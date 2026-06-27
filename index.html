@@ -681,7 +681,7 @@ function filterCountry(btn, code) {
 }
 
 function filter(btn, tag) {
-  document.querySelectorAll('.fil, .mob-fil').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('#sf .fil, .mob-fil').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   var cards = document.querySelectorAll('.card');
   var visible = 0;
@@ -693,7 +693,7 @@ function filter(btn, tag) {
   });
   var cl = document.getElementById('cnt');
   if (cl) cl.textContent = visible + (lang === 'es' ? ' organizaciones' : ' organizations');
-}
+}window.onload = function() { switchTab('country'); };
 </script>
 </body>
 </html>
