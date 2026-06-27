@@ -122,6 +122,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 /* MOBILE */
 @media(max-width:767px){
   .sidebar{display:none}.layout{flex-direction:column}.main{padding:16px}
+  .mob-hdr{display:block}
+  #dsk-hdr{display:none}
   .page-header{margin-bottom:16px;padding-bottom:16px}.page-header h1{font-size:20px}
   .mob-lang{display:flex;gap:6px;margin-bottom:12px}
   .mob-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
@@ -135,7 +137,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   .cards,.country-cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
   .footer{margin-left:0;padding:20px 16px}
 }
-@media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}}
+@media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}
+  #dsk-hdr{display:none}}
 </style>
 </head>
 <body>
