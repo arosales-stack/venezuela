@@ -151,21 +151,21 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   <div>
     <div class="sidebar-section-label t" data-en="Navigate" data-es="Navegar">Navigate</div>
     <nav class="nav">
-      <button class="nav-item active" id="nav-global" onclick="switchTab('global')">
-        <span class="t" data-en="Global organizations" data-es="Organizaciones globales">Global organizations</span>
-      </button>
-      <button class="nav-item" id="nav-country" onclick="switchTab('country')">
+      <button class="nav-item active" id="nav-country" onclick="switchTab('country')">
         <span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span>
       </button>
       <button class="nav-item" id="nav-goods" onclick="switchTab('goods')">
         <span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span>
+      </button>
+      <button class="nav-item" id="nav-global" onclick="switchTab('global')">
+        <span class="t" data-en="Global organizations" data-es="Organizaciones globales">Global organizations</span>
       </button>
       <button class="nav-item" id="nav-about" onclick="switchTab('about')">
         <span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span>
       </button>
     </nav>
   </div>
-  <div id="sf">
+  <div id="sf" style="display:none">
     <div class="sidebar-section-label t" data-en="Filter by type" data-es="Filtrar por tipo">Filter by type</div>
     <div class="filters-v">
       <button class="fil active" onclick="filter(this,'all')"><span class="t" data-en="All (10)" data-es="Todo (10)">All (10)</span></button>
@@ -177,7 +177,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
       <button class="fil" onclick="filter(this,'faith')"><span class="t" data-en="Faith-based" data-es="Religiosa">Faith-based</span></button>
     </div>
   </div>
-  <div id="scf" style="display:none">
+  <div id="scf">
     <div class="sidebar-section-label t" data-en="Filter by country" data-es="Filtrar por pa&iacute;s">Filter by country</div>
     <div class="filters-v">
       <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All countries" data-es="Todos los pa&iacute;ses">All countries</span></button>
@@ -210,9 +210,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.25;margin-top:14px;margin-bottom:10px" class="t" data-en="Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe" data-es="Lista centralizada de centros de ayuda oficiales para &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europa">Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe</h1>
     <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t." data-es="Encuentra d&oacute;nde enviar dinero tras los terremotos de Venezuela. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t.</p>
     <div class="mob-tabs">
-      <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Organizations" data-es="Organizaciones">Organizations</span></button>
-      <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
+      <button class="mob-tab active" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
       <button class="mob-tab" id="mnav-goods" onclick="switchTab('goods')"><span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span></button>
+      <button class="mob-tab" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Organizations" data-es="Organizaciones">Organizations</span></button>
       <button class="mob-tab" id="mnav-about" onclick="switchTab('about')"><span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span></button>
     </div>
   </div>
@@ -226,7 +226,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 
   <!-- GLOBAL PANEL -->
   <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
-  <div class="panel active" id="panel-global">
+  <div class="panel" id="panel-global">
     <div class="mob-filters">
       <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
       <button class="mob-fil" onclick="filter(this,'global')"><span class="t" data-en="Relief" data-es="Ayuda">Relief</span></button>
@@ -343,7 +343,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   </div>
 
   <!-- COUNTRY PANEL -->
-  <div class="panel" id="panel-country">
+  <div class="panel active" id="panel-country">
     <div class="country-filters" id="cf">
       <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All" data-es="Todos">All</span></button>
       <button class="fil" onclick="filterCountry(this,'es')">&#x1F1EA;&#x1F1F8; <span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></button>
