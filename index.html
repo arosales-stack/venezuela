@@ -17,34 +17,34 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0D1117;--surface:#161B22;--surface2:#1E242D;--border:#2A2D35;
-  --amber:#E8A020;--amber-dim:#7A5310;--text:#F0EEE9;--muted:#8B8F9A;--dim:#4A4E5A;
+  --amber:#E8A020;--amber-dim:#7A5310;--text:#F0EEE9;--muted:#B0B4BF;--dim:#7A7E8A;
   --green:#4CAF50;--orange:#F5855B;--sidebar:240px;
 }
 html{font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;font-size:15px;line-height:1.6}
 .layout{display:flex;max-width:1140px;margin:0 auto}
 
 /* SIDEBAR */
 .sidebar{width:var(--sidebar);flex-shrink:0;padding:32px 20px;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:24px}
-.sidebar-section-label{font-size:10px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.sidebar-section-label{font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
 .nav{display:flex;flex-direction:column;gap:2px}
-.nav-item{display:block;padding:8px 10px;border-radius:6px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;background:transparent;border:none;font-family:'Inter',sans-serif;text-align:left;letter-spacing:.04em;text-transform:uppercase;transition:all .15s;width:100%}
+.nav-item{display:block;padding:8px 10px;border-radius:6px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;background:transparent;border:none;font-family:'Inter',sans-serif;text-align:left;letter-spacing:.04em;text-transform:uppercase;transition:all .15s;width:100%}
 .nav-item:hover{color:var(--text);background:var(--surface2)}.nav-item.active{color:var(--amber);background:var(--surface2)}
 .filters-v{display:flex;flex-direction:column;gap:2px}
-.fil{padding:7px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;transition:all .15s;width:100%}
+.fil{padding:7px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;transition:all .15s;width:100%}
 .fil:hover{color:var(--text);background:var(--surface2)}.fil.active{color:var(--amber);background:var(--surface2);font-weight:600}
 .lang-row{display:flex;gap:6px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
-.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 10px;border-radius:4px;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.05em;text-transform:uppercase;transition:all .15s}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:14px;font-weight:600;padding:4px 10px;border-radius:4px;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.05em;text-transform:uppercase;transition:all .15s}
 .lang-btn.active{border-color:var(--amber);color:var(--amber)}
 
 /* MAIN */
 .main{flex:1;min-width:0;padding:32px 36px}
 .page-header{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)}
-.eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
 .page-header h1{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:10px}
-.page-header p{font-size:13px;color:var(--muted);line-height:1.6;max-width:620px}
+.page-header p{font-size:14px;color:var(--muted);line-height:1.6;max-width:620px}
 .panel{display:none}.panel.active{display:block}
-.count-line{font-size:11px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
+.count-line{font-size:14px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
 
 /* ORG CARDS */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
@@ -54,77 +54,77 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .org-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
 
 .card-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
-.cpill{font-size:10px;font-weight:500;padding:3px 8px;border-radius:3px;border:1px solid}
+.cpill{font-size:12px;font-weight:500;padding:3px 8px;border-radius:3px;border:1px solid}
 .pp-yes{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
 .pp-partial{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
 .pp-dim{color:var(--muted);border-color:var(--border);background:transparent}
-.card-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.card-desc{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:14px;opacity:0.85}
 .card-footer{display:flex;align-items:center;justify-content:space-between}
-.org-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.org-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .tag-global{background:#1A2540;color:#5B8BF5}.tag-medical{background:#2A1A1A;color:#F5855B}
 .tag-cash{background:#1A2A1A;color:#5BF5A0}.tag-logistics{background:#2A2A1A;color:#F5D05B}
 .tag-children{background:#2A1A2A;color:#D05BF5}.tag-faith{background:#261A2A;color:#B05BF5}
-.vlink{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--dim);text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.vlink{display:flex;align-items:center;gap:5px;font-size:14px;font-weight:600;color:var(--dim);text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
 .vlink svg{width:12px;height:12px}.card:hover .vlink{color:var(--amber)}
 .context-note{margin-top:20px;padding:14px;border-radius:8px;border-left:3px solid var(--amber-dim);background:var(--surface)}
-.context-note p{font-size:11px;color:var(--dim);line-height:1.6}.context-note strong{color:var(--muted)}
+.context-note p{font-size:14px;color:var(--dim);line-height:1.6}.context-note strong{color:var(--muted)}
 
 /* COUNTRY CARDS */
 .country-section{margin-bottom:40px}
-.country-heading{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.country-heading{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .country-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
 .ccard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;transition:border-color .15s}
 .ccard:hover{border-color:var(--amber-dim)}
 .ccard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px}
-.ccard-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);line-height:1.3;flex:1}
-.ccard-type{flex-shrink:0;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px}
+.ccard-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.3;flex:1}
+.ccard-type{flex-shrink:0;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px}
 .type-org{background:#1A2540;color:#5B8BF5}.type-initiative{background:#2A1A2A;color:#D05BF5}
 .type-transfer{background:#1A2A1A;color:#5BF5A0}.type-coalition{background:#261A2A;color:#B05BF5}
-.ccard-backing{font-size:10px;color:var(--dim);margin-bottom:8px;line-height:1.4}.ccard-backing strong{color:var(--muted)}
+.ccard-backing{font-size:12px;color:var(--dim);margin-bottom:8px;line-height:1.4}.ccard-backing strong{color:var(--muted)}
 .ccard-safety{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
-.safety-pill{font-size:10px;font-weight:500;padding:2px 8px;border-radius:3px;border:1px solid}
+.safety-pill{font-size:12px;font-weight:500;padding:2px 8px;border-radius:3px;border:1px solid}
 .sp-ok{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
 .sp-watch{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
-.ccard-detail{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:10px}
+.ccard-detail{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:10px}
 .ccard-footer{display:flex;align-items:center;justify-content:space-between}
 .ccard:hover .vlink{color:var(--amber)}
 .gcard{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text);transition:border-color .15s}
 .gcard:hover{border-color:var(--amber)}
 .gcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
 .gcard-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
-.gcard-status{font-size:10px;font-weight:600;padding:3px 8px;border-radius:3px;border:1px solid;flex-shrink:0;white-space:nowrap}
+.gcard-status{font-size:12px;font-weight:600;padding:3px 8px;border-radius:3px;border:1px solid;flex-shrink:0;white-space:nowrap}
 .gs-active{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
 .gs-weekend{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
 .gs-unconfirmed{color:var(--muted);border-color:var(--border);background:transparent}
-.gcard-accepts{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.5}
+.gcard-accepts{font-size:14px;color:var(--muted);margin-bottom:8px;line-height:1.5}
 .gcard-accepts strong{color:var(--text);font-weight:600}
 .gcard-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
-.gcard-footer{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--dim)}
-.gcard-location{font-size:11px;color:var(--muted);font-style:italic}
+.gcard-footer{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--dim)}
+.gcard-location{font-size:14px;color:var(--muted);font-style:italic}
 .country-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .country-filters .fil{flex-shrink:0}
 @media(min-width:768px){.country-filters{display:none}}
 .goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.goods-country-heading{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:24px 0 10px}
+.goods-country-heading{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:24px 0 10px}
 .goods-country-heading:first-child{margin-top:0}
-.goods-warning{background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:18px;font-size:12px;color:var(--amber);line-height:1.5}
-.goods-note{background:var(--surface2);border-radius:8px;padding:12px 14px;margin-top:18px;font-size:11px;color:var(--dim);line-height:1.6}
+.goods-warning{background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:18px;font-size:14px;color:var(--amber);line-height:1.5}
+.goods-note{background:var(--surface2);border-radius:8px;padding:12px 14px;margin-top:18px;font-size:14px;color:var(--dim);line-height:1.6}
 @media(min-width:768px){}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .about-block{}.about-block.full{grid-column:1/-1}
-.about-block h3{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
-.about-block p{font-size:12px;color:var(--muted);line-height:1.8}.about-block p+p{margin-top:10px}
+.about-block h3{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.about-block p{font-size:14px;color:var(--muted);line-height:1.8}.about-block p+p{margin-top:10px}
 .score-table{width:100%;border-collapse:collapse;margin-top:4px}
-.score-table td{font-size:11px;padding:8px 0;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+.score-table td{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
 .score-table td:first-child{color:var(--text);font-weight:500;width:40%;padding-right:16px}
 .score-table tr:last-child td{border-bottom:none}
-.src-tag{display:inline-block;margin-top:10px;font-size:10px;color:var(--dim);border:1px solid var(--border);border-radius:3px;padding:3px 8px}
+.src-tag{display:inline-block;margin-top:10px;font-size:12px;color:var(--dim);border:1px solid var(--border);border-radius:3px;padding:3px 8px}
 
 /* FOOTER */
 .footer{padding:20px 36px;border-top:1px solid var(--border);margin-left:var(--sidebar)}
-.footer p{font-size:11px;color:var(--dim);line-height:1.6}
+.footer p{font-size:14px;color:var(--dim);line-height:1.6}
 
 /* MOBILE */
 @media(max-width:767px){
@@ -135,11 +135,11 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   .mob-lang{display:flex;gap:6px;margin-bottom:12px}
   .mob-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
   .mob-tabs::-webkit-scrollbar{display:none}
-  .mob-tab{flex-shrink:0;padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+  .mob-tab{flex-shrink:0;padding:10px 14px;font-size:14px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
   .mob-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
   .mob-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px;margin-bottom:4px}
   .mob-filters::-webkit-scrollbar{display:none}
-  .mob-fil{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:all .15s}
+  .mob-fil{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:all .15s}
   .mob-fil.active{background:var(--amber);border-color:var(--amber);color:#0D1117}
   .cards,.country-cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
   .footer{margin-left:0;padding:20px 16px}
@@ -212,7 +212,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
       <button class="lang-btn" onclick="setLang('es')">ES</button>
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.25;margin-top:14px;margin-bottom:10px" class="t" data-en="Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe" data-es="Lista centralizada de centros de ayuda oficiales para &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europa">Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe</h1>
-    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t." data-es="Encuentra d&oacute;nde enviar dinero tras los terremotos de Venezuela. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t." data-es="Encuentra d&oacute;nde enviar dinero tras los terremotos de Venezuela. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t.</p>
     <div class="mob-tabs">
       <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Organizations" data-es="Organizaciones">Organizations</span></button>
       <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
@@ -229,7 +229,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   </div>
 
   <!-- GLOBAL PANEL -->
-  <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
+  <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
   <div class="panel active" id="panel-global">
     <div class="mob-filters">
       <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
@@ -386,7 +386,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
         <div class="ccard-backing t" data-en="<strong>Backed by:</strong> WCK international. Spain Bizum routes directly to Venezuela earthquake response &mdash; no website intermediary." data-es="<strong>Respaldado por:</strong> WCK internacional. Bizum Espa&ntilde;a va directamente a la respuesta Venezuela."><strong>Backed by:</strong> WCK international. Spain Bizum routes directly to Venezuela earthquake response &mdash; no website intermediary.</div>
         <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span></div>
         <p class="ccard-detail t" data-en="Donation goes directly to Venezuela campaign via Bizum (code on WCK website)." data-es="Donaci&oacute;n directamente a campa&ntilde;a Venezuela v&iacute;a Bizum (c&oacute;digo en web WCK).">Donation goes directly to Venezuela campaign via Bizum (code on WCK website).</p>
-        <div class="ccard-footer"><span style="font-size:11px;color:var(--dim)" class="t" data-en="No link &mdash; see detail" data-es="Sin enlace &mdash; ver detalle">No link &mdash; see detail</span></div>
+        <div class="ccard-footer"><span style="font-size:14px;color:var(--dim)" class="t" data-en="No link &mdash; see detail" data-es="Sin enlace &mdash; ver detalle">No link &mdash; see detail</span></div>
       </div></div>
     </div>
     <div class="country-section" data-country="de">
@@ -588,7 +588,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 
     <div class="goods-country-heading">&#x1F30D; Other European countries</div>
     <div class="gcard" style="border-style:dashed">
-      <p class="t" style="font-size:12px;color:var(--muted);margin:0;line-height:1.6" data-en="No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data." data-es="No se encontraron puntos de recogida f&iacute;sica verificados en Francia, Alemania, Pa&iacute;ses Bajos, Italia, Portugal, Austria, Suiza, Rep&uacute;blica Checa ni Luxemburgo al 27 jun 2026. Las organizaciones principales en esos pa&iacute;ses solo aceptan donaciones monetarias.">No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data.</p>
+      <p class="t" style="font-size:14px;color:var(--muted);margin:0;line-height:1.6" data-en="No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data." data-es="No se encontraron puntos de recogida f&iacute;sica verificados en Francia, Alemania, Pa&iacute;ses Bajos, Italia, Portugal, Austria, Suiza, Rep&uacute;blica Checa ni Luxemburgo al 27 jun 2026. Las organizaciones principales en esos pa&iacute;ses solo aceptan donaciones monetarias.">No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data.</p>
     </div>
 
     <div class="goods-note t" data-en="&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged." data-es="&#9432; La mayor&iacute;a de organizaciones humanitarias recomiendan dinero en lugar de bienes &mdash; llega m&aacute;s r&aacute;pido, evita aduanas y permite comprar exactamente lo necesario localmente.">&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged.</div>
@@ -613,13 +613,13 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
           <tr><td class="t" data-en="Active Venezuela presence" data-es="Presencia activa Venezuela">Active Venezuela presence</td><td class="t" data-en="Teams or funds confirmed active as of June 27, 2026 &mdash; not just announced" data-es="Equipos o fondos confirmados activos al 27 jun 2026 &mdash; no solo anunciados">Teams or funds confirmed active as of June 27, 2026 &mdash; not just announced</td></tr>
           <tr><td class="t" data-en="Venezuela-specific campaign" data-es="Campa&ntilde;a espec&iacute;fica Venezuela">Venezuela-specific campaign</td><td class="t" data-en="Dedicated page or fund for this earthquake, not a general donation page" data-es="P&aacute;gina o fondo dedicado a este terremoto, no p&aacute;gina de donaci&oacute;n general">Dedicated page or fund for this earthquake, not a general donation page</td></tr>
         </table>
-        <p style="margin-top:12px;font-size:11px;color:var(--dim)" class="t" data-en="Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements." data-es="Verde &#10003; = confirmado. &Aacute;mbar &#9888; = no confirmado o parcial. Observaciones factuales, no respaldos.">Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--dim)" class="t" data-en="Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements." data-es="Verde &#10003; = confirmado. &Aacute;mbar &#9888; = no confirmado o parcial. Observaciones factuales, no respaldos.">Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements.</p>
       </div>
 
       <div class="about-block">
         <h3 class="t" data-en="How we assess physical collection points" data-es="C&oacute;mo evaluamos los puntos de recogida f&iacute;sica">How we assess physical collection points</h3>
         <p class="t" data-en="Physical collection points are assessed differently from monetary organizations. We show: what they accept, location and hours, who is running them, and verification source. We do not rate diaspora community initiatives against UN agencies &mdash; they serve different purposes. Status badges indicate whether a point is active, weekend-only, or unconfirmed." data-es="Los puntos de recogida f&iacute;sica se eval&uacute;an de forma diferente a las organizaciones monetarias. Mostramos: qu&eacute; aceptan, ubicaci&oacute;n y horario, qui&eacute;n los gestiona, y fuente de verificaci&oacute;n. No comparamos iniciativas de la di&aacute;spora con agencias de la ONU.">Physical collection points are assessed differently from monetary organizations. We show: what they accept, location and hours, who is running them, and verification source. We do not rate diaspora community initiatives against UN agencies &mdash; they serve different purposes. Status badges indicate whether a point is active, weekend-only, or unconfirmed.</p>
-        <p style="margin-top:8px;font-size:11px;color:var(--dim)" class="t" data-en="All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going." data-es="Todos los puntos de recogida listados fueron verificados mediante fuentes de prensa. Cambian r&aacute;pidamente &mdash; confirma siempre antes de ir.">All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going.</p>
+        <p style="margin-top:8px;font-size:14px;color:var(--dim)" class="t" data-en="All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going." data-es="Todos los puntos de recogida listados fueron verificados mediante fuentes de prensa. Cambian r&aacute;pidamente &mdash; confirma siempre antes de ir.">All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going.</p>
       </div>
 
       <div class="about-block">
@@ -639,7 +639,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 </div>
 
 <div class="footer">
-  <p style="text-align:center;margin-bottom:10px;font-size:12px" class="t" data-en="Know an initiative we missed? <a href='mailto:suggestions@ayudave.net' style='color:var(--amber)'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? <a href='mailto:suggestions@ayudave.net' style='color:var(--amber)'>suggestions@ayudave.net</a>">Know an initiative we missed? <a href="mailto:suggestions@ayudave.net" style="color:var(--amber)">suggestions@ayudave.net</a></p>
+  <p style="text-align:center;margin-bottom:10px;font-size:14px" class="t" data-en="Know an initiative we missed? <a href='mailto:suggestions@ayudave.net' style='color:var(--amber)'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? <a href='mailto:suggestions@ayudave.net' style='color:var(--amber)'>suggestions@ayudave.net</a>">Know an initiative we missed? <a href="mailto:suggestions@ayudave.net" style="color:var(--amber)">suggestions@ayudave.net</a></p>
   <p class="t" data-en="Links to third-party organizations. No affiliation, no compensation. Scores are an independent assessment based on publicly available data, provided for informational purposes only." data-es="Enlaza a organizaciones de terceros. Sin afiliaci&oacute;n ni compensaci&oacute;n. Puntuaciones basadas en datos p&uacute;blicos, solo con fines informativos.">Links to third-party organizations. No affiliation, no compensation. Scores are an independent assessment based on publicly available data, provided for informational purposes only.</p>
 </div>
 
