@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#x1F1FB;&#x1F1EA; Centralized list of official aid centers for Venezuela &mdash; Global and Europe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D1117;--surface:#161B22;--surface2:#1E242D;--border:#2A2D35;
+  --amber:#E8A020;--amber-dim:#7A5310;--text:#F0EEE9;--muted:#8B8F9A;--dim:#4A4E5A;
+  --green:#4CAF50;--orange:#F5855B;--sidebar:240px;
+}
+html{font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+.layout{display:flex;max-width:1140px;margin:0 auto}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar);flex-shrink:0;padding:32px 20px;position:sticky;top:0;height:100vh;overflow-y:auto;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:24px}
+.sidebar-section-label{font-size:10px;font-weight:700;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav-item{display:block;padding:8px 10px;border-radius:6px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;background:transparent;border:none;font-family:'Inter',sans-serif;text-align:left;letter-spacing:.04em;text-transform:uppercase;transition:all .15s;width:100%}
+.nav-item:hover{color:var(--text);background:var(--surface2)}.nav-item.active{color:var(--amber);background:var(--surface2)}
+.filters-v{display:flex;flex-direction:column;gap:2px}
+.fil{padding:7px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;transition:all .15s;width:100%}
+.fil:hover{color:var(--text);background:var(--surface2)}.fil.active{color:var(--amber);background:var(--surface2);font-weight:600}
+.lang-row{display:flex;gap:6px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
+.lang-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;padding:4px 10px;border-radius:4px;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.05em;text-transform:uppercase;transition:all .15s}
+.lang-btn.active{border-color:var(--amber);color:var(--amber)}
+
+/* MAIN */
+.main{flex:1;min-width:0;padding:32px 36px}
+.page-header{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
+.page-header h1{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:10px}
+.page-header p{font-size:13px;color:var(--muted);line-height:1.6;max-width:620px}
+.panel{display:none}.panel.active{display:block}
+.count-line{font-size:11px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
+
+/* ORG CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;display:block;transition:border-color .15s}
+.card:hover{border-color:var(--amber-dim)}.card[data-hidden="true"]{display:none}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px}
+.org-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+
+.card-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.cpill{font-size:10px;font-weight:500;padding:3px 8px;border-radius:3px;border:1px solid}
+.pp-yes{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
+.pp-partial{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
+.pp-dim{color:var(--muted);border-color:var(--border);background:transparent}
+.card-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px}
+.card-footer{display:flex;align-items:center;justify-content:space-between}
+.org-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.tag-global{background:#1A2540;color:#5B8BF5}.tag-medical{background:#2A1A1A;color:#F5855B}
+.tag-cash{background:#1A2A1A;color:#5BF5A0}.tag-logistics{background:#2A2A1A;color:#F5D05B}
+.tag-children{background:#2A1A2A;color:#D05BF5}.tag-faith{background:#261A2A;color:#B05BF5}
+.vlink{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--dim);text-decoration:none;text-transform:uppercase;letter-spacing:.06em}
+.vlink svg{width:12px;height:12px}.card:hover .vlink{color:var(--amber)}
+.context-note{margin-top:20px;padding:14px;border-radius:8px;border-left:3px solid var(--amber-dim);background:var(--surface)}
+.context-note p{font-size:11px;color:var(--dim);line-height:1.6}.context-note strong{color:var(--muted)}
+
+/* COUNTRY CARDS */
+.country-section{margin-bottom:32px}
+.country-heading{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.country-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
+.ccard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;transition:border-color .15s}
+.ccard:hover{border-color:var(--amber-dim)}
+.ccard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px}
+.ccard-name{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);line-height:1.3;flex:1}
+.ccard-type{flex-shrink:0;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:3px}
+.type-org{background:#1A2540;color:#5B8BF5}.type-initiative{background:#2A1A2A;color:#D05BF5}
+.type-transfer{background:#1A2A1A;color:#5BF5A0}.type-coalition{background:#261A2A;color:#B05BF5}
+.ccard-backing{font-size:10px;color:var(--dim);margin-bottom:8px;line-height:1.4}.ccard-backing strong{color:var(--muted)}
+.ccard-safety{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.safety-pill{font-size:10px;font-weight:500;padding:2px 8px;border-radius:3px;border:1px solid}
+.sp-ok{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
+.sp-watch{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
+.ccard-detail{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:10px}
+.ccard-footer{display:flex;align-items:center;justify-content:space-between}
+.ccard:hover .vlink{color:var(--amber)}
+.gcard{display:block;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text);transition:border-color .15s}
+.gcard:hover{border-color:var(--amber)}
+.gcard-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px}
+.gcard-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+.gcard-status{font-size:10px;font-weight:600;padding:3px 8px;border-radius:3px;border:1px solid;flex-shrink:0;white-space:nowrap}
+.gs-active{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
+.gs-weekend{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
+.gs-unconfirmed{color:var(--muted);border-color:var(--border);background:transparent}
+.gcard-accepts{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.5}
+.gcard-accepts strong{color:var(--text);font-weight:600}
+.gcard-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.gcard-footer{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--dim)}
+.gcard-location{font-size:11px;color:var(--muted);font-style:italic}
+.goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.goods-country-heading{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:24px 0 10px}
+.goods-country-heading:first-child{margin-top:0}
+.goods-warning{background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:18px;font-size:12px;color:var(--amber);line-height:1.5}
+.goods-note{background:var(--surface2);border-radius:8px;padding:12px 14px;margin-top:18px;font-size:11px;color:var(--dim);line-height:1.6}
+.country-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:14px;margin-bottom:4px}
+.country-filters::-webkit-scrollbar{display:none}
+.country-filters .fil{flex-shrink:0}
+@media(min-width:768px){.country-filters{display:none}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.about-block{}.about-block.full{grid-column:1/-1}
+.about-block h3{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.about-block p{font-size:12px;color:var(--muted);line-height:1.8}.about-block p+p{margin-top:10px}
+.score-table{width:100%;border-collapse:collapse;margin-top:4px}
+.score-table td{font-size:11px;padding:8px 0;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+.score-table td:first-child{color:var(--text);font-weight:500;width:40%;padding-right:16px}
+.score-table tr:last-child td{border-bottom:none}
+.src-tag{display:inline-block;margin-top:10px;font-size:10px;color:var(--dim);border:1px solid var(--border);border-radius:3px;padding:3px 8px}
+
+/* FOOTER */
+.footer{padding:20px 36px;border-top:1px solid var(--border);margin-left:var(--sidebar)}
+.footer p{font-size:11px;color:var(--dim);line-height:1.6}
+
+/* MOBILE */
+@media(max-width:767px){
+  .sidebar{display:none}.layout{flex-direction:column}.main{padding:16px}
+  .page-header{margin-bottom:16px;padding-bottom:16px}.page-header h1{font-size:20px}
+  .mob-lang{display:flex;gap:6px;margin-bottom:12px}
+  .mob-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
+  .mob-tabs::-webkit-scrollbar{display:none}
+  .mob-tab{flex-shrink:0;padding:10px 14px;font-size:11px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+  .mob-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
+  .mob-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px;margin-bottom:4px}
+  .mob-filters::-webkit-scrollbar{display:none}
+  .mob-fil{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:all .15s}
+  .mob-fil.active{background:var(--amber);border-color:var(--amber);color:#0D1117}
+  .cards,.country-cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
+  .footer{margin-left:0;padding:20px 16px}
+}
+@media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+  <div>
+    <div class="sidebar-section-label t" data-en="Navigate" data-es="Navegar">Navigate</div>
+    <nav class="nav">
+      <button class="nav-item active" id="nav-global" onclick="switchTab('global')">
+        <span class="t" data-en="Global organizations" data-es="Organizaciones globales">Global organizations</span>
+      </button>
+      <button class="nav-item" id="nav-country" onclick="switchTab('country')">
+        <span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span>
+      </button>
+      <button class="nav-item" id="nav-goods" onclick="switchTab('goods')">
+        <span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span>
+      </button>
+      <button class="nav-item" id="nav-about" onclick="switchTab('about')">
+        <span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span>
+      </button>
+    </nav>
+  </div>
+  <div id="sf">
+    <div class="sidebar-section-label t" data-en="Filter by type" data-es="Filtrar por tipo">Filter by type</div>
+    <div class="filters-v">
+      <button class="fil active" onclick="filter(this,'all')"><span class="t" data-en="All (10)" data-es="Todo (10)">All (10)</span></button>
+      <button class="fil" onclick="filter(this,'global')"><span class="t" data-en="General relief" data-es="Ayuda general">General relief</span></button>
+      <button class="fil" onclick="filter(this,'medical')"><span class="t" data-en="Medical" data-es="M&eacute;dico">Medical</span></button>
+      <button class="fil" onclick="filter(this,'cash')"><span class="t" data-en="Direct cash" data-es="Efectivo directo">Direct cash</span></button>
+      <button class="fil" onclick="filter(this,'logistics')"><span class="t" data-en="Logistics" data-es="Log&iacute;stica">Logistics</span></button>
+      <button class="fil" onclick="filter(this,'children')"><span class="t" data-en="Children" data-es="Ni&ntilde;os">Children</span></button>
+      <button class="fil" onclick="filter(this,'faith')"><span class="t" data-en="Faith-based" data-es="Religiosa">Faith-based</span></button>
+    </div>
+  </div>
+  <div id="scf" style="display:none">
+    <div class="sidebar-section-label t" data-en="Filter by country" data-es="Filtrar por pa&iacute;s">Filter by country</div>
+    <div class="filters-v">
+      <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All countries" data-es="Todos los pa&iacute;ses">All countries</span></button>
+      <button class="fil" onclick="filterCountry(this,'es')">&#x1F1EA;&#x1F1F8; <span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></button>
+      <button class="fil" onclick="filterCountry(this,'de')">&#x1F1E9;&#x1F1EA; <span class="t" data-en="Germany" data-es="Alemania">Germany</span></button>
+      <button class="fil" onclick="filterCountry(this,'nl')">&#x1F1F3;&#x1F1F1; <span class="t" data-en="Netherlands" data-es="Pa&iacute;ses Bajos">Netherlands</span></button>
+      <button class="fil" onclick="filterCountry(this,'it')">&#x1F1EE;&#x1F1F9; <span class="t" data-en="Italy" data-es="Italia">Italy</span></button>
+      <button class="fil" onclick="filterCountry(this,'pt')">&#x1F1F5;&#x1F1F9; <span class="t" data-en="Portugal" data-es="Portugal">Portugal</span></button>
+      <button class="fil" onclick="filterCountry(this,'fr')">&#x1F1EB;&#x1F1F7; <span class="t" data-en="France" data-es="Francia">France</span></button>
+      <button class="fil" onclick="filterCountry(this,'cz')">&#x1F1E8;&#x1F1FF; <span class="t" data-en="Czech Rep." data-es="Rep. Checa">Czech Rep.</span></button>
+      <button class="fil" onclick="filterCountry(this,'at')">&#x1F1E6;&#x1F1F9; <span class="t" data-en="Austria" data-es="Austria">Austria</span></button>
+      <button class="fil" onclick="filterCountry(this,'ch')">&#x1F1E8;&#x1F1ED; <span class="t" data-en="Switzerland" data-es="Suiza">Switzerland</span></button>
+      <button class="fil" onclick="filterCountry(this,'lu')">&#x1F1F1;&#x1F1FA; <span class="t" data-en="Luxembourg" data-es="Luxemburgo">Luxembourg</span></button>
+    </div>
+  </div>
+  <div class="lang-row">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</aside>
+
+<main class="main">
+
+  <!-- Mobile header -->
+  <div class="mob-hdr">
+    <div class="mob-lang">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:12px" class="t" data-en="Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe" data-es="Lista centralizada de centros de ayuda oficiales para &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europa">Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe</h1>
+    <div class="mob-tabs">
+      <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Organizations" data-es="Organizaciones">Organizations</span></button>
+      <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
+      <button class="mob-tab" id="mnav-goods" onclick="switchTab('goods')"><span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span></button>
+      <button class="mob-tab" id="mnav-about" onclick="switchTab('about')"><span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span></button>
+    </div>
+    <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
+    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px" class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't." data-es="Encuentra d&oacute;nde enviar dinero tras los terremotos de Venezuela. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't.</p>
+    
+  </div>
+
+  <!-- Desktop page header -->
+  <div class="page-header" id="dsk-hdr">
+    <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
+    <h1 class="t" data-en="Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe" data-es="Lista centralizada de centros de ayuda oficiales para &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europa">Centralized list of official aid centers for &#x1F1FB;&#x1F1EA; Venezuela<br>&#x1F30D; Global &amp; &#x1F1EA;&#x1F1FA; Europe</h1>
+    <p class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't." data-es="Encuentra d&oacute;nde enviar dinero tras los terremotos de Venezuela. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't.</p>
+  </div>
+
+  <!-- GLOBAL PANEL -->
+  <div class="panel active" id="panel-global">
+    <div class="mob-filters">
+      <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
+      <button class="mob-fil" onclick="filter(this,'global')"><span class="t" data-en="Relief" data-es="Ayuda">Relief</span></button>
+      <button class="mob-fil" onclick="filter(this,'medical')"><span class="t" data-en="Medical" data-es="M&eacute;dico">Medical</span></button>
+      <button class="mob-fil" onclick="filter(this,'cash')"><span class="t" data-en="Cash" data-es="Efectivo">Cash</span></button>
+      <button class="mob-fil" onclick="filter(this,'logistics')"><span class="t" data-en="Logistics" data-es="Log&iacute;stica">Logistics</span></button>
+      <button class="mob-fil" onclick="filter(this,'children')"><span class="t" data-en="Children" data-es="Ni&ntilde;os">Children</span></button>
+      <button class="mob-fil" onclick="filter(this,'faith')"><span class="t" data-en="Faith" data-es="Fe">Faith</span></button>
+    </div>
+    <div class="count-line" id="cnt">10 organizations</div>
+    <div class="cards">
+      <a class="card" href="https://www.directrelief.org/2026/06/venezuela-earthquake-direct-relief-emergency-response/" target="_blank" data-tags="global medical">
+        <div class="card-head"><span class="org-name">Direct Relief</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 100%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — no government funding" data-es="Ind. gob.: Yes — no government funding">Gov. independent: Yes — no government funding</span>
+        </div>
+        <p class="card-desc t" data-en="Emergency medical supplies to clinics, funding search &amp; rescue. Forbes #5 charity 2025." data-es="Suministros m&eacute;dicos de emergencia. Forbes #5 en 2025.">Emergency medical supplies to clinics, funding search &amp; rescue. Forbes #5 charity 2025.</p>
+        <div class="card-footer"><span class="org-tag tag-medical t" data-en="Medical" data-es="M&eacute;dico">Medical</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://msf.org.uk/secure/donate/venezuela-response" target="_blank" data-tags="medical">
+        <div class="card-head"><span class="org-name">Doctors Without Borders (MSF)</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 96%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — 0% government funding" data-es="Ind. gob.: Yes — 0% government funding">Gov. independent: Yes — 0% government funding</span>
+        </div>
+        <p class="card-desc t" data-en="In Venezuela since 2015. June 25: 200+ trauma kits to La Guaira. June 26: 400 more. Link &rarr; MSF UK Venezuela-specific page." data-es="En Venezuela desde 2015. 25 jun: 200+ kits. 26 jun: 400 m&aacute;s.">In Venezuela since 2015. June 25: 200+ trauma kits to La Guaira. June 26: 400 more. Link &rarr; MSF UK Venezuela-specific page.</p>
+        <div class="card-footer"><span class="org-tag tag-medical t" data-en="Medical" data-es="M&eacute;dico">Medical</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://donate.wck.org/campaign/815521/donate" target="_blank" data-tags="global">
+        <div class="card-head"><span class="org-name">World Central Kitchen</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 100%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — civilian kitchen networks" data-es="Ind. gob.: Yes — civilian kitchen networks">Gov. independent: Yes — civilian kitchen networks</span>
+        </div>
+        <p class="card-desc t" data-en="Deployed within 24h. Partner: I Love Venezuela. Prior Venezuela responses: Hurricane Beryl 2024, Julia 2022." data-es="Desplegado en 24h. Socio: I Love Venezuela. Beryl 2024, Julia 2022.">Deployed within 24h. Partner: I Love Venezuela. Prior Venezuela responses: Hurricane Beryl 2024, Julia 2022.</p>
+        <div class="card-footer"><span class="org-tag tag-global t" data-en="Relief" data-es="Ayuda">Relief</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.globalempowermentmission.org/mission/venezuela-earthquakes/" target="_blank" data-tags="global logistics">
+        <div class="card-head"><span class="org-name">Global Empowerment Mission</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 100%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — 97% of funds to field ops" data-es="Ind. gob.: Yes — 97% of funds to field ops">Gov. independent: Yes — 97% of funds to field ops</span>
+        </div>
+        <p class="card-desc t" data-en="Florida-based, Venezuelan diaspora-rooted. Teams on ground with I Love Venezuela. Food, water, hygiene kits, medical supplies." data-es="Con base en Florida, ra&iacute;ces venezolanas. Equipos con I Love Venezuela.">Florida-based, Venezuelan diaspora-rooted. Teams on ground with I Love Venezuela. Food, water, hygiene kits, medical supplies.</p>
+        <div class="card-footer"><span class="org-tag tag-logistics t" data-en="Logistics" data-es="Log&iacute;stica">Logistics</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.crs.org/donate/venezuela-earthquake" target="_blank" data-tags="faith global">
+        <div class="card-head"><span class="org-name">Catholic Relief Services</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: ~90%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — Caritas Venezuela church network" data-es="Ind. gob.: Yes — Caritas Venezuela church network">Gov. independent: Yes — Caritas Venezuela church network</span>
+        </div>
+        <p class="card-desc t" data-en="20+ years in Venezuela via Caritas. Church network operates outside state reach. Active since quake hit." data-es="20+ a&ntilde;os v&iacute;a Caritas Venezuela. Red eclesial fuera del alcance estatal.">20+ years in Venezuela via Caritas. Church network operates outside state reach. Active since quake hit.</p>
+        <div class="card-footer"><span class="org-tag tag-faith t" data-en="Faith-based" data-es="Religiosa">Faith-based</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.rescue.org/article/how-help-survivors-earthquakes-venezuela" target="_blank" data-tags="global">
+        <div class="card-head"><span class="org-name">International Rescue Committee</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 96%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-partial t" data-en="Gov. independent: Partial — accepts some gov. grants" data-es="Ind. gob.: Partial — accepts some gov. grants">Gov. independent: Partial — accepts some gov. grants</span>
+        </div>
+        <p class="card-desc t" data-en="Founded 1933. Scaling up Venezuela response. Shelter, water, healthcare, economic recovery. 87&cent; of every dollar to programs." data-es="Fundada en 1933. 87&cent; de cada d&oacute;lar a programas.">Founded 1933. Scaling up Venezuela response. Shelter, water, healthcare, economic recovery. 87&cent; of every dollar to programs.</p>
+        <div class="card-footer"><span class="org-tag tag-global t" data-en="Relief" data-es="Ayuda">Relief</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.savethechildren.net/emergency/venezuela-earthquake" target="_blank" data-tags="children">
+        <div class="card-head"><span class="org-name">Save the Children</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 97%</span>
+          <span class="cpill pp-yes t" data-en="On ground: Confirmed" data-es="En terreno: Confirmed">On ground: Confirmed</span>
+          <span class="cpill pp-partial t" data-en="Gov. independent: Partial — some institutional funding" data-es="Ind. gob.: Partial — some institutional funding">Gov. independent: Partial — some institutional funding</span>
+        </div>
+        <p class="card-desc t" data-en="Emergency funds released immediately. Food, water, child protection, emergency education." data-es="Fondos de emergencia liberados de inmediato.">Emergency funds released immediately. Food, water, child protection, emergency education.</p>
+        <div class="card-footer"><span class="org-tag tag-children t" data-en="Children" data-es="Ni&ntilde;os">Children</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.givedirectly.org/venezuela-earthquakes" target="_blank" data-tags="cash">
+        <div class="card-head"><span class="org-name">GiveDirectly</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 4&#9733;</span>
+          <span class="cpill pp-partial t" data-en="On ground: Pledged" data-es="En terreno: Pledged">On ground: Pledged</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — cash directly to survivors" data-es="Ind. gob.: Yes — cash directly to survivors">Gov. independent: Yes — cash directly to survivors</span>
+        </div>
+        <p class="card-desc t" data-en="Direct cash transfers. 85&ndash;90% of funds reach recipients. No prior Venezuela operations &mdash; new campaign for this earthquake." data-es="Transferencias de efectivo. 85&ndash;90% a beneficiarios. Sin operaciones previas en Venezuela.">Direct cash transfers. 85&ndash;90% of funds reach recipients. No prior Venezuela operations &mdash; new campaign for this earthquake.</p>
+        <div class="card-footer"><span class="org-tag tag-cash t" data-en="Direct cash" data-es="Efectivo directo">Direct cash</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://airlinkflight.org/response/venezuela-earthquakes/" target="_blank" data-tags="logistics">
+        <div class="card-head"><span class="org-name">Airlink</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-yes">CN: 4&#9733;</span>
+          <span class="cpill pp-partial t" data-en="On ground: Mobilizing" data-es="En terreno: Mobilizing">On ground: Mobilizing</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — air transport coordination" data-es="Ind. gob.: Yes — air transport coordination">Gov. independent: Yes — air transport coordination</span>
+        </div>
+        <p class="card-desc t" data-en="Coordinates cargo flights for other relief orgs. Sim&oacute;n Bol&iacute;var airport partially closed &mdash; seeking alternative routes." data-es="Coordina vuelos de carga. Aeropuerto Sim&oacute;n Bol&iacute;var parcialmente cerrado.">Coordinates cargo flights for other relief orgs. Sim&oacute;n Bol&iacute;var airport partially closed &mdash; seeking alternative routes.</p>
+        <div class="card-footer"><span class="org-tag tag-logistics t" data-en="Logistics" data-es="Log&iacute;stica">Logistics</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+      <a class="card" href="https://www.peopleinneed.net/launching-sos-venezuela-appeal-after-tragic-earthquake-13590gp" target="_blank" data-tags="global">
+        <div class="card-head"><span class="org-name">People in Need</span></div>
+        <div class="card-pills">
+          <span class="cpill pp-dim">Not on CN (Czech NGO)</span>
+          <span class="cpill pp-partial t" data-en="On ground: Appeal launched" data-es="En terreno: Appeal launched">On ground: Appeal launched</span>
+          <span class="cpill pp-yes t" data-en="Gov. independent: Yes — Czech civil society org" data-es="Ind. gob.: Yes — Czech civil society org">Gov. independent: Yes — Czech civil society org</span>
+        </div>
+        <p class="card-desc t" data-en="SOS Venezuela appeal active. Active in 30+ countries. Not on Charity Navigator (Czech org)." data-es="Campa&ntilde;a SOS Venezuela activa. Activa en m&aacute;s de 30 pa&iacute;ses.">SOS Venezuela appeal active. Active in 30+ countries. Not on Charity Navigator (Czech org).</p>
+        <div class="card-footer"><span class="org-tag tag-global t" data-en="Relief" data-es="Ayuda">Relief</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- COUNTRY PANEL -->
+  <div class="panel" id="panel-country">
+    <div class="country-filters" id="cf">
+      <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All" data-es="Todos">All</span></button>
+      <button class="fil" onclick="filterCountry(this,'es')">&#x1F1EA;&#x1F1F8; <span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></button>
+      <button class="fil" onclick="filterCountry(this,'de')">&#x1F1E9;&#x1F1EA; <span class="t" data-en="Germany" data-es="Alemania">Germany</span></button>
+      <button class="fil" onclick="filterCountry(this,'nl')">&#x1F1F3;&#x1F1F1; <span class="t" data-en="Netherlands" data-es="Pa&iacute;ses Bajos">Netherlands</span></button>
+      <button class="fil" onclick="filterCountry(this,'it')">&#x1F1EE;&#x1F1F9; <span class="t" data-en="Italy" data-es="Italia">Italy</span></button>
+      <button class="fil" onclick="filterCountry(this,'pt')">&#x1F1F5;&#x1F1F9; <span class="t" data-en="Portugal" data-es="Portugal">Portugal</span></button>
+      <button class="fil" onclick="filterCountry(this,'fr')">&#x1F1EB;&#x1F1F7; <span class="t" data-en="France" data-es="Francia">France</span></button>
+      <button class="fil" onclick="filterCountry(this,'cz')">&#x1F1E8;&#x1F1FF; <span class="t" data-en="Czech Rep." data-es="Rep. Checa">Czech Rep.</span></button>
+      <button class="fil" onclick="filterCountry(this,'at')">&#x1F1E6;&#x1F1F9; <span class="t" data-en="Austria" data-es="Austria">Austria</span></button>
+      <button class="fil" onclick="filterCountry(this,'ch')">&#x1F1E8;&#x1F1ED; <span class="t" data-en="Switzerland" data-es="Suiza">Switzerland</span></button>
+      <button class="fil" onclick="filterCountry(this,'lu')">&#x1F1F1;&#x1F1FA; <span class="t" data-en="Luxembourg" data-es="Luxemburgo">Luxembourg</span></button>
+    </div>
+    <div class="country-section" data-country="es">
+      <div class="country-heading">&#x1F1EA;&#x1F1F8; <span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www2.cruzroja.es/-/ayuda-terremoto-venezuela-2026" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Cruz Roja Espa&ntilde;ola</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. Venezuela-specific campaign active. Coordinating with Cruz Roja Venezolana on the ground." data-es="<strong>Respaldado por:</strong> FICR. Campa&ntilde;a espec&iacute;fica Venezuela activa."><strong>Backed by:</strong> IFRC. Venezuela-specific campaign active. Coordinating with Cruz Roja Venezolana on the ground.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span></div>
+        <p class="ccard-detail t" data-en="Online donations via their site." data-es="Donaciones online desde su web.">Online donations via their site.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.comiteemergencia.org/emergencias/terremoto-venezuela/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Comit&eacute; de Emergencia Espa&ntilde;ol</span><span class="ccard-type type-coalition t" data-en="Coalition" data-es="Coalici&oacute;n">Coalition</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Interm&oacute;n, World Vision, Plan Internacional. SPHERE humanitarian standards." data-es="<strong>Respaldado por:</strong> 8 ONGs espa&ntilde;olas. Est&aacute;ndares ESFERA."><strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Interm&oacute;n, World Vision, Plan Internacional. SPHERE humanitarian standards.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; Tax-deductible Spain" data-es="&#10003; Desgravable Espa&ntilde;a">&#10003; Tax-deductible Spain</span></div>
+        <p class="ccard-detail t" data-en="80% tax deduction on first &euro;250. Funds distributed among member NGOs already in Venezuela." data-es="Deducci&oacute;n del 80% en los primeros 250&euro;.">80% tax deduction on first &euro;250. Funds distributed among member NGOs already in Venezuela.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.msf.es/emergencia-terremoto-venezuela" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">M&eacute;dicos Sin Fronteras Espa&ntilde;a</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> MSF international. Spain section funds MSF teams already on the ground delivering trauma kits in Venezuela." data-es="<strong>Respaldado por:</strong> MSF internacional. Financia equipos MSF ya en terreno."><strong>Backed by:</strong> MSF international. Spain section funds MSF teams already on the ground delivering trauma kits in Venezuela.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; P&aacute;gina espec&iacute;fica Venezuela">&#10003; Venezuela-specific page</span><span class="safety-pill sp-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. 75% tax reduction on first &euro;2,000." data-es="Donaciones EUR. 75% reducci&oacute;n fiscal.">EUR donations. 75% tax reduction on first &euro;2,000.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><div class="ccard">
+        <div class="ccard-top"><span class="ccard-name">World Central Kitchen</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> WCK international. Spain Bizum routes directly to Venezuela earthquake response &mdash; no website intermediary." data-es="<strong>Respaldado por:</strong> WCK internacional. Bizum Espa&ntilde;a va directamente a la respuesta Venezuela."><strong>Backed by:</strong> WCK international. Spain Bizum routes directly to Venezuela earthquake response &mdash; no website intermediary.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span></div>
+        <p class="ccard-detail t" data-en="Donation goes directly to Venezuela campaign via Bizum (code on WCK website)." data-es="Donaci&oacute;n directamente a campa&ntilde;a Venezuela v&iacute;a Bizum (c&oacute;digo en web WCK).">Donation goes directly to Venezuela campaign via Bizum (code on WCK website).</p>
+        <div class="ccard-footer"><span style="font-size:11px;color:var(--dim)" class="t" data-en="No link &mdash; see detail" data-es="Sin enlace &mdash; ver detalle">No link &mdash; see detail</span></div>
+      </div></div>
+    </div>
+    <div class="country-section" data-country="de">
+      <div class="country-heading">&#x1F1E9;&#x1F1EA; <span class="t" data-en="Germany" data-es="Alemania">Germany</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.aktion-deutschland-hilft.de/de/hilfseinsaetze/erdbeben-venezuela-spenden-sie-jetzt/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Aktion Deutschland Hilft</span><span class="ccard-type type-coalition t" data-en="Coalition" data-es="Coalici&oacute;n">Coalition</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> German NGO coalition incl. World Vision, ADRA, Malteser International, ASB. &euro;1M committed from emergency fund. ADRA teams on the ground." data-es="<strong>Respaldado por:</strong> Coalici&oacute;n alemana incl. World Vision, ADRA, Malteser. &euro;1M comprometido. ADRA en terreno."><strong>Backed by:</strong> German NGO coalition incl. World Vision, ADRA, Malteser International, ASB. &euro;1M committed from emergency fund. ADRA teams on the ground.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span><span class="safety-pill sp-ok t" data-en="&#10003; Tax-deductible Germany" data-es="&#10003; Deducible Alemania">&#10003; Tax-deductible Germany</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Venezuela-specific campaign." data-es="Donaciones EUR. Campa&ntilde;a espec&iacute;fica Venezuela.">EUR donations. Venezuela-specific campaign.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.aktionsbuendnis-katastrophenhilfe.de/nothilfe-venezuela" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Aktionsb&uuml;ndnis Katastrophenhilfe</span><span class="ccard-type type-coalition t" data-en="Coalition" data-es="Coalici&oacute;n">Coalition</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> DRK (German Red Cross), Caritas international, Diakonie Katastrophenhilfe, UNICEF Germany. All four have active Venezuela operations." data-es="<strong>Respaldado por:</strong> DRK, Caritas international, Diakonie, UNICEF Alemania. Los cuatro con operaciones activas."><strong>Backed by:</strong> DRK (German Red Cross), Caritas international, Diakonie Katastrophenhilfe, UNICEF Germany. All four have active Venezuela operations.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Espec&iacute;fico Venezuela">&#10003; Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; Multiple orgs on ground" data-es="&#10003; M&uacute;ltiples orgs en terreno">&#10003; Multiple orgs on ground</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Caritas Venezuela has 700+ parish networks active. DRK supplies pre-positioned at Colombia border." data-es="Donaciones EUR. Caritas Venezuela con 700+ redes parroquiales activas.">EUR donations. Caritas Venezuela has 700+ parish networks active. DRK supplies pre-positioned at Colombia border.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.caritas-international.de/hilfeweltweit/lateinamerika/venezuela/erdbeben" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Caritas international (Germany)</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Caritas Germany international arm. &euro;100,000 committed immediately. Works with Caritas Venezuela network of 700+ parish organizations and 30,000 volunteers." data-es="<strong>Respaldado por:</strong> Brazo internacional de Caritas Alemania. &euro;100.000 comprometidos. Trabaja con red Caritas Venezuela."><strong>Backed by:</strong> Caritas Germany international arm. &euro;100,000 committed immediately. Works with Caritas Venezuela network of 700+ parish organizations and 30,000 volunteers.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; P&aacute;gina espec&iacute;fica Venezuela">&#10003; Venezuela-specific page</span><span class="safety-pill sp-ok t" data-en="&#10003; Caritas Venezuela on ground" data-es="&#10003; Caritas Venezuela en terreno">&#10003; Caritas Venezuela on ground</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Venezuela-specific campaign." data-es="Donaciones EUR. Campa&ntilde;a espec&iacute;fica Venezuela.">EUR donations. Venezuela-specific campaign.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.drk.de/presse/pressemitteilungen/meldung/schwere-erdbeben-in-venezuela-das-drk-ruft-zu-spenden-auf/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Deutsches Rotes Kreuz (DRK)</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. DRK pre-positioned supplies at Colombia border for transfer to Venezuelan Red Cross. Separate from the Aktionsb&uuml;ndnis umbrella." data-es="<strong>Respaldado por:</strong> FICR. DRK preposicion&oacute; suministros en frontera Colombia. Independiente del paraguas Aktionsb&uuml;ndnis."><strong>Backed by:</strong> IFRC. DRK pre-positioned supplies at Colombia border for transfer to Venezuelan Red Cross. Separate from the Aktionsb&uuml;ndnis umbrella.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelaci&oacute;n espec&iacute;fica Venezuela">&#10003; Venezuela-specific appeal</span><span class="safety-pill sp-ok t" data-en="&#10003; Supplies pre-positioned" data-es="&#10003; Suministros pre-posicionados">&#10003; Supplies pre-positioned</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Venezuela earthquake appeal active. Can also donate via Aktionsb&uuml;ndnis above." data-es="Donaciones EUR. Apelaci&oacute;n terremoto Venezuela activa.">EUR donations. Venezuela earthquake appeal active. Can also donate via Aktionsb&uuml;ndnis above.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="nl">
+      <div class="country-heading">&#x1F1F3;&#x1F1F1; <span class="t" data-en="Netherlands" data-es="Pa&iacute;ses Bajos">Netherlands</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.rodekruis.nl/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Rode Kruis Nederland</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. Venezuelan Red Cross activated with Rode Kruis support. Venezuela-specific appeal open." data-es="<strong>Respaldado por:</strong> FICR. Cruz Roja Venezolana activada con apoyo Rode Kruis."><strong>Backed by:</strong> IFRC. Venezuelan Red Cross activated with Rode Kruis support. Venezuela-specific appeal open.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelaci&oacute;n espec&iacute;fica Venezuela">&#10003; Venezuela-specific appeal</span><span class="safety-pill sp-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span></div>
+        <p class="ccard-detail t" data-en="EUR donations via their site." data-es="Donaciones EUR desde su web.">EUR donations via their site.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.cordaid.org/nl/campagnes/aardbeving-venezuela/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Cordaid</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Dutch Catholic development org. Works through Caritas Venezuela partner network. Venezuela-specific campaign page." data-es="<strong>Respaldado por:</strong> Organizaci&oacute;n cat&oacute;lica neerlandesa. Opera a trav&eacute;s de Caritas Venezuela."><strong>Backed by:</strong> Dutch Catholic development org. Works through Caritas Venezuela partner network. Venezuela-specific campaign page.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; P&aacute;gina espec&iacute;fica Venezuela">&#10003; Venezuela-specific page</span><span class="safety-pill sp-ok t" data-en="&#10003; Caritas Venezuela partner" data-es="&#10003; Socio Caritas Venezuela">&#10003; Caritas Venezuela partner</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Routes through Caritas Venezuela church network." data-es="Donaciones EUR. Canaliza a trav&eacute;s de Caritas Venezuela.">EUR donations. Routes through Caritas Venezuela church network.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="it">
+      <div class="country-heading">&#x1F1EE;&#x1F1F9; <span class="t" data-en="Italy" data-es="Italia">Italy</span></div>
+      <div class="country-cards"><a class="ccard" href="https://cri.it/2026/06/25/terremoto-venezuela-croce-rossa-apre-raccolta-fondi/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Croce Rossa Italiana</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. Italy deployed 100+ rescue specialists to Venezuela. Italian government allocated &euro;5M to CRI, Caritas and WFP operations." data-es="<strong>Respaldado por:</strong> FICR. Italia despleg&oacute; 100+ especialistas. Gobierno italiano asign&oacute; &euro;5M a CRI, Caritas y PMA."><strong>Backed by:</strong> IFRC. Italy deployed 100+ rescue specialists to Venezuela. Italian government allocated &euro;5M to CRI, Caritas and WFP operations.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific campaign" data-es="&#10003; Campa&ntilde;a espec&iacute;fica Venezuela">&#10003; Venezuela-specific campaign</span><span class="safety-pill sp-ok t" data-en="&#10003; Italian team on ground" data-es="&#10003; Equipo italiano en terreno">&#10003; Italian team on ground</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Venezuela earthquake fundraiser active." data-es="Donaciones EUR. Recaudaci&oacute;n terremoto Venezuela activa.">EUR donations. Venezuela earthquake fundraiser active.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="pt">
+      <div class="country-heading">&#x1F1F5;&#x1F1F9; <span class="t" data-en="Portugal" data-es="Portugal">Portugal</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.cruzvermelha.pt/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Cruz Vermelha Portuguesa</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. Portugal deployed 60+ rescue specialists. At least 9 Portuguese nationals confirmed dead &mdash; strong diaspora connection." data-es="<strong>Respaldado por:</strong> FICR. Portugal despleg&oacute; 60+ especialistas. Al menos 9 ciudadanos portugueses muertos."><strong>Backed by:</strong> IFRC. Portugal deployed 60+ rescue specialists. At least 9 Portuguese nationals confirmed dead &mdash; strong diaspora connection.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelaci&oacute;n espec&iacute;fica Venezuela">&#10003; Venezuela-specific appeal</span><span class="safety-pill sp-ok t" data-en="&#10003; Portuguese team on ground" data-es="&#10003; Equipo portugu&eacute;s en terreno">&#10003; Portuguese team on ground</span></div>
+        <p class="ccard-detail t" data-en="EUR donations via their site. Venezuela emergency appeal active." data-es="Donaciones EUR desde su web. Apelaci&oacute;n emergencia Venezuela activa.">EUR donations via their site. Venezuela emergency appeal active.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="fr">
+      <div class="country-heading">&#x1F1EB;&#x1F1F7; <span class="t" data-en="France" data-es="Francia">France</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.msf.fr/agir/soutenir-nos-actions/faire-un-don-en-ligne" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">M&eacute;decins Sans Fronti&egrave;res France</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed yet; general donation funds Venezuela via MSF emergency fund." data-es="<strong>Respaldado por:</strong> MSF internacional. Sin p&aacute;gina espec&iacute;fica Francia-Venezuela; donaci&oacute;n general financia Venezuela v&iacute;a fondo de emergencia."><strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed yet; general donation funds Venezuela via MSF emergency fund.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-watch t" data-en="&#9888; General page, not Venezuela-specific" data-es="&#9888; P&aacute;gina general, no espec&iacute;fica Venezuela">&#9888; General page, not Venezuela-specific</span><span class="safety-pill sp-ok t" data-en="&#10003; 75% tax reduction France" data-es="&#10003; 75% reducci&oacute;n fiscal Francia">&#10003; 75% tax reduction France</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. 75% tax reduction on first &euro;2,000." data-es="Donaciones EUR. 75% reducci&oacute;n.">EUR donations. 75% tax reduction on first &euro;2,000.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.secours-catholique.org" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Secours Catholique &mdash; Caritas France</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Caritas Internationalis. Direct institutional partner of Caritas Venezuela." data-es="<strong>Respaldado por:</strong> Caritas Internationalis. Socio directo de Caritas Venezuela."><strong>Backed by:</strong> Caritas Internationalis. Direct institutional partner of Caritas Venezuela.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-watch t" data-en="&#9888; No Venezuela-specific page confirmed" data-es="&#9888; Sin p&aacute;gina espec&iacute;fica Venezuela confirmada">&#9888; No Venezuela-specific page confirmed</span><span class="safety-pill sp-ok t" data-en="&#10003; Caritas Venezuela partner" data-es="&#10003; Socio Caritas Venezuela">&#10003; Caritas Venezuela partner</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Funds routed through Caritas Venezuela church network. Verify campaign status before donating." data-es="Donaciones EUR. Fondos v&iacute;a red Caritas Venezuela. Verifica estado antes de donar.">EUR donations. Funds routed through Caritas Venezuela church network. Verify campaign status before donating.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="cz">
+      <div class="country-heading">&#x1F1E8;&#x1F1FF; <span class="t" data-en="Czech Republic" data-es="Rep&uacute;blica Checa">Czech Republic</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.peopleinneed.net/launching-sos-venezuela-appeal-after-tragic-earthquake-13590gp" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">People in Need (&#268;lov&#283;k v t&iacute;sni)</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Czech civil society org since 1992. Active in 30+ countries. Czech government-accredited for humanitarian work." data-es="<strong>Respaldado por:</strong> Org sociedad civil checa desde 1992. Acreditada por el gobierno checo."><strong>Backed by:</strong> Czech civil society org since 1992. Active in 30+ countries. Czech government-accredited for humanitarian work.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific SOS appeal" data-es="&#10003; Campa&ntilde;a SOS espec&iacute;fica Venezuela">&#10003; Venezuela-specific SOS appeal</span><span class="safety-pill sp-watch t" data-en="&#9888; Not on Charity Navigator (Czech org)" data-es="&#9888; No en Charity Navigator">&#9888; Not on Charity Navigator (Czech org)</span></div>
+        <p class="ccard-detail t" data-en="CZK or EUR donations." data-es="Donaciones CZK o EUR.">CZK or EUR donations.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="at">
+      <div class="country-heading">&#x1F1E6;&#x1F1F9; <span class="t" data-en="Austria" data-es="Austria">Austria</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.caritas.at/spenden-helfen/auslandshilfe/katastrophenhilfe/laender-brennpunkte/erdbeben-in-venezuela/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Caritas &Ouml;sterreich</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Caritas Internationalis network. Working with Caritas Venezuela, CRS, Caritas Germany, and Caritas Switzerland. Venezuela-specific campaign page." data-es="<strong>Respaldado por:</strong> Red Caritas Internationalis. Trabaja con Caritas Venezuela, CRS, Caritas Alemania y Caritas Suiza."><strong>Backed by:</strong> Caritas Internationalis network. Working with Caritas Venezuela, CRS, Caritas Germany, and Caritas Switzerland. Venezuela-specific campaign page.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; P&aacute;gina espec&iacute;fica Venezuela">&#10003; Venezuela-specific page</span><span class="safety-pill sp-ok t" data-en="&#10003; Caritas Venezuela partner" data-es="&#10003; Socio Caritas Venezuela">&#10003; Caritas Venezuela partner</span></div>
+        <p class="ccard-detail t" data-en="EUR donations. Venezuela-specific campaign. Routes through Caritas Venezuela church network." data-es="Donaciones EUR. Campa&ntilde;a espec&iacute;fica Venezuela. Canaliza v&iacute;a red Caritas Venezuela.">EUR donations. Venezuela-specific campaign. Routes through Caritas Venezuela church network.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://wir.roteskreuz.at/erdbeben-venezuela" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">&Ouml;sterreichisches Rotes Kreuz</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC. Venezuelan Red Cross activated. Austrian Red Cross president confirmed response coordination." data-es="<strong>Respaldado por:</strong> FICR. Cruz Roja Venezolana activada. Presidente de Cruz Roja Austriaca confirm&oacute; coordinaci&oacute;n."><strong>Backed by:</strong> IFRC. Venezuelan Red Cross activated. Austrian Red Cross president confirmed response coordination.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific campaign" data-es="&#10003; Campa&ntilde;a espec&iacute;fica Venezuela">&#10003; Venezuela-specific campaign</span><span class="safety-pill sp-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span></div>
+        <p class="ccard-detail t" data-en="EUR donations via their site. Venezuela earthquake appeal active." data-es="Donaciones EUR desde su web. Apelaci&oacute;n terremoto Venezuela activa.">EUR donations via their site. Venezuela earthquake appeal active.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="ch">
+      <div class="country-heading">&#x1F1E8;&#x1F1ED; <span class="t" data-en="Switzerland" data-es="Suiza">Switzerland</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.caritas.ch/de/erdbeben-in-venezuela-caritas-schweiz-leistet-nothilfe/" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Caritas Schweiz</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> Caritas Internationalis network. CHF 100,000 committed immediately. Venezuela-specific campaign page. Caritas Venezuela partner with prior long-term operations." data-es="<strong>Respaldado por:</strong> Red Caritas Internationalis. CHF 100.000 comprometidos de inmediato. Socio Caritas Venezuela con operaciones previas de largo plazo."><strong>Backed by:</strong> Caritas Internationalis network. CHF 100,000 committed immediately. Venezuela-specific campaign page. Caritas Venezuela partner with prior long-term operations.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; P&aacute;gina espec&iacute;fica Venezuela">&#10003; Venezuela-specific page</span><span class="safety-pill sp-ok t" data-en="&#10003; CHF 100k committed" data-es="&#10003; CHF 100k comprometidos">&#10003; CHF 100k committed</span></div>
+        <p class="ccard-detail t" data-en="CHF donations. Venezuela earthquake appeal. Routes through Caritas Venezuela." data-es="Donaciones CHF. Campa&ntilde;a terremoto Venezuela. Canaliza v&iacute;a Caritas Venezuela.">CHF donations. Venezuela earthquake appeal. Routes through Caritas Venezuela.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="ccard" href="https://www.redcross.ch/de/medienservice/das-schweizerische-rote-kreuz-unterstuetzt-die-nothilfe-in-venezuela-und-ruft-zu-spenden-auf" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">Schweizerisches Rotes Kreuz (SRK)</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> IFRC + Swiss government. CHF 200,000 allocated. REDOG search-and-rescue dog teams deployed to Venezuela. Swiss government supporting deployment." data-es="<strong>Respaldado por:</strong> FICR + gobierno suizo. CHF 200.000 asignados. Equipos de rescate con perros REDOG desplegados en Venezuela."><strong>Backed by:</strong> IFRC + Swiss government. CHF 200,000 allocated. REDOG search-and-rescue dog teams deployed to Venezuela. Swiss government supporting deployment.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelaci&oacute;n espec&iacute;fica Venezuela">&#10003; Venezuela-specific appeal</span><span class="safety-pill sp-ok t" data-en="&#10003; Search teams deployed" data-es="&#10003; Equipos de rescate desplegados">&#10003; Search teams deployed</span></div>
+        <p class="ccard-detail t" data-en="CHF donations. Venezuela earthquake appeal active. REDOG rescue teams on the ground." data-es="Donaciones CHF. Apelaci&oacute;n terremoto Venezuela activa. Equipos REDOG en terreno.">CHF donations. Venezuela earthquake appeal active. REDOG rescue teams on the ground.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+    <div class="country-section" data-country="lu">
+      <div class="country-heading">&#x1F1F1;&#x1F1FA; <span class="t" data-en="Luxembourg" data-es="Luxemburgo">Luxembourg</span></div>
+      <div class="country-cards"><a class="ccard" href="https://www.msf.lu" target="_blank">
+        <div class="ccard-top"><span class="ccard-name">MSF Luxembourg</span><span class="ccard-type type-org t" data-en="Org" data-es="Org">Org</span></div>
+        <div class="ccard-backing t" data-en="<strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, and energy equipment to Venezuela via EU civil protection mechanism." data-es="<strong>Respaldado por:</strong> MSF internacional. Luxemburgo despleg&oacute; equipos de telecomunicaciones y refugio v&iacute;a mecanismo de protecci&oacute;n civil de la UE."><strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, and energy equipment to Venezuela via EU civil protection mechanism.</div>
+        <div class="ccard-safety"><span class="safety-pill sp-ok t" data-en="&#10003; MSF Venezuela operations active" data-es="&#10003; Operaciones MSF Venezuela activas">&#10003; MSF Venezuela operations active</span><span class="safety-pill sp-watch t" data-en="&#9888; No Luxembourg-specific campaign confirmed" data-es="&#9888; Sin campa&ntilde;a espec&iacute;fica Luxemburgo confirmada">&#9888; No Luxembourg-specific campaign confirmed</span></div>
+        <p class="ccard-detail t" data-en="EUR donations via MSF Luxembourg. Government equipment already deployed; donations fund MSF medical response." data-es="Donaciones EUR v&iacute;a MSF Luxemburgo. Equipos gubernamentales ya desplegados; donaciones financian respuesta m&eacute;dica MSF.">EUR donations via MSF Luxembourg. Government equipment already deployed; donations fund MSF medical response.</p>
+        <div class="ccard-footer"><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a></div>
+    </div>
+  </div>
+  <!-- GOODS PANEL -->
+  <div class="panel" id="panel-goods">
+    <div class="goods-warning t" data-en="&#9888; These are physical drop-off points. Info verified June 27, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going." data-es="&#9888; Estos son puntos de entrega f&iacute;sica. Informaci&oacute;n verificada el 27 jun 2026 &mdash; algunos son solo fin de semana o pueden cambiar. Confirma antes de ir.">&#9888; These are physical drop-off points. Info verified June 27, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going.</div>
+
+    <div class="goods-country-heading">&#x1F1EA;&#x1F1F8; Spain &mdash; Madrid</div>
+    <div class="goods-grid">
+<a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
+        <div class="gcard-top">
+          <span class="gcard-name">Sambil Madrid</span>
+          <span class="gcard-status gs-weekend t" data-en="This weekend only" data-es="Solo este fin de semana">This weekend only</span>
+        </div>
+        <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Non-perishables, hygiene, basics. No glass containers. No clothes (already full)." data-es="<strong>Acepta:</strong> No perecederos, higiene, b&aacute;sicos. Sin envases de cristal. Sin ropa (ya lleno)."><strong>Accepts:</strong> Non-perishables, hygiene, basics. No glass containers. No clothes (already full).</p>
+        <p class="gcard-location t" data-en="&#128205; Plant 0, Sambil Madrid shopping center. Sat&ndash;Sun 10:00&ndash;18:30." data-es="&#128205; Planta 0, centro comercial Sambil Madrid. S&aacute;b&ndash;Dom 10:00&ndash;18:30.">&#128205; Plant 0, Sambil Madrid shopping center. Sat&ndash;Sun 10:00&ndash;18:30.</p>
+        <div class="gcard-pills"><span class="cpill pp-yes t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span><span class="cpill gs-weekend t" data-en="Weekend only" data-es="Solo fin de semana">Weekend only</span></div>
+        <div class="gcard-footer"><span class="t" data-en="Run by Venezuelan community. Ships via Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul." data-es="Comunidad venezolana. Env&iacute;o v&iacute;a Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul.">Run by Venezuelan community. Ships via Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
+        <div class="gcard-top">
+          <span class="gcard-name">Refugiados Sin Fronteras + Di&aacute;spora en Movimiento</span>
+          <span class="gcard-status gs-weekend t" data-en="This weekend" data-es="Este fin de semana">This weekend</span>
+        </div>
+        <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Humanitarian materials. Confirm current accepted items before going." data-es="<strong>Acepta:</strong> Material humanitario. Confirmar art&iacute;culos aceptados antes de ir."><strong>Accepts:</strong> Humanitarian materials. Confirm current accepted items before going.</p>
+        <p class="gcard-location t" data-en="&#128205; Calle Matilde Landa 26, Madrid. Sat&ndash;Sun 11:00&ndash;18:00." data-es="&#128205; Calle Matilde Landa 26, Madrid. S&aacute;b&ndash;Dom 11:00&ndash;18:00.">&#128205; Calle Matilde Landa 26, Madrid. Sat&ndash;Sun 11:00&ndash;18:00.</p>
+        <div class="gcard-pills"><span class="cpill pp-yes t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span></div>
+        <div class="gcard-footer"><span class="t" data-en="Two Venezuelan diaspora organizations jointly coordinating." data-es="Dos organizaciones de la di&aacute;spora venezolana coordinando conjuntamente.">Two Venezuelan diaspora organizations jointly coordinating.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a><a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
+        <div class="gcard-top">
+          <span class="gcard-name">VENESP &mdash; Villanueva del Pardillo</span>
+          <span class="gcard-status gs-weekend t" data-en="This weekend" data-es="Este fin de semana">This weekend</span>
+        </div>
+        <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Basic supplies + accepts monetary contributions for transport costs." data-es="<strong>Acepta:</strong> Art&iacute;culos b&aacute;sicos + acepta contribuciones monetarias para costos de transporte."><strong>Accepts:</strong> Basic supplies + accepts monetary contributions for transport costs.</p>
+        <p class="gcard-location t" data-en="&#128205; Pard&iacute;llo Center, Av. de Madrid 4 local 1, Villanueva del Pard&iacute;llo." data-es="&#128205; Pard&iacute;llo Center, Av. de Madrid 4 local 1, Villanueva del Pard&iacute;llo.">&#128205; Pard&iacute;llo Center, Av. de Madrid 4 local 1, Villanueva del Pard&iacute;llo.</p>
+        <div class="gcard-pills"><span class="cpill pp-yes t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span><span class="cpill pp-yes t" data-en="&#10003; Also accepts cash" data-es="&#10003; Tambi&eacute;n acepta efectivo">&#10003; Also accepts cash</span></div>
+        <div class="gcard-footer"><span class="t" data-en="Asociaci&oacute;n Civil de Venezolanos en Espa&ntilde;a (VENESP)." data-es="Asociaci&oacute;n Civil de Venezolanos en Espa&ntilde;a (VENESP).">Asociaci&oacute;n Civil de Venezolanos en Espa&ntilde;a (VENESP).</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+    </div>
+
+    <div class="goods-country-heading">&#x1F1EA;&#x1F1F8; Spain &mdash; Alicante</div>
+    <div class="goods-grid">
+<a class="gcard" href="https://www.elespanol.com/alicante/20260626/necesitamos-gasas-betadine-panales-alicante-establece-puntos-recogida-victimas-terremoto-venezuela/1003744301080_0.html" target="_blank">
+        <div class="gcard-top">
+          <span class="gcard-name">AMASVE &mdash; Alicante</span>
+          <span class="gcard-status gs-active t" data-en="Active" data-es="Activo">Active</span>
+        </div>
+        <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Medical supplies only: gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). No food or clothes." data-es="<strong>Acepta:</strong> Solo material sanitario: gasas, antis&eacute;pticos, primeros auxilios, medicamentos cr&oacute;nicos (sin receta restringida). Sin ropa ni comida."><strong>Accepts:</strong> Medical supplies only: gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). No food or clothes.</p>
+        <p class="gcard-location t" data-en="&#128205; Alicante. Shipment planned Monday June 29. Contact via AMASVE channels to confirm exact location." data-es="&#128205; Alicante. Env&iacute;o previsto lunes 29 jun. Contactar AMASVE para confirmar ubicaci&oacute;n exacta.">&#128205; Alicante. Shipment planned Monday June 29. Contact via AMASVE channels to confirm exact location.</p>
+        <div class="gcard-pills"><span class="cpill pp-yes t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span><span class="cpill pp-partial t" data-en="&#9888; Medical only" data-es="&#9888; Solo m&eacute;dico">&#9888; Medical only</span></div>
+        <div class="gcard-footer"><span class="t" data-en="Asociaci&oacute;n AMASVE. Logistics: local purchase priority, international shipping complex." data-es="Asociaci&oacute;n AMASVE. Log&iacute;stica: prioridad compra local, env&iacute;o internacional complejo.">Asociaci&oacute;n AMASVE. Logistics: local purchase priority, international shipping complex.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+    </div>
+
+    <div class="goods-country-heading">&#x1F1EA;&#x1F1F8; Spain &mdash; Valladolid</div>
+    <div class="goods-grid">
+<a class="gcard" href="https://www.eleconomista.es/actualidad/noticias/13987384/06/26/como-ayudar-a-los-afectados-por-el-terremoto-en-venezuela-ongs-telefonos-y-cuentas-2.html" target="_blank">
+        <div class="gcard-top">
+          <span class="gcard-name">AVeVa &mdash; Valladolid</span>
+          <span class="gcard-status gs-weekend t" data-en="June 27&ndash;28 only" data-es="Solo 27&ndash;28 jun">June 27&ndash;28 only</span>
+        </div>
+        <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Non-perishable food, water, clothing, first aid, basic supplies." data-es="<strong>Acepta:</strong> Comida no perecedera, agua, ropa, primeros auxilios, art&iacute;culos b&aacute;sicos."><strong>Accepts:</strong> Non-perishable food, water, clothing, first aid, basic supplies.</p>
+        <p class="gcard-location t" data-en="&#128205; Sede de Ropero Amigo, Plaza Marqu&eacute;s de Suances, Valladolid." data-es="&#128205; Sede de Ropero Amigo, Plaza Marqu&eacute;s de Suances, Valladolid.">&#128205; Sede de Ropero Amigo, Plaza Marqu&eacute;s de Suances, Valladolid.</p>
+        <div class="gcard-pills"><span class="cpill pp-yes t" data-en="&#10003; Verified via Europa Press" data-es="&#10003; Verificado v&iacute;a Europa Press">&#10003; Verified via Europa Press</span></div>
+        <div class="gcard-footer"><span class="t" data-en="Asociaci&oacute;n de Venezolanos en Valladolid (AVeVa). President: Julianny Dur&aacute;n." data-es="Asociaci&oacute;n de Venezolanos en Valladolid (AVeVa). Presidenta: Julianny Dur&aacute;n.">Asociaci&oacute;n de Venezolanos en Valladolid (AVeVa). President: Julianny Dur&aacute;n.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+      </a>
+    </div>
+
+    <div class="goods-country-heading">&#x1F30D; Other European countries</div>
+    <div class="gcard" style="border-style:dashed">
+      <p class="t" style="font-size:12px;color:var(--muted);margin:0;line-height:1.6" data-en="No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data." data-es="No se encontraron puntos de recogida f&iacute;sica verificados en Francia, Alemania, Pa&iacute;ses Bajos, Italia, Portugal, Austria, Suiza, Rep&uacute;blica Checa ni Luxemburgo al 27 jun 2026. Las organizaciones principales en esos pa&iacute;ses solo aceptan donaciones monetarias.">No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 27, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data.</p>
+    </div>
+
+    <div class="goods-note t" data-en="&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged." data-es="&#9432; La mayor&iacute;a de organizaciones humanitarias recomiendan dinero en lugar de bienes &mdash; llega m&aacute;s r&aacute;pido, evita aduanas y permite comprar exactamente lo necesario localmente.">&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged.</div>
+
+  </div>
+
+  <!-- ABOUT PANEL -->
+  <div class="panel" id="panel-about">
+    <div class="about-grid">
+
+      <div class="about-block">
+        <h3 class="t" data-en="What this is" data-es="Qu&eacute; es esto">What this is</h3>
+        <p class="t" data-en="A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and physical donation collection points. All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received." data-es="Un directorio centralizado de iniciativas de ayuda para los terremotos de Venezuela del 24 de junio de 2026. Tres secciones: organizaciones monetarias globales, iniciativas monetarias por pa&iacute;s europeo, y puntos de recogida f&iacute;sica. Todo en base a informaci&oacute;n p&uacute;blica. Sin afiliaci&oacute;n ni compensaci&oacute;n.">A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and physical donation collection points. All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received.</p>
+      </div>
+
+      <div class="about-block">
+        <h3 class="t" data-en="How we assess monetary organizations" data-es="C&oacute;mo evaluamos las organizaciones monetarias">How we assess monetary organizations</h3>
+        <p class="t" data-en="Each organization is assessed on four factual criteria shown as pills on each card. No aggregate score &mdash; we show what we know and flag what we don&rsquo;t. The reader decides." data-es="Cada organizaci&oacute;n se eval&uacute;a en cuatro criterios factuales mostrados como pastillas en cada tarjeta. Sin puntuaci&oacute;n global &mdash; mostramos lo que sabemos y marcamos lo que no.">Each organization is assessed on four factual criteria shown as pills on each card. No aggregate score &mdash; we show what we know and flag what we don&rsquo;t. The reader decides.</p>
+        <table class="score-table">
+          <tr><td class="t" data-en="Financial transparency" data-es="Transparencia financiera">Financial transparency</td><td class="t" data-en="Charity Navigator rating where available; no equivalent exists for most European national orgs" data-es="Calificaci&oacute;n Charity Navigator donde disponible; no existe equivalente para la mayor&iacute;a de orgs europeas nacionales">Charity Navigator rating where available; no equivalent exists for most European national orgs</td></tr>
+          <tr><td class="t" data-en="Government independence" data-es="Independencia del gobierno">Government independence</td><td class="t" data-en="Whether the initiative accepts government funding" data-es="Si la iniciativa acepta fondos gubernamentales">Whether the initiative accepts government funding</td></tr>
+          <tr><td class="t" data-en="Active Venezuela presence" data-es="Presencia activa Venezuela">Active Venezuela presence</td><td class="t" data-en="Teams or funds confirmed active as of June 27, 2026 &mdash; not just announced" data-es="Equipos o fondos confirmados activos al 27 jun 2026 &mdash; no solo anunciados">Teams or funds confirmed active as of June 27, 2026 &mdash; not just announced</td></tr>
+          <tr><td class="t" data-en="Venezuela-specific campaign" data-es="Campa&ntilde;a espec&iacute;fica Venezuela">Venezuela-specific campaign</td><td class="t" data-en="Dedicated page or fund for this earthquake, not a general donation page" data-es="P&aacute;gina o fondo dedicado a este terremoto, no p&aacute;gina de donaci&oacute;n general">Dedicated page or fund for this earthquake, not a general donation page</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:11px;color:var(--dim)" class="t" data-en="Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements." data-es="Verde &#10003; = confirmado. &Aacute;mbar &#9888; = no confirmado o parcial. Observaciones factuales, no respaldos.">Green &#10003; = confirmed. Amber &#9888; = unconfirmed or partial. Factual observations, not endorsements.</p>
+      </div>
+
+      <div class="about-block">
+        <h3 class="t" data-en="How we assess physical collection points" data-es="C&oacute;mo evaluamos los puntos de recogida f&iacute;sica">How we assess physical collection points</h3>
+        <p class="t" data-en="Physical collection points are assessed differently from monetary organizations. We show: what they accept, location and hours, who is running them, and verification source. We do not rate diaspora community initiatives against UN agencies &mdash; they serve different purposes. Status badges indicate whether a point is active, weekend-only, or unconfirmed." data-es="Los puntos de recogida f&iacute;sica se eval&uacute;an de forma diferente a las organizaciones monetarias. Mostramos: qu&eacute; aceptan, ubicaci&oacute;n y horario, qui&eacute;n los gestiona, y fuente de verificaci&oacute;n. No comparamos iniciativas de la di&aacute;spora con agencias de la ONU.">Physical collection points are assessed differently from monetary organizations. We show: what they accept, location and hours, who is running them, and verification source. We do not rate diaspora community initiatives against UN agencies &mdash; they serve different purposes. Status badges indicate whether a point is active, weekend-only, or unconfirmed.</p>
+        <p style="margin-top:8px;font-size:11px;color:var(--dim)" class="t" data-en="All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going." data-es="Todos los puntos de recogida listados fueron verificados mediante fuentes de prensa. Cambian r&aacute;pidamente &mdash; confirma siempre antes de ir.">All physical collection points listed were verified through press sources. These change rapidly &mdash; always confirm before going.</p>
+      </div>
+
+      <div class="about-block">
+        <h3 class="t" data-en="What we don&rsquo;t cover" data-es="Qu&eacute; no cubrimos">What we don&rsquo;t cover</h3>
+        <p class="t" data-en="Local Venezuelan organizations: Venezuela&rsquo;s 2024 Anti-NGO Law requires state authorization for civil society organizations. Hundreds were shut down or forced underground. We cannot verify independence or safety of funds routed through state-adjacent entities. Sources: WOLA, Human Rights Watch, The New Humanitarian, Amnesty International (2024&ndash;2026)." data-es="Organizaciones locales venezolanas: la Ley Anti-ONG de 2024 exige autorizaci&oacute;n estatal. Cientos fueron clausuradas o forzadas a operar clandestinamente. No podemos verificar independencia ni seguridad de fondos canalizados a trav&eacute;s de entidades vinculadas al Estado.">Local Venezuelan organizations: Venezuela&rsquo;s 2024 Anti-NGO Law requires state authorization for civil society organizations. Hundreds were shut down or forced underground. We cannot verify independence or safety of funds routed through state-adjacent entities. Sources: WOLA, Human Rights Watch, The New Humanitarian, Amnesty International (2024&ndash;2026).</p>
+      </div>
+
+      <div class="about-block">
+        <h3 class="t" data-en="Last updated" data-es="&Uacute;ltima actualizaci&oacute;n">Last updated</h3>
+        <p>June 27, 2026</p>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+</div>
+
+<div class="footer">
+  <p class="t" data-en="Links to third-party organizations. No affiliation, no compensation. Scores are an independent assessment based on publicly available data, provided for informational purposes only." data-es="Enlaza a organizaciones de terceros. Sin afiliaci&oacute;n ni compensaci&oacute;n. Puntuaciones basadas en datos p&uacute;blicos, solo con fines informativos.">Links to third-party organizations. No affiliation, no compensation. Scores are an independent assessment based on publicly available data, provided for informational purposes only.</p>
+</div>
+
+<script>
+var lang = 'en';
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    if (b.getAttribute('onclick') === "setLang('" + l + "')") b.classList.add('active');
+  });
+  document.querySelectorAll('.t').forEach(function(el) {
+    var v = el.getAttribute('data-' + l);
+    if (v) el.innerHTML = v;
+  });
+  document.documentElement.lang = l === 'es' ? 'es' : 'en';
+}
+
+function switchTab(name) {
+  ['global', 'country', 'goods', 'about'].forEach(function(n) {
+    var p = document.getElementById('panel-' + n);
+    var ni = document.getElementById('nav-' + n);
+    var mni = document.getElementById('mnav-' + n);
+    if (p) p.classList.toggle('active', n === name);
+    if (ni) ni.classList.toggle('active', n === name);
+    if (mni) mni.classList.toggle('active', n === name);
+  });
+  var sf = document.getElementById('sf');
+  if (sf) sf.style.display = name === 'global' ? 'block' : 'none';
+  var scf = document.getElementById('scf');
+  if (scf) scf.style.display = name === 'country' ? 'block' : 'none';
+}
+
+function filterCountry(btn, code) {
+  document.querySelectorAll('#cf .fil, #scf .fil').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.country-section').forEach(function(s) {
+    s.style.display = (code === 'all' || s.dataset.country === code) ? 'block' : 'none';
+  });
+}
+
+function filter(btn, tag) {
+  document.querySelectorAll('.fil, .mob-fil').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('.card');
+  var visible = 0;
+  cards.forEach(function(c) {
+    var tags = c.dataset.tags || '';
+    var show = tag === 'all' || tags.indexOf(tag) !== -1;
+    c.dataset.hidden = show ? 'false' : 'true';
+    if (show) visible++;
+  });
+  var cl = document.getElementById('cnt');
+  if (cl) cl.textContent = visible + (lang === 'es' ? ' organizaciones' : ' organizations');
+}
+</script>
+</body>
+</html>
