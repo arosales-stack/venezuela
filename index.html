@@ -31,6 +31,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .nav-item{display:block;padding:8px 10px;border-radius:6px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;background:transparent;border:none;font-family:'Inter',sans-serif;text-align:left;letter-spacing:.04em;text-transform:uppercase;transition:all .15s;width:100%}
 .nav-item:hover{color:var(--text);background:var(--surface2)}.nav-item.active{color:var(--amber);background:var(--surface2)}
 .filters-v{display:flex;flex-direction:column;gap:2px}
+.filters-h{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:8px}
+.filters-h .fil{width:auto;text-align:center;padding:6px 10px}
 .fil{padding:7px 10px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:14px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;transition:all .15s;width:100%}
 .fil:hover{color:var(--text);background:var(--surface2)}.fil.active{color:var(--amber);background:var(--surface2);font-weight:600}
 .lang-row{display:flex;gap:6px;margin-top:auto;padding-top:16px;border-top:1px solid var(--border)}
@@ -179,7 +181,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   </div>
   <div id="scf">
     <div class="sidebar-section-label t" data-en="Filter by country" data-es="Filtrar por pa&iacute;s">Filter by country</div>
-    <div class="filters-v">
+    <div class="filters-h">
       <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All countries" data-es="Todos los pa&iacute;ses">All countries</span></button>
       <button class="fil" onclick="filterCountry(this,'es')"><span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></button>
       <button class="fil" onclick="filterCountry(this,'de')"><span class="t" data-en="Germany" data-es="Alemania">Germany</span></button>
