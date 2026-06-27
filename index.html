@@ -58,6 +58,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .card-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
 .cpill{font-size:12px;font-weight:500;padding:3px 8px;border-radius:3px;border:1px solid}
 .pp-yes{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
+.sp-ok{color:var(--green);border-color:#1A5E1A;background:#0D2B0D;font-size:13px;padding:3px 9px;border-radius:3px;border:1px solid;font-weight:500;display:inline-block}
+.sp-watch{color:var(--amber);border-color:var(--amber-dim);background:#1A1200;font-size:13px;padding:3px 9px;border-radius:3px;border:1px solid;font-weight:500;display:inline-block}
 .pp-partial{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
 .pp-dim{color:var(--muted);border-color:var(--border);background:transparent}
 .card-desc{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:14px;opacity:0.85}
@@ -99,8 +101,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
 .gcard-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
 .gcard-footer{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--dim)}
 .gcard-location{font-size:14px;color:var(--muted);font-style:italic}
-.country-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.country-filters .fil{flex-shrink:0}
+.country-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.country-filters .fil{flex-shrink:0;width:auto;padding:6px 12px}
 @media(min-width:768px){.country-filters{display:none}}
 .goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .goods-country-heading{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:24px 0 10px}
@@ -142,8 +144,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-h
   .cards,.country-cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
   .footer{margin-left:0;padding:20px 16px}
 }
-@media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}
-  #dsk-hdr{display:none}}
+@media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}}
 </style>
 </head>
 <body>
