@@ -76,7 +76,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
 /* COUNTRY CARDS */
 .country-section{margin-bottom:40px}
-.country-heading{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.country-heading{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin:32px 0 14px;display:flex;align-items:center;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--border)}.country-heading:first-child{margin-top:0}
 .country-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
 .ccard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;display:block;transition:border-color .15s}
 .ccard:hover{border-color:var(--amber-dim)}
@@ -148,15 +148,15 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 @media(min-width:768px){.mob-lang,.mob-tabs,.mob-filters,.mob-hdr{display:none}}
 
 /* UNIFIED CARDS */
-.ucards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.ucard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.ucards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.ucard{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:border-color .15s}
 .ucard:hover{border-color:var(--amber-dim)}
 .ucard[data-hidden="true"]{display:none}
-.ucard-meta{display:flex;justify-content:space-between;align-items:center}
+.ucard-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
 .ucountry{font-size:12px;font-weight:600;color:var(--dim);letter-spacing:.04em}
 .ucontrib{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
 .ucard-head{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
-.uname{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text);flex:1;line-height:1.3}
+.uname{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text);flex:1;line-height:1.3}
 .ubadge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--surface2);border:1px solid var(--border);color:var(--dim);text-transform:uppercase;letter-spacing:.06em;flex-shrink:0}
 .ustatus{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid;flex-shrink:0}
 .us-active{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
@@ -554,7 +554,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     </div>
     <div id="country-cards">
 
-    <div class="country-heading t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</div>
+    <div class="country-heading t" data-country="spain" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="spain" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -655,7 +655,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</div>
+    <div class="country-heading t" data-country="germany" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="germany" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -737,7 +737,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</div>
+    <div class="country-heading t" data-country="netherlands" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="netherlands" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -780,7 +780,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇮🇹 Italy" data-es="🇮🇹 Italia">🇮🇹 Italy</div>
+    <div class="country-heading t" data-country="italy" data-en="🇮🇹 Italy" data-es="🇮🇹 Italia">🇮🇹 Italy</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="italy" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -804,7 +804,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇵🇹 Portugal" data-es="🇵🇹 Portugal">🇵🇹 Portugal</div>
+    <div class="country-heading t" data-country="portugal" data-en="🇵🇹 Portugal" data-es="🇵🇹 Portugal">🇵🇹 Portugal</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="portugal" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -828,7 +828,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</div>
+    <div class="country-heading t" data-country="france" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="france" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -890,7 +890,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇨🇿 Czech Republic" data-es="🇨🇿 República Checa">🇨🇿 Czech Republic</div>
+    <div class="country-heading t" data-country="czechrepublic" data-en="🇨🇿 Czech Republic" data-es="🇨🇿 República Checa">🇨🇿 Czech Republic</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="czechrepublic" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -914,7 +914,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</div>
+    <div class="country-heading t" data-country="austria" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="austria" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -957,7 +957,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</div>
+    <div class="country-heading t" data-country="switzerland" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="switzerland" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -1000,7 +1000,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇱🇺 Luxembourg" data-es="🇱🇺 Luxemburgo">🇱🇺 Luxembourg</div>
+    <div class="country-heading t" data-country="luxembourg" data-en="🇱🇺 Luxembourg" data-es="🇱🇺 Luxemburgo">🇱🇺 Luxembourg</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="luxembourg" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -1024,7 +1024,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
     </div>
 
-    <div class="country-heading t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</div>
+    <div class="country-heading t" data-country="uk" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</div>
     <div class="ucards">
       <div class="ucard" data-scope="country" data-country="uk" data-contribution="cash" data-tags="">
         <div class="ucard-meta">
@@ -1771,11 +1771,10 @@ function switchTab(name) {
 function filterCountry(btn, code) {
   document.querySelectorAll('#cf .fil, #scf .fil').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  // Show/hide country headings and their card groups
   document.querySelectorAll('#country-cards .country-heading').forEach(function(h) {
     var next = h.nextElementSibling;
-    var ctry = h.getAttribute('data-en').replace(/^[^\s]+ /, '').toLowerCase().replace(/ — /g,'').replace(/ /g,'');
-    var show = code === 'all' || ctry.startsWith(code);
+    var ctry = h.dataset.country || '';
+    var show = code === 'all' || ctry === code;
     h.style.display = show ? '' : 'none';
     if (next) next.style.display = show ? '' : 'none';
   });
