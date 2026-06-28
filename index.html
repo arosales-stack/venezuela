@@ -161,8 +161,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="nav-item" id="nav-country" onclick="switchTab('country')">
         <span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span>
       </button>
-      <button class="nav-item" id="nav-goods" onclick="switchTab('goods')">
-        <span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span>
+      <button class="nav-item" id="nav-type" onclick="switchTab('type')">
+        <span class="t" data-en="By type" data-es="Por tipo">By type</span>
       </button>
       <button class="nav-item" id="nav-about" onclick="switchTab('about')">
         <span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span>
@@ -198,6 +198,15 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="fil" onclick="filterCountry(this,'gb')"><span class="t" data-en="UK" data-es="RU">UK</span></button>
     </div>
   </div>
+  <div id="stf" style="display:none">
+    <div class="sidebar-section-label t" data-en="Filter by type" data-es="Filtrar por tipo">Filter by type</div>
+    <div class="filters-v">
+      <button class="fil active" onclick="filterType(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
+      <button class="fil" onclick="filterType(this,'cash')"><span class="t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span></button>
+      <button class="fil" onclick="filterType(this,'goods')"><span class="t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span></button>
+      <button class="fil" onclick="filterType(this,'both')"><span class="t" data-en="&#128179;&#128230; Both" data-es="&#128179;&#128230; Ambos">&#128179;&#128230; Both</span></button>
+    </div>
+  </div>
   <div class="lang-row">
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
@@ -217,7 +226,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     <div class="mob-tabs">
       <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Global" data-es="Global">Global</span></button>
       <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
-      <button class="mob-tab" id="mnav-goods" onclick="switchTab('goods')"><span class="t" data-en="Donate goods" data-es="Donar bienes">Donate goods</span></button>
+      <button class="mob-tab" id="mnav-type" onclick="switchTab('type')"><span class="t" data-en="By type" data-es="Por tipo">By type</span></button>
       <button class="mob-tab" id="mnav-about" onclick="switchTab('about')"><span class="t" data-en="Methodology" data-es="Metodolog&iacute;a">Methodology</span></button>
     </div>
   </div>
@@ -588,14 +597,20 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   </section>
 
   <!-- GOODS PANEL -->
-  <section data-panel="goods">
+  <section data-panel="type">
+    <div class="mob-filters" id="mob-type-filters">
+      <button class="mob-fil active" onclick="filterType(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
+      <button class="mob-fil" onclick="filterType(this,'cash')"><span class="t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span></button>
+      <button class="mob-fil" onclick="filterType(this,'goods')"><span class="t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span></button>
+      <button class="mob-fil" onclick="filterType(this,'both')"><span class="t" data-en="&#128179;&#128230; Both" data-es="&#128179;&#128230; Ambos">&#128179;&#128230; Both</span></button>
+    </div>
     <div class="goods-warning t" data-en="&#9888; These are physical drop-off points. Info verified June 28, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going." data-es="&#9888; Estos son puntos de entrega f&iacute;sica. Informaci&oacute;n verificada el 27 jun 2026 &mdash; algunos son solo fin de semana o pueden cambiar. Confirma antes de ir.">&#9888; These are physical drop-off points. Info verified June 28, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going.</div>
 
     <div class="goods-country-heading">&#x1F1EA;&#x1F1F8; Spain &mdash; Madrid</div>
     <div class="goods-grid">
-<a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
+<a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank" data-type="goods" data-type="goods" data-type="both" data-type="goods" data-type="goods" data-type="goods">
         <div class="gcard-top">
-          <span class="gcard-name">Sambil Madrid</span>
+          <span class="gcard-name" data-type="goods">Sambil Madrid</span>
           <span class="gcard-status gs-weekend t" data-en="This weekend only" data-es="Solo este fin de semana">This weekend only</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Non-perishables, hygiene, basics. No glass containers. No clothes (already full)." data-es="<strong>Acepta:</strong> No perecederos, higiene, b&aacute;sicos. Sin envases de cristal. Sin ropa (ya lleno)."><strong>Accepts:</strong> Non-perishables, hygiene, basics. No glass containers. No clothes (already full).</p>
@@ -604,7 +619,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="gcard-footer"><span class="t" data-en="Run by Venezuelan community. Ships via Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul." data-es="Comunidad venezolana. Env&iacute;o v&iacute;a Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul.">Run by Venezuelan community. Ships via Toneladas de Alegr&iacute;a &rarr; Fundaci&oacute;n Bandazul.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
       </a><a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
         <div class="gcard-top">
-          <span class="gcard-name">Refugiados Sin Fronteras + Di&aacute;spora en Movimiento</span>
+          <span class="gcard-name" data-type="goods">Refugiados Sin Fronteras + Di&aacute;spora en Movimiento</span>
           <span class="gcard-status gs-weekend t" data-en="This weekend" data-es="Este fin de semana">This weekend</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Humanitarian materials. Confirm current accepted items before going." data-es="<strong>Acepta:</strong> Material humanitario. Confirmar art&iacute;culos aceptados antes de ir."><strong>Accepts:</strong> Humanitarian materials. Confirm current accepted items before going.</p>
@@ -613,7 +628,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="gcard-footer"><span class="t" data-en="Two Venezuelan diaspora organizations jointly coordinating." data-es="Dos organizaciones de la di&aacute;spora venezolana coordinando conjuntamente.">Two Venezuelan diaspora organizations jointly coordinating.</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
       </a><a class="gcard" href="https://www.eldiariodemadrid.es/articulo/madrid/madrid-puntos-recogida-ayuda-humanitaria-terremotos-venezuela/20260627163715135578.html" target="_blank">
         <div class="gcard-top">
-          <span class="gcard-name">VENESP &mdash; Villanueva del Pardillo</span>
+          <span class="gcard-name" data-type="both">VENESP &mdash; Villanueva del Pardillo</span>
           <span class="gcard-status gs-weekend t" data-en="This weekend" data-es="Este fin de semana">This weekend</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Basic supplies + accepts monetary contributions for transport costs." data-es="<strong>Acepta:</strong> Art&iacute;culos b&aacute;sicos + acepta contribuciones monetarias para costos de transporte."><strong>Accepts:</strong> Basic supplies + accepts monetary contributions for transport costs.</p>
@@ -627,7 +642,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     <div class="goods-grid">
 <a class="gcard" href="https://www.elespanol.com/alicante/20260626/necesitamos-gasas-betadine-panales-alicante-establece-puntos-recogida-victimas-terremoto-venezuela/1003744301080_0.html" target="_blank">
         <div class="gcard-top">
-          <span class="gcard-name">AMASVE &mdash; Alicante</span>
+          <span class="gcard-name" data-type="goods">AMASVE &mdash; Alicante</span>
           <span class="gcard-status gs-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Medical supplies only: gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). No food or clothes." data-es="<strong>Acepta:</strong> Solo material sanitario: gasas, antis&eacute;pticos, primeros auxilios, medicamentos cr&oacute;nicos (sin receta restringida). Sin ropa ni comida."><strong>Accepts:</strong> Medical supplies only: gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). No food or clothes.</p>
@@ -641,7 +656,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     <div class="goods-grid">
 <a class="gcard" href="https://www.eleconomista.es/actualidad/noticias/13987384/06/26/como-ayudar-a-los-afectados-por-el-terremoto-en-venezuela-ongs-telefonos-y-cuentas-2.html" target="_blank">
         <div class="gcard-top">
-          <span class="gcard-name">AVeVa &mdash; Valladolid</span>
+          <span class="gcard-name" data-type="goods">AVeVa &mdash; Valladolid</span>
           <span class="gcard-status gs-weekend t" data-en="June 27&ndash;28 only" data-es="Solo 27&ndash;28 jun">June 27&ndash;28 only</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Non-perishable food, water, clothing, first aid, basic supplies." data-es="<strong>Acepta:</strong> Comida no perecedera, agua, ropa, primeros auxilios, art&iacute;culos b&aacute;sicos."><strong>Accepts:</strong> Non-perishable food, water, clothing, first aid, basic supplies.</p>
@@ -654,7 +669,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <div class="goods-country-heading t" data-en="&#x1F1EA;&#x1F1F8; Spain &mdash; Alcobendas (Madrid)" data-es="&#x1F1EA;&#x1F1F8; Espa&ntilde;a &mdash; Alcobendas (Madrid)">&#x1F1EA;&#x1F1F8; Spain &mdash; Alcobendas (Madrid)</div>
       <a class="gcard" href="https://www.diariodealcobendas.com/post/alcobendas-recoge-ayuda-para-los-afectados-por-el-devastador-doble-terremoto-de-venezuela" target="_blank">
         <div class="gcard-top">
-          <span class="gcard-name">Asociaci&oacute;n Venezolana de Alcobendas (AVA)</span>
+          <span class="gcard-name" data-type="goods">Asociaci&oacute;n Venezolana de Alcobendas (AVA)</span>
           <span class="gcard-status gs-weekend t" data-en="June 27&ndash;28" data-es="27&ndash;28 jun">June 27&ndash;28</span>
         </div>
         <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Non-perishables, hygiene, baby items (diapers, formula), first aid, blankets, batteries, rescue tools." data-es="<strong>Acepta:</strong> No perecederos, higiene, art&iacute;culos beb&eacute; (pa&ntilde;ales, leche), primeros auxilios, mantas, pilas, herramientas de rescate."><strong>Accepts:</strong> Non-perishables, hygiene, baby items (diapers, formula), first aid, blankets, batteries, rescue tools.</p>
@@ -666,6 +681,35 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="gcard-footer"><span class="gcard-org t" data-en="Asociaci&oacute;n Venezolana de Alcobendas (AVA)" data-es="Asociaci&oacute;n Venezolana de Alcobendas (AVA)">Asociaci&oacute;n Venezolana de Alcobendas (AVA)</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
       </a>
 
+      <div class="goods-country-heading t" data-en="&#128179; Cash initiatives" data-es="&#128179; Iniciativas en efectivo">&#128179; Cash initiatives</div>
+      <div class="goods-grid">
+        <a class="gcard" data-type="cash" href="https://cordopolis.eldiario.es/cordoba-hoy/sociedad/coordina-recogida-ayuda-humanitaria-iniciada-venezolanos-afincados-cordoba_1_13338952.html" target="_blank">
+          <div class="gcard-top">
+            <span class="gcard-name">Bomberos Unidos Sin Fronteras (BUSF) &mdash; C&oacute;rdoba</span>
+            <span class="gcard-status gs-active t" data-en="Active" data-es="Activo">Active</span>
+          </div>
+          <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Cash only via Bizum 38350. Funds used to buy supplies directly in Venezuela." data-es="<strong>Acepta:</strong> Solo efectivo v&iacute;a Bizum 38350. Fondos para comprar directamente en Venezuela."><strong>Accepts:</strong> Cash only via Bizum 38350. Funds used to buy supplies directly in Venezuela.</p>
+          <p class="gcard-location t" data-en="&#128205; C&oacute;rdoba. Donate via Bizum 38350." data-es="&#128205; C&oacute;rdoba. Donaci&oacute;n v&iacute;a Bizum 38350.">&#128205; C&oacute;rdoba. Donate via Bizum 38350.</p>
+          <div class="gcard-pills">
+            <span class="cpill pp-yes t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
+            <span class="cpill pp-yes t" data-en="&#10003; Named contact: Ninoska Schulz" data-es="&#10003; Contacto: Ninoska Schulz">&#10003; Named contact: Ninoska Schulz</span>
+          </div>
+          <div class="gcard-footer"><span class="t" data-en="Bomberos Unidos Sin Fronteras" data-es="Bomberos Unidos Sin Fronteras">Bomberos Unidos Sin Fronteras</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+        </a>
+        <a class="gcard" data-type="cash" href="https://www.helloasso.com/associations/venezuela-te-necesita" target="_blank">
+          <div class="gcard-top">
+            <span class="gcard-name">Venezuela Te Necesita (VTN) &mdash; Paris</span>
+            <span class="gcard-status gs-unconfirmed t" data-en="Pending" data-es="Pendiente">Pending</span>
+          </div>
+          <p class="gcard-accepts t" data-en="<strong>Accepts:</strong> Cash donations via HelloAsso. Track record sending supplies to Venezuela. Earthquake-specific campaign not yet confirmed." data-es="<strong>Acepta:</strong> Donaciones en efectivo v&iacute;a HelloAsso. Historial enviando suministros a Venezuela. Campa&ntilde;a espec&iacute;fica terremoto no confirmada."><strong>Accepts:</strong> Cash donations via HelloAsso. Track record sending supplies to Venezuela. Earthquake-specific campaign not yet confirmed.</p>
+          <p class="gcard-location t" data-en="&#128205; Paris, France. Donate via HelloAsso." data-es="&#128205; Par&iacute;s, Francia. Donaci&oacute;n v&iacute;a HelloAsso.">&#128205; Paris, France. Donate via HelloAsso.</p>
+          <div class="gcard-pills">
+            <span class="cpill pp-yes t" data-en="&#10003; Registered French association" data-es="&#10003; Asociaci&oacute;n francesa registrada">&#10003; Registered French association</span>
+            <span class="cpill pp-partial t" data-en="&#9888; Earthquake campaign unconfirmed" data-es="&#9888; Campa&ntilde;a terremoto sin confirmar">&#9888; Earthquake campaign unconfirmed</span>
+          </div>
+          <div class="gcard-footer"><span class="t" data-en="Venezuela Te Necesita (VTN)" data-es="Venezuela Te Necesita (VTN)">Venezuela Te Necesita (VTN)</span><span class="vlink"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></span></div>
+        </a>
+      </div>
       <div class="goods-country-heading">&#x1F30D; Other European countries</div>
       <div class="gcard" style="border-style:dashed">
       <p class="t" style="font-size:14px;color:var(--muted);margin:0;line-height:1.6" data-en="No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 28, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data." data-es="No se encontraron puntos de recogida f&iacute;sica verificados en Francia, Alemania, Pa&iacute;ses Bajos, Italia, Portugal, Austria, Suiza, Rep&uacute;blica Checa ni Luxemburgo al 27 jun 2026. Las organizaciones principales en esos pa&iacute;ses solo aceptan donaciones monetarias.">No verified physical collection points found in France, Germany, Netherlands, Italy, Portugal, Austria, Switzerland, Czech Republic, or Luxembourg as of June 28, 2026. Major organizations in those countries (Red Cross, Caritas) are accepting monetary donations only and advise against unsolicited goods. If you know of a verified collection point, the information on this page comes from press sources &mdash; we update as we find confirmed data.</p>
@@ -681,7 +725,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
       <div class="about-block">
         <h3 class="t" data-en="What this is" data-es="Qu&eacute; es esto">What this is</h3>
-        <p class="t" data-en="A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and physical donation collection points. All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received." data-es="Un directorio centralizado de iniciativas de ayuda para los terremotos de Venezuela del 24 de junio de 2026. Tres secciones: organizaciones monetarias globales, iniciativas monetarias por pa&iacute;s europeo, y puntos de recogida f&iacute;sica. Todo en base a informaci&oacute;n p&uacute;blica. Sin afiliaci&oacute;n ni compensaci&oacute;n.">A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and physical donation collection points. All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received.</p>
+        <p class="t" data-en="A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and by type (cash vs goods). All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received." data-es="Un directorio centralizado de iniciativas de ayuda para los terremotos de Venezuela del 24 de junio de 2026. Tres secciones: organizaciones monetarias globales, iniciativas monetarias por pa&iacute;s europeo, y puntos de recogida f&iacute;sica. Todo en base a informaci&oacute;n p&uacute;blica. Sin afiliaci&oacute;n ni compensaci&oacute;n.">A centralized directory of relief initiatives for the Venezuela earthquakes of June 24, 2026. Three sections: global monetary organizations, European country-specific monetary initiatives, and by type (cash vs goods). All entries are based on publicly available information. No affiliation with any initiative listed. No compensation received.</p>
       </div>
 
       <div class="about-block">
@@ -743,7 +787,7 @@ function switchTab(name) {
   document.querySelectorAll('[data-panel]').forEach(function(p) {
     p.classList.toggle('active', p.dataset.panel === name);
   });
-  ['global', 'country', 'goods', 'about'].forEach(function(n) {
+  ['global', 'country', 'type', 'about'].forEach(function(n) {
     var ni = document.getElementById('nav-' + n);
     var mni = document.getElementById('mnav-' + n);
     if (ni) ni.classList.toggle('active', n === name);
@@ -753,6 +797,8 @@ function switchTab(name) {
   if (sf) sf.style.display = name === 'global' ? 'block' : 'none';
   var scf = document.getElementById('scf');
   if (scf) scf.style.display = name === 'country' ? 'block' : 'none';
+  var stf = document.getElementById('stf');
+  if (stf) stf.style.display = name === 'type' ? 'block' : 'none';
 }
 
 function filterCountry(btn, code) {
@@ -776,6 +822,16 @@ function filter(btn, tag) {
   });
   var cl = document.getElementById('cnt');
   if (cl) cl.textContent = visible + (lang === 'es' ? ' organizaciones' : ' organizations');
+
+function filterType(btn, type) {
+  document.querySelectorAll('#stf .fil, #mob-type-filters .mob-fil').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.gcard').forEach(function(c) {
+    var t = c.dataset.type || 'goods';
+    var show = type === 'all' || t === type || (type === 'goods' && t === 'both') || (type === 'cash' && t === 'both');
+    c.style.display = show ? 'block' : 'none';
+  });
+}
 }window.onload = function() { switchTab('global'); };
 </script>
 </body>
