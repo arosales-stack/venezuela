@@ -1784,7 +1784,7 @@ function filterCountry(btn, code) {
 function filter(btn, tag) {
   document.querySelectorAll('#sf .fil, .mob-fil').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  var cards = document.querySelectorAll('.card');
+  var cards = document.querySelectorAll('#global-cards .ucard');
   var visible = 0;
   cards.forEach(function(c) {
     var tags = c.dataset.tags || '';
@@ -1794,6 +1794,7 @@ function filter(btn, tag) {
   });
   var cl = document.getElementById('cnt');
   if (cl) cl.textContent = visible + (lang === 'es' ? ' organizaciones' : ' organizations');
+}
 
 function filterType(btn, type) {
   document.querySelectorAll('#stf .fil, #mob-type-filters .mob-fil').forEach(function(b) { b.classList.remove('active'); });
