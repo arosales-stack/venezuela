@@ -7,6 +7,19 @@
 All changes go to `dev` first. Only push to `main` when explicitly told to.
 
 ---
+## NEVER make edits without reading the full code first
+
+Before touching any line of index.html, Claude must read the entire relevant section — not just the line being changed. This means:
+
+- Before editing a card: read the full panel it lives in and verify the div/section structure is intact
+- Before inserting content: find the exact insertion point by reading 200+ chars of surrounding context, not guessing
+- Before any push: run validate.py and do a full structural audit (panels, country sections, global cards, nav order, JS functions)
+- Never make "small edits" on top of unverified structure — every edit assumes the structure is correct, which it may not be after prior edits
+
+The reason this rule exists: Claude repeatedly made tiny targeted edits (replacing strings, inserting cards) without verifying the surrounding structure, causing content to appear in wrong sections, panels to break, and filters to stop working. Reading the full context before every edit prevents this.
+
+---
+
 
 ## How to view the dev preview URL
 
