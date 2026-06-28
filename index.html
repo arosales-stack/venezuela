@@ -175,6 +175,45 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .ucard-link svg{width:12px;height:12px}
 .ucard:hover .ucard-link{color:var(--amber)}
 @media(max-width:767px){.ucards{grid-template-columns:1fr}}
+
+/* LIGHT MODE */
+[data-theme="light"] {
+  --bg:#F5F5F0;
+  --surface:#FFFFFF;
+  --surface2:#EBEBЕ6;
+  --border:#D4D0C8;
+  --text:#1A1A1A;
+  --muted:#4A4A4A;
+  --dim:#7A7A7A;
+  --amber:#C07010;
+  --amber-dim:#C07010;
+  --green:#2A7A2A;
+  --sidebar:240px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Light mode surface2 fix - use proper hex */
+[data-theme="light"] { --surface2:#EAEAE5; }
+[data-theme="light"] .ucard { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+[data-theme="light"] .sidebar { background: var(--bg); }
+[data-theme="light"] body { background: var(--bg); }
 </style>
 <script type="application/ld+json">
 {
@@ -269,6 +308,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="lang-row">
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark mode">🌙</button>
   </div>
 </aside>
 
@@ -279,6 +319,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     <div class="mob-lang">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn-mob" title="Toggle light/dark mode">🌙</button>
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1.2;margin-top:14px;margin-bottom:14px" class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
     <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
@@ -294,7 +335,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="page-header" id="dsk-hdr">
     <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
     <h1 class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p class="t" data-en="Find where to send money after the Venezuela earthquakes." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find where to send money after the Venezuela earthquakes.</p>
+    <p class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
   </div>
 
   <!-- GLOBAL PANEL -->
@@ -1952,7 +1993,33 @@ function filterType(btn, type) {
     c.dataset.hidden = show ? 'false' : 'true';
   });
 }
-window.onload = function() { switchTab('global'); };
+
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme');
+  var next = current === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('ayudave-theme', next);
+  var icon = next === 'light' ? '☀️' : '🌙';
+  var btns = document.querySelectorAll('.theme-toggle');
+  btns.forEach(function(b) { b.textContent = icon; });
+}
+
+// Apply saved theme on load
+(function() {
+  var saved = localStorage.getItem('ayudave-theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+})();
+
+window.onload = function() {
+  switchTab('global');
+  // Set correct icon on load
+  var saved = localStorage.getItem('ayudave-theme');
+  if (saved === 'light') {
+    document.querySelectorAll('.theme-toggle').forEach(function(b) { b.textContent = '☀️'; });
+  }
+};
 </script>
 </body>
 </html>
