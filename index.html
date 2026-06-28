@@ -102,8 +102,9 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .gcard-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
 .gcard-footer{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--dim)}
 .gcard-location{font-size:14px;color:var(--muted);font-style:italic}
-.country-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.country-filters .fil{flex-shrink:0;width:auto;padding:6px 12px}
+.country-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:0;padding:16px 0 20px}
+.country-filters .fil{flex-shrink:0;width:auto;padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.country-filters .fil.active{background:var(--amber);border-color:var(--amber);color:#0D1117}
 @media(min-width:768px){.country-filters{display:none}}
 .goods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .goods-country-heading{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:24px 0 10px}
@@ -552,7 +553,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="fil" onclick="filterCountry(this,'luxembourg')"><span class="t" data-en="Luxembourg" data-es="Luxemburgo">Luxembourg</span></button>
       <button class="fil" onclick="filterCountry(this,'uk')"><span class="t" data-en="UK" data-es="RU">UK</span></button>
     </div>
-    <div id="country-cards">
+    <div id="country-cards" style="margin-top:8px">
 
     <div class="country-heading t" data-country="spain" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</div>
     <div class="ucards">
