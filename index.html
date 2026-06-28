@@ -42,9 +42,9 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
 /* MAIN */
 .main{flex:1;min-width:0;padding:32px 36px}
-.page-header{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.page-header{margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--border)}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
-.page-header h1{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:10px}
+.page-header h1{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:16px}
 .page-header p{font-size:14px;color:var(--muted);line-height:1.6;max-width:620px}
 [data-panel]{display:none}[data-panel].active{display:block;padding-bottom:40px}
 .count-line{font-size:14px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
@@ -133,7 +133,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   .sidebar{display:none}.layout{flex-direction:column}.main{padding:16px}
   .mob-hdr{display:block}
   #dsk-hdr{display:none}
-  .page-header{margin-bottom:16px;padding-bottom:16px}.page-header h1{font-size:20px}
+  .page-header{margin-bottom:24px;padding-bottom:20px}.page-header h1{font-size:26px}
   .mob-lang{display:flex;gap:6px;margin-bottom:12px}
   .mob-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
   .mob-tabs::-webkit-scrollbar{display:none}
@@ -280,8 +280,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
     </div>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.25;margin-top:14px;margin-bottom:10px" class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find verified and official ways to help Venezuelans after the earthquake. We assess each initiative on publicly available information and flag what we know and what we don&rsquo;t.</p>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1.2;margin-top:14px;margin-bottom:14px" class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
+    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
     <div class="mob-tabs">
       <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Global" data-es="Global">Global</span></button>
       <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
@@ -294,11 +294,11 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="page-header" id="dsk-hdr">
     <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
     <h1 class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p class="t" data-en="Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto. Evaluamos cada iniciativa con informaci&oacute;n p&uacute;blica y marcamos lo que sabemos y lo que no.">Find where to send money after the Venezuela earthquakes. We assess each initiative on publicly available information and flag what we know and what we don't.</p>
+    <p class="t" data-en="Find where to send money after the Venezuela earthquakes." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find where to send money after the Venezuela earthquakes.</p>
   </div>
 
   <!-- GLOBAL PANEL -->
-  <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
+  <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:24px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
   <section data-panel="global">
     <div class="mob-filters">
       <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
