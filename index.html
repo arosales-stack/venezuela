@@ -46,11 +46,11 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
 .page-header h1{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:10px}
 .page-header p{font-size:14px;color:var(--muted);line-height:1.6;max-width:620px}
-.panel{display:none}.panel.active{display:block}
+[data-panel]{display:none}[data-panel].active{display:block;padding-bottom:40px}
 .count-line{font-size:14px;color:var(--dim);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
 
 /* ORG CARDS */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:12px;margin-bottom:24px}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;text-decoration:none;display:block;transition:border-color .15s}
 .card:hover{border-color:var(--amber-dim)}.card[data-hidden="true"]{display:none}
 .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px}
@@ -231,7 +231,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
   <!-- GLOBAL PANEL -->
   <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
-  <div class="panel active" id="panel-global">
+  <section data-panel="global">
     <div class="mob-filters">
       <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
       <button class="mob-fil" onclick="filter(this,'global')"><span class="t" data-en="Relief" data-es="Ayuda">Relief</span></button>
@@ -356,10 +356,10 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
     </div>
 
-  </div>
+  </section>
 
   <!-- COUNTRY PANEL -->
-  <div class="panel" id="panel-country">
+  <section data-panel="country">
     <div class="country-filters" id="cf">
       <button class="fil active" onclick="filterCountry(this,'all')"><span class="t" data-en="All" data-es="Todos">All</span></button>
       <button class="fil" onclick="filterCountry(this,'es')"><span class="t" data-en="Spain" data-es="Espa&ntilde;a">Spain</span></button>
@@ -406,7 +406,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         </a>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="country-section" data-country="de">
       <div class="country-heading">&#x1F1E9;&#x1F1EA; <span class="t" data-en="Germany" data-es="Alemania">Germany</span></div>
@@ -563,7 +563,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   </div>
 
   <!-- GOODS PANEL -->
-  <div class="panel" id="panel-goods">
+  <section data-panel="goods">
     <div class="goods-warning t" data-en="&#9888; These are physical drop-off points. Info verified June 27, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going." data-es="&#9888; Estos son puntos de entrega f&iacute;sica. Informaci&oacute;n verificada el 27 jun 2026 &mdash; algunos son solo fin de semana o pueden cambiar. Confirma antes de ir.">&#9888; These are physical drop-off points. Info verified June 27, 2026 &mdash; some may be weekend-only or change rapidly. Always confirm before going.</div>
 
     <div class="goods-country-heading">&#x1F1EA;&#x1F1F8; Spain &mdash; Madrid</div>
@@ -633,10 +633,10 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
     <div class="goods-note t" data-en="&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged." data-es="&#9432; La mayor&iacute;a de organizaciones humanitarias recomiendan dinero en lugar de bienes &mdash; llega m&aacute;s r&aacute;pido, evita aduanas y permite comprar exactamente lo necesario localmente.">&#9432; Most established humanitarian organizations (Red Cross, UNHCR, Caritas) recommend cash over goods &mdash; it reaches people faster, avoids customs delays, and lets teams buy exactly what&rsquo;s needed locally. Physical donations are best when an organization specifically requests them with logistics already arranged.</div>
 
-  </div>
+  </section>
 
   <!-- ABOUT PANEL -->
-  <div class="panel" id="panel-about">
+  <section data-panel="about">
     <div class="about-grid">
 
       <div class="about-block">
@@ -673,7 +673,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       </div>
 
     </div>
-  </div>
+  </section>
 
 </main>
 </div>
@@ -700,11 +700,12 @@ function setLang(l) {
 }
 
 function switchTab(name) {
+  document.querySelectorAll('[data-panel]').forEach(function(p) {
+    p.classList.toggle('active', p.dataset.panel === name);
+  });
   ['global', 'country', 'goods', 'about'].forEach(function(n) {
-    var p = document.getElementById('panel-' + n);
     var ni = document.getElementById('nav-' + n);
     var mni = document.getElementById('mnav-' + n);
-    if (p) p.classList.toggle('active', n === name);
     if (ni) ni.classList.toggle('active', n === name);
     if (mni) mni.classList.toggle('active', n === name);
   });
