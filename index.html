@@ -139,9 +139,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   .mob-tabs::-webkit-scrollbar{display:none}
   .mob-tab{flex-shrink:0;padding:10px 14px;font-size:14px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;touch-action:manipulation}
   .mob-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
-  .mob-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px;margin-bottom:4px}
-  .mob-filters::-webkit-scrollbar{display:none}
-  .mob-fil{flex-shrink:0;padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:all .15s}
+  .mob-filters{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:4px;margin-bottom:4px}
+  .mob-fil{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.05em;transition:all .15s}
   .mob-fil.active{background:var(--amber);border-color:var(--amber);color:#0D1117}
   .cards,.country-cards{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
   .footer{margin-left:0;padding:20px 16px}
