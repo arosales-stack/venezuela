@@ -366,3 +366,43 @@ Update the Excel whenever the website is updated. They should always be in sync.
 - **All collection points** must be verified through press sources before adding
 - **No local Venezuelan organizations** — 2024 Anti-NGO Law makes verification impossible
 - **Last updated date** must be updated on every publish (currently in Methodology tab and Donate Goods warning)
+
+---
+
+## Architecture update — June 28, 2026 (unified card system)
+
+### Card system
+All cards now use ONE template: `.ucard`. Previous templates (`.card`, `.ccard`, `.gcard`) are removed. Every card has:
+- `data-scope` — `global` or `country`
+- `data-country` — e.g. `spain`, `germany`, `france`, `uk` (lowercase, no spaces, no dashes)
+- `data-contribution` — `cash`, `goods`, or `both`
+- `data-tags` — for Global tab filtering (medical, relief, cash, logistics, children, faith)
+
+### Three panels
+- `<section data-panel="global">` — 12 global orgs
+- `<section data-panel="country">` — all country cards including goods/both cards duplicated here from type panel
+- `<section data-panel="type">` — all non-global cards filtered by cash/goods/both
+- `<section data-panel="about">` — methodology
+
+### Critical: goods cards appear in BOTH country and type panels
+Physical collection point cards (goods/both) must exist in BOTH:
+1. `#country-cards` (country panel) — inside the relevant country heading group
+2. `#type-cards` (type panel) — flat list filtered by contribution type
+
+If you add a new goods card, add it to both places.
+
+### Filter systems
+- `filter(btn, tag)` — filters `#global-cards .ucard` by `data-tags`
+- `filterCountry(btn, code)` — shows/hides `.country-heading[data-country]` + nextElementSibling in `#country-cards`
+- `filterType(btn, type)` — shows/hides `#type-cards .ucard` by `data-contribution`
+
+### Country heading data-country
+Each `<div class="country-heading t" data-country="X">` must have `data-country` matching the filter button value exactly. filterCountry uses `h.dataset.country` directly.
+
+### Tab navigation
+- Desktop sidebar: `#sf` (global filters), `#scf` (country filters), `#stf` (type filters) — shown/hidden by switchTab
+- Mobile: `.mob-tabs` with `.mob-tab` buttons; `.mob-filters` with `.mob-fil` pill buttons inside each panel; `.country-filters` with `.fil` pill buttons in country panel
+- All filter buttons are pill-shaped with `border-radius:20px` and wrap (no horizontal scroll)
+
+### Validator
+The validator at `/home/claude/validate.py` is outdated — it checks for old `.card` class and old panel names. It will report false positives. The real structural checks are: 4 sections present, JS functions present, no escaped quotes in onclick.
