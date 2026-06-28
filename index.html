@@ -124,7 +124,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .src-tag{display:inline-block;margin-top:10px;font-size:12px;color:var(--dim);border:1px solid var(--border);border-radius:3px;padding:3px 8px}
 
 /* FOOTER */
-.footer{padding:20px 36px;border-top:1px solid var(--border);margin-left:var(--sidebar)}
+.footer{padding:20px 36px;border-top:1px solid var(--border);margin-left:var(--sidebar);contain:layout}
 .footer p{font-size:14px;color:var(--dim);line-height:1.6}
 
 /* MOBILE */
@@ -136,7 +136,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   .mob-lang{display:flex;gap:6px;margin-bottom:12px}
   .mob-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;overflow-x:auto;scrollbar-width:none}
   .mob-tabs::-webkit-scrollbar{display:none}
-  .mob-tab{flex-shrink:0;padding:10px 14px;font-size:14px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+  .mob-tab{flex-shrink:0;padding:10px 14px;font-size:14px;font-weight:600;color:var(--muted);background:transparent;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;touch-action:manipulation}
   .mob-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
   .mob-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:12px;margin-bottom:4px}
   .mob-filters::-webkit-scrollbar{display:none}
