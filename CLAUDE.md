@@ -1,3 +1,41 @@
+# ⚠️ CRITICAL RULES — READ FIRST
+
+## NEVER push to main without explicit consent
+
+**Claude must NEVER push to the `main` branch without Audra explicitly saying "push to main", "update main", "deploy to main", or equivalent.** This is non-negotiable. The live site at ayudave.net serves real users during an active humanitarian crisis. An unauthorized push to main that breaks the site is unacceptable.
+
+All changes go to `dev` first. Only push to `main` when explicitly told to.
+
+---
+
+## How to view the dev preview URL
+
+The dev branch deploys to a Cloudflare Workers preview URL. To see it:
+
+1. Go to **Cloudflare dashboard → Workers & Pages → europeforvenezuela**
+2. Click **Deployments** tab
+3. Find the latest entry with the **`dev`** branch tag
+4. Click the **three dots (...)** next to it
+5. Click **"Preview"** — this opens the version-specific URL
+
+The URL format is: `<version-hash>-europeforvenezuela.a-rosales.workers.dev`
+
+Example: `dc6443fc-europeforvenezuela.a-rosales.workers.dev`
+
+This URL is unique to each version. Every new push to dev creates a new hash and a new preview URL. The previous URL still works — it points to that specific version.
+
+**Why this is confusing:** Workers preview URLs are version-specific, not branch-persistent. Unlike Cloudflare Pages (which gives `dev.project.pages.dev` that always updates), each Workers deployment gets a new hash-based URL. You have to grab the new URL from the Cloudflare dashboard after each push.
+
+---
+
+## What `preview_urls: true` does in wrangler.json
+
+Added on June 28, 2026. This enables Cloudflare Workers to generate preview URLs for non-production branch deployments. Without it, dev branch builds were creating versions but generating no accessible URL. With it, every push to dev gets a `<hash>-europeforvenezuela.a-rosales.workers.dev` URL visible in the Cloudflare Deployments tab.
+
+The `workers_dev: true` line was also added at the same time — this ensures the workers.dev subdomain routing is explicitly enabled.
+
+---
+
 # ayudave.net — Complete Technical Documentation
 
 **Site:** https://ayudave.net  
