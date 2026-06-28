@@ -175,6 +175,91 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .ucard-link svg{width:12px;height:12px}
 .ucard:hover .ucard-link{color:var(--amber)}
 @media(max-width:767px){.ucards{grid-template-columns:1fr}}
+
+.suggestion-strip{background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:24px;font-size:14px;color:var(--amber);text-align:center}
+[data-theme="light"] .suggestion-strip{background:#FEF3D6;border-color:#B07830;color:#5A3000}
+[data-theme="light"] .suggestion-strip a{color:#5A3000 !important}
+
+/* LIGHT MODE */
+[data-theme="light"] {
+  --bg:#F2F1ED;
+  --surface:#FFFFFF;
+  --surface2:#E8E6E0;
+  --border:#C8C4BC;
+  --text:#111111;
+  --muted:#333333;
+  --dim:#666660;
+  --amber:#8A5000;
+  --amber-dim:#8A5000;
+  --green:#1A5E1A;
+  --sidebar:240px;
+}
+[data-theme="light"] .up-ok{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .up-warn{color:#6B3800;border-color:#B07830;background:#FDEFD6}
+[data-theme="light"] .up-dim{color:#444440;border-color:#999994;background:#ECEAE6}
+[data-theme="light"] .pp-yes{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .pp-partial{color:#6B3800;border-color:#B07830;background:#FDEFD6}
+[data-theme="light"] .pp-dim{color:#444440;border-color:#999994;background:#ECEAE6}
+[data-theme="light"] .sp-ok{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .sp-watch{color:#6B3800;border-color:#B07830;background:#FDEFD6}
+[data-theme="light"] .us-active{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .us-weekend{color:#6B3800;border-color:#B07830;background:#FDEFD6}
+[data-theme="light"] .goods-warning{background:#FFF8E8;border-color:#C08A40;color:#7A4400}
+[data-theme="light"] .goods-note{background:#EEECEA}
+[data-theme="light"] .ucard{box-shadow:0 1px 3px rgba(0,0,0,.06)}
+[data-theme="light"] .mob-fil.active{background:#9A5E00;border-color:#9A5E00;color:#FFF}
+[data-theme="light"] .country-filters .fil.active{background:#9A5E00;border-color:#9A5E00;color:#FFF}
+[data-theme="light"] .mob-tab.active{color:#9A5E00;border-bottom-color:#9A5E00}
+[data-theme="light"] .nav-item.active{color:#9A5E00;background:#F0EFEB}
+[data-theme="light"] .lang-btn.active{border-color:#9A5E00;color:#9A5E00}
+[data-theme="light"] .ucard:hover{border-color:#C08A40}
+[data-theme="light"] .ucard:hover .ucard-link{color:#9A5E00}
+[data-theme="light"] .context-note{background:#EEECEA}
+[data-theme="light"] .ubadge{background:#E0DED8;border-color:#C0BCB4;color:#333330}
+[data-theme="light"] .ucontrib{background:#E0DED8;border-color:#C0BCB4;color:#333330}
+[data-theme="light"] .ucountry{color:#555550}
+[data-theme="light"] .count-line{color:#555550}
+[data-theme="light"] .country-heading{color:#111111}
+[data-theme="light"] .ubacking{color:#333333}
+[data-theme="light"] .ubacking strong{color:#111111}
+[data-theme="light"] .udetail{color:#222222;opacity:1}
+[data-theme="light"] .ucard-link{color:#555550}
+[data-theme="light"] .ucard:hover .ucard-link{color:#8A5000}
+[data-theme="light"] .goods-warning{background:#FEF3D6;border-color:#B07830;color:#5A3000}
+[data-theme="light"] .goods-note{background:#E8E6E0;color:#444440}
+[data-theme="light"] .about-block h3{color:#8A5000}
+[data-theme="light"] .about-block p{color:#333333}
+[data-theme="light"] .score-table td{color:#333333}
+[data-theme="light"] .score-table td:first-child{color:#111111}
+[data-theme="light"] .footer p{color:#555550}
+[data-theme="light"] .eyebrow{color:#8A5000}
+[data-theme="light"] .page-header p{color:#444440}
+[data-theme="light"] .sidebar-section-label{color:#888880}
+
+
+/* Theme toggle button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Light mode surface2 fix - use proper hex */
+[data-theme="light"] { --surface2:#EAEAE5; }
+[data-theme="light"] .ucard { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+[data-theme="light"] .sidebar { background: var(--bg); }
+[data-theme="light"] body { background: var(--bg); }
 </style>
 <script type="application/ld+json">
 {
@@ -269,6 +354,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="lang-row">
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark mode">🌙</button>
   </div>
 </aside>
 
@@ -279,6 +365,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
     <div class="mob-lang">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn-mob" title="Toggle light/dark mode">🌙</button>
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1.2;margin-top:14px;margin-bottom:14px" class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
     <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
@@ -294,11 +381,11 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="page-header" id="dsk-hdr">
     <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
     <h1 class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p class="t" data-en="Find where to send money after the Venezuela earthquakes." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find where to send money after the Venezuela earthquakes.</p>
+    <p class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
   </div>
 
   <!-- GLOBAL PANEL -->
-  <div style="background:#1A1200;border:1px solid var(--amber-dim);border-radius:8px;padding:12px 14px;margin-bottom:24px;font-size:14px;color:var(--amber);text-align:center" class="t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
+  <div class="suggestion-strip t" data-en="Know an initiative we missed? Email us: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>" data-es="&iquest;Conoces una iniciativa que nos falt&oacute;? Escr&iacute;benos: <a href='mailto:suggestions@ayudave.net' style='color:var(--amber);text-decoration:underline'>suggestions@ayudave.net</a>">Know an initiative we missed? Email us: <a href="mailto:suggestions@ayudave.net" style="color:var(--amber);text-decoration:underline">suggestions@ayudave.net</a></div>
   <section data-panel="global">
     <div class="mob-filters">
       <button class="mob-fil active" onclick="filter(this,'all')"><span class="t" data-en="All" data-es="Todo">All</span></button>
@@ -1952,7 +2039,33 @@ function filterType(btn, type) {
     c.dataset.hidden = show ? 'false' : 'true';
   });
 }
-window.onload = function() { switchTab('global'); };
+
+function toggleTheme() {
+  var current = document.documentElement.getAttribute('data-theme');
+  var next = current === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('ayudave-theme', next);
+  var icon = next === 'light' ? '☀️' : '🌙';
+  var btns = document.querySelectorAll('.theme-toggle');
+  btns.forEach(function(b) { b.textContent = icon; });
+}
+
+// Apply saved theme on load
+(function() {
+  var saved = localStorage.getItem('ayudave-theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+  }
+})();
+
+window.onload = function() {
+  switchTab('global');
+  // Set correct icon on load
+  var saved = localStorage.getItem('ayudave-theme');
+  if (saved === 'light') {
+    document.querySelectorAll('.theme-toggle').forEach(function(b) { b.textContent = '☀️'; });
+  }
+};
 </script>
 </body>
 </html>
