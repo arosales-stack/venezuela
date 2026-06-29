@@ -156,12 +156,13 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .ucountry{font-size:12px;font-weight:600;color:var(--dim);letter-spacing:.04em}
 .ucontrib{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--surface2);border:1px solid var(--border);color:var(--muted)}
 .ucard-head{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.ucard-status{display:flex;gap:6px;flex-wrap:wrap}
 .uname{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text);flex:1;line-height:1.3}
 .ubadge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;background:var(--surface2);border:1px solid var(--border);color:var(--dim);text-transform:uppercase;letter-spacing:.06em;flex-shrink:0}
 .ustatus{font-size:11px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid;flex-shrink:0}
 .us-active{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
 .us-weekend{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
-.us-pending{color:var(--muted);border-color:var(--border);background:transparent}
+.us-pending{color:#E05050;border-color:#7A2020;background:#2B0D0D}
 .ubacking{font-size:13px;color:var(--muted);line-height:1.5}
 .ubacking strong{color:var(--text)}
 .upills{display:flex;flex-wrap:wrap;gap:5px}
@@ -203,6 +204,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 [data-theme="light"] .sp-ok{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
 [data-theme="light"] .sp-watch{color:#6B3800;border-color:#B07830;background:#FDEFD6}
 [data-theme="light"] .us-active{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .us-pending{color:#A02020;border-color:#D06060;background:#FDEAEA}
 [data-theme="light"] .us-weekend{color:#6B3800;border-color:#B07830;background:#FDEFD6}
 [data-theme="light"] .goods-warning{background:#FFF8E8;border-color:#C08A40;color:#7A4400}
 [data-theme="light"] .goods-note{background:#EEECEA}
@@ -822,8 +824,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Sambil Madrid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-weekend t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Venezuelan community. Ships via Toneladas de Alegría → Fundación Bandazul." data-es="<strong>Respaldado por:</strong> Comunidad venezolana. Envío vía Toneladas de Alegría → Fundación Bandazul."><strong>Backed by:</strong> Venezuelan community. Ships via Toneladas de Alegría → Fundación Bandazul.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -843,8 +845,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Refugiados Sin Fronteras + Diáspora en Movimiento</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Jun 27–29, 11:00–18:00" data-es="27–29 jun, 11:00–18:00">Jun 27–29, 11:00–18:00</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Jun 27–29, 11:00–18:00" data-es="27–29 jun, 11:00–18:00">Jun 27–29, 11:00–18:00</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating." data-es="<strong>Respaldado por:</strong> Dos organizaciones de la diáspora venezolana coordinando conjuntamente."><strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -862,8 +864,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">VENESP — Villanueva del Pardillo</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación Civil de Venezolanos en España (VENESP)." data-es="<strong>Respaldado por:</strong> Asociación Civil de Venezolanos en España (VENESP)."><strong>Backed by:</strong> Asociación Civil de Venezolanos en España (VENESP).</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -882,8 +884,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Asociación Venezolana de Alcobendas (AVA)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Ships via Toneladas de Alegría → Fundación Bandazul. Verified by Diario de Alcobendas." data-es="<strong>Respaldado por:</strong> Envío vía Toneladas de Alegría → Fundación Bandazul. Verificado por Diario de Alcobendas."><strong>Backed by:</strong> Ships via Toneladas de Alegría → Fundación Bandazul. Verified by Diario de Alcobendas.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -902,8 +904,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Pabellón Manuel Cadenas — Leganés</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Ayuntamiento de Leganés. Replaces Sambil Madrid after it reached capacity. Ships via Toneladas de Alegría → Fundación Bandazul." data-es="<strong>Respaldado por:</strong> Ayuntamiento de Leganés. Sustituye a Sambil Madrid tras llenarse. Envío vía Toneladas de Alegría → Fundación Bandazul."><strong>Backed by:</strong> Ayuntamiento de Leganés. Replaces Sambil Madrid after it reached capacity. Ships via Toneladas de Alegría → Fundación Bandazul.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (Leganews)" data-es="&#10003; Verificado en prensa (Leganews)">&#10003; Verified in press (Leganews)</span>
@@ -923,8 +925,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Fundación Madrina — Madrid</span>
           <span class="ubadge t" data-en="Foundation" data-es="Fundación">Foundation</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Registered Spanish foundation. Founder: Conrado Giménez. Ships via Diócesis de Caracas — one of the few independent logistics channels active in affected areas." data-es="<strong>Respaldado por:</strong> Fundación española registrada. Fundador: Conrado Giménez. Envío vía Diócesis de Caracas — uno de los pocos canales logísticos independientes activos en la zona."><strong>Backed by:</strong> Registered Spanish foundation. Founder: Conrado Giménez. Ships via Diócesis de Caracas — one of the few independent logistics channels active in affected areas.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (Diario en Positivo)" data-es="&#10003; Verificado en prensa (Diario en Positivo)">&#10003; Verified in press (Diario en Positivo)</span>
@@ -944,8 +946,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">AMASVE — Alicante</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación AMASVE. Logistics: local purchase priority." data-es="<strong>Respaldado por:</strong> Asociación AMASVE. Logística: prioridad compra local."><strong>Backed by:</strong> Asociación AMASVE. Logistics: local purchase priority.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -964,8 +966,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">AVeVa — Valladolid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán." data-es="<strong>Respaldado por:</strong> Asociación de Venezolanos en Valladolid (AVeVa). Presidenta: Julianny Durán."><strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified via Europa Press" data-es="&#10003; Verificado vía Europa Press">&#10003; Verified via Europa Press</span>
@@ -1200,6 +1202,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
           
         </div>
+        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Check HelloAsso for status" data-es="Consulta HelloAsso">Check HelloAsso for status</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Venezuelan diaspora association based in Paris. Track record sending medical supplies, baby formula, water filters to schools and NGOs in Venezuela." data-es="<strong>Respaldado por:</strong> Asociación de la diáspora venezolana en París. Historial enviando suministros médicos, leche, filtros de agua a escuelas y ONGs en Venezuela."><strong>Backed by:</strong> Venezuelan diaspora association based in Paris. Track record sending medical supplies, baby formula, water filters to schools and NGOs in Venezuela.</div>
         <div class="upills">
           <span class="upill up-warn t" data-en="&#9888; Unverified — no confirmed earthquake-specific campaign yet" data-es="&#9888; Sin verificar — sin campaña específica para el terremoto confirmada">&#9888; Unverified — no confirmed earthquake-specific campaign yet</span>
@@ -1533,8 +1536,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Sambil Madrid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-weekend t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Venezuelan community. Ships via Toneladas de Alegría → Fundación Bandazul." data-es="<strong>Respaldado por:</strong> Comunidad venezolana. Envío vía Toneladas de Alegría → Fundación Bandazul."><strong>Backed by:</strong> Venezuelan community. Ships via Toneladas de Alegría → Fundación Bandazul.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -1553,8 +1556,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Refugiados Sin Fronteras + Diáspora en Movimiento</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Jun 27–29, 11:00–18:00" data-es="27–29 jun, 11:00–18:00">Jun 27–29, 11:00–18:00</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Jun 27–29, 11:00–18:00" data-es="27–29 jun, 11:00–18:00">Jun 27–29, 11:00–18:00</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating." data-es="<strong>Respaldado por:</strong> Dos organizaciones de la diáspora venezolana coordinando conjuntamente."><strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -1572,8 +1575,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">VENESP — Villanueva del Pardillo</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación Civil de Venezolanos en España (VENESP)." data-es="<strong>Respaldado por:</strong> Asociación Civil de Venezolanos en España (VENESP)."><strong>Backed by:</strong> Asociación Civil de Venezolanos en España (VENESP).</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -1592,8 +1595,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Asociación Venezolana de Alcobendas (AVA)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Ships via Toneladas de Alegría → Fundación Bandazul. Verified by Diario de Alcobendas." data-es="<strong>Respaldado por:</strong> Envío vía Toneladas de Alegría → Fundación Bandazul. Verificado por Diario de Alcobendas."><strong>Backed by:</strong> Ships via Toneladas de Alegría → Fundación Bandazul. Verified by Diario de Alcobendas.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -1612,8 +1615,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Pabellón Manuel Cadenas — Leganés</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Ayuntamiento de Leganés. Replaces Sambil Madrid after it reached capacity. Ships via Toneladas de Alegría → Fundación Bandazul." data-es="<strong>Respaldado por:</strong> Ayuntamiento de Leganés. Sustituye a Sambil Madrid tras llenarse. Envío vía Toneladas de Alegría → Fundación Bandazul."><strong>Backed by:</strong> Ayuntamiento de Leganés. Replaces Sambil Madrid after it reached capacity. Ships via Toneladas de Alegría → Fundación Bandazul.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (Leganews)" data-es="&#10003; Verificado en prensa (Leganews)">&#10003; Verified in press (Leganews)</span>
@@ -1633,8 +1636,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">Fundación Madrina — Madrid</span>
           <span class="ubadge t" data-en="Foundation" data-es="Fundación">Foundation</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Registered Spanish foundation. Founder: Conrado Giménez. Ships via Diócesis de Caracas — one of the few independent logistics channels active in affected areas." data-es="<strong>Respaldado por:</strong> Fundación española registrada. Fundador: Conrado Giménez. Envío vía Diócesis de Caracas — uno de los pocos canales logísticos independientes activos en la zona."><strong>Backed by:</strong> Registered Spanish foundation. Founder: Conrado Giménez. Ships via Diócesis de Caracas — one of the few independent logistics channels active in affected areas.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (Diario en Positivo)" data-es="&#10003; Verificado en prensa (Diario en Positivo)">&#10003; Verified in press (Diario en Positivo)</span>
@@ -1654,8 +1657,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">AMASVE — Alicante</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active" data-es="Activo">Active</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación AMASVE. Logistics: local purchase priority." data-es="<strong>Respaldado por:</strong> Asociación AMASVE. Logística: prioridad compra local."><strong>Backed by:</strong> Asociación AMASVE. Logistics: local purchase priority.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
@@ -1674,8 +1677,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ucard-head">
           <span class="uname">AVeVa — Valladolid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
-          <span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span>
         </div>
+        <div class="ucard-status"><span class="ustatus us-pending t" data-en="Closed" data-es="Cerrado">Closed</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán." data-es="<strong>Respaldado por:</strong> Asociación de Venezolanos en Valladolid (AVeVa). Presidenta: Julianny Durán."><strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified via Europa Press" data-es="&#10003; Verificado vía Europa Press">&#10003; Verified via Europa Press</span>
@@ -1896,6 +1899,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
           
         </div>
+        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Check HelloAsso for status" data-es="Consulta HelloAsso">Check HelloAsso for status</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Venezuelan diaspora association based in Paris. Track record sending medical supplies, baby formula, water filters to schools and NGOs in Venezuela." data-es="<strong>Respaldado por:</strong> Asociación de la diáspora venezolana en París. Historial enviando suministros médicos, leche, filtros de agua a escuelas y ONGs en Venezuela."><strong>Backed by:</strong> Venezuelan diaspora association based in Paris. Track record sending medical supplies, baby formula, water filters to schools and NGOs in Venezuela.</div>
         <div class="upills">
           <span class="upill up-warn t" data-en="&#9888; Unverified — no confirmed earthquake-specific campaign yet" data-es="&#9888; Sin verificar — sin campaña específica para el terremoto confirmada">&#9888; Unverified — no confirmed earthquake-specific campaign yet</span>
