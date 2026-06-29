@@ -2226,6 +2226,7 @@ function filter(btn, tag) {
 function filterType(btn, type) {
   document.querySelectorAll('#stf .fil, #mob-type-filters .mob-fil').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
+  window.scrollTo(0,0);
   document.querySelectorAll('#type-cards .ucard').forEach(function(c) {
     var t = c.dataset.contribution || 'cash';
     var show = type === 'all' || t === type || (type !== 'all' && t === 'both');
