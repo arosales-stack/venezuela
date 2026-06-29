@@ -371,7 +371,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn-mob" title="Toggle light/dark mode">🌙</button>
     </div>
     <h1 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:14px" class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
+    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:18px" class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake. Human-verified, updated throughout the day." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto. Verificación humana, actualizado durante el día.">Find verified and official ways to help Venezuelans after the earthquake. Human-verified, updated throughout the day.</p>
     <div class="mob-tabs">
       <button class="mob-tab active" id="mnav-global" onclick="switchTab('global')"><span class="t" data-en="Global" data-es="Global">Global</span></button>
       <button class="mob-tab" id="mnav-country" onclick="switchTab('country')"><span class="t" data-en="By country" data-es="Por pa&iacute;s">By country</span></button>
@@ -384,7 +384,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   <div class="page-header" id="dsk-hdr">
     <div class="eyebrow">&#x1F1FB;&#x1F1EA; <span class="t" data-en="Venezuela Earthquakes &mdash; Donation Guide for Europe" data-es="Terremotos Venezuela &mdash; Gu&iacute;a de donaci&oacute;n para Europa">Venezuela Earthquakes &mdash; Donation Guide for Europe</span></div>
     <h1 class="t" data-en="&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe" data-es="&#x1F1FB;&#x1F1EA; Ayuda a venezolanos: solo ayuda verificada<br>Global y Europa">&#x1F1FB;&#x1F1EA; Help Venezuelans: only verified aid<br>Global and Europe</h1>
-    <p class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto.">Find verified and official ways to help Venezuelans after the earthquake.</p>
+    <p class="t" data-en="Find verified and official ways to help Venezuelans after the earthquake. Human-verified, updated throughout the day." data-es="Encuentra formas verificadas y oficiales de ayudar a los venezolanos tras el terremoto. Verificación humana, actualizado durante el día.">Find verified and official ways to help Venezuelans after the earthquake. Human-verified, updated throughout the day.</p>
   </div>
 
   <!-- GLOBAL PANEL -->
@@ -1374,7 +1374,6 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         </div>
       </div>
     </div>
-    </div>
 
     <div class="country-heading t" data-country="uk" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</div>
     <div class="ucards">
@@ -2227,6 +2226,7 @@ function filter(btn, tag) {
 function filterType(btn, type) {
   document.querySelectorAll('#stf .fil, #mob-type-filters .mob-fil').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
+  window.scrollTo(0,0);
   document.querySelectorAll('#type-cards .ucard').forEach(function(c) {
     var t = c.dataset.contribution || 'cash';
     var show = type === 'all' || t === type || (type !== 'all' && t === 'both');
