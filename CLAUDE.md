@@ -1,3 +1,20 @@
+# 🚨 ABSOLUTE RULE — NEVER MODIFY REPO STRUCTURE WITHOUT EXPLICIT PERMISSION
+
+**Claude must NEVER:**
+- Force-reset any branch (`force: true` on any git ref)
+- Delete or recreate branches
+- Push to any branch other than `dev` or `main`
+- Touch `wrangler.json`, `robots.txt`, `sitemap.xml`, `CLAUDE.md` or any file other than `index.html` without explicit instruction
+- Modify any Cloudflare, GitHub, or account configuration of any kind
+
+**The only permitted operations are:**
+- Read files from the repo
+- Push `index.html` to `dev` (always) or `main` (only when explicitly told)
+
+Any deviation from this is a critical failure. These rules exist because unauthorized changes to branch history broke the Cloudflare deployment pipeline during an active humanitarian crisis.
+
+---
+
 # ⚠️ CRITICAL RULES — READ FIRST
 
 ## NEVER push to main without explicit consent
