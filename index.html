@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- ayudave v20260702 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -270,7 +271,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   "name": "ayudave.net — Verified aid for Venezuela earthquake 2026",
   "description": "Centralized and verified ways to donate to Venezuela after the June 2026 earthquakes. Global organizations and European country-specific channels. Bilingual EN/ES.",
   "url": "https://ayudave.net",
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-07-02",
   "inLanguage": ["en", "es"],
   "about": {
     "@type": "Event",
@@ -325,6 +326,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="fil" onclick="filter(this,'logistics')"><span class="t" data-en="Logistics" data-es="Log&iacute;stica">Logistics</span></button>
       <button class="fil" onclick="filter(this,'children')"><span class="t" data-en="Children" data-es="Ni&ntilde;os">Children</span></button>
       <button class="fil" onclick="filter(this,'faith')"><span class="t" data-en="Faith-based" data-es="Religiosa">Faith-based</span></button>
+      <button class="fil" onclick="filter(this,'animals')"><span class="t" data-en="Animals" data-es="Animales">Animals</span></button>
     </div>
   </div>
   <div id="scf" style="display:none">
@@ -398,8 +400,9 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
       <button class="mob-fil" onclick="filter(this,'logistics')"><span class="t" data-en="Logistics" data-es="Logística">Logistics</span></button>
       <button class="mob-fil" onclick="filter(this,'children')"><span class="t" data-en="Children" data-es="Niños">Children</span></button>
       <button class="mob-fil" onclick="filter(this,'faith')"><span class="t" data-en="Faith" data-es="Fe">Faith</span></button>
+      <button class="mob-fil" onclick="filter(this,'animals')"><span class="t" data-en="Animals" data-es="Animales">Animals</span></button>
     </div>
-    <div class="count-line" id="cnt">13 organizations</div>
+    <div class="count-line" id="cnt">14 organizations</div>
     <div class="ucards" id="global-cards">
       <div class="ucard" data-scope="global" data-country="global" data-contribution="cash" data-tags="medical">
         <div class="ucard-meta">
@@ -653,6 +656,26 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <a class="ucard-link" href="https://www.globalgiving.org/projects/venezuela-earthquake-relief-fund/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
+      <div class="ucard" data-scope="global" data-country="global" data-contribution="cash" data-tags="animals">
+        <div class="ucard-meta">
+          <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
+          <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
+        </div>
+        <div class="ucard-head">
+          <span class="uname">IFAW — International Fund for Animal Welfare</span>
+          <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
+        </div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> Major international animal welfare org registered across Europe (UK, Germany, Netherlands, France and more). Partnering with Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org with 20+ years on the ground." data-es="<strong>Respaldado por:</strong> Gran organización internacional registrada en Europa (RU, Alemania, Países Bajos, Francia y más). Socio de Red de Apoyo Canino (RAC) — principal organización de rescate animal de Venezuela con 20+ años de experiencia."><strong>Backed by:</strong> Major international animal welfare org registered across Europe (UK, Germany, Netherlands, France and more). Partnering with Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org with 20+ years on the ground.</div>
+        <div class="upills">
+          <span class="upill up-ok t" data-en="&#10003; Emergency funding already deployed" data-es="&#10003; Fondos de emergencia ya desplegados">&#10003; Emergency funding already deployed</span>
+          <span class="upill up-ok t" data-en="&#10003; Third earthquake response with RAC in Venezuela" data-es="&#10003; Tercera respuesta sísmica con RAC en Venezuela">&#10003; Third earthquake response with RAC in Venezuela</span>
+          <span class="upill up-ok t" data-en="&#10003; Verified in press (AP Photo, IFAW.org)" data-es="&#10003; Verificado en prensa (AP Photo, IFAW.org)">&#10003; Verified in press (AP Photo, IFAW.org)</span>
+        </div>
+        <p class="udetail t" data-en="Funds veterinary care, animal food and rescue for trapped pets in Caracas and La Guaira. Donations tax-deductible in multiple European countries — select your country on the IFAW site." data-es="Financia atención veterinaria, alimento y rescate de mascotas atrapadas en Caracas y La Guaira. Donaciones deducibles en varios países europeos — selecciona tu país en el sitio de IFAW.">Funds veterinary care, animal food and rescue for trapped pets in Caracas and La Guaira. Donations tax-deductible in multiple European countries — select your country on the IFAW site.</p>
+        <div class="ucard-footer">
+          <a class="ucard-link" href="https://www.ifaw.org/international/news/venezuela-earthquakes-urgent-response" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
       <div class="ucard" data-scope="global" data-country="global" data-contribution="cash" data-tags="relief">
         <div class="ucard-meta">
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
@@ -668,6 +691,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="upill up-dim t" data-en="Not on Charity Navigator (UN-affiliated body)" data-es="No en Charity Navigator (organismo afiliado a ONU)">Not on Charity Navigator (UN-affiliated body)</span>
           <span class="upill up-ok t" data-en="&#10003; On ground: Venezuelan Red Cross confirmed" data-es="&#10003; En terreno: Cruz Roja Venezolana confirmada">&#10003; On ground: Venezuelan Red Cross confirmed</span>
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific: Dedicated CHF 50M appeal" data-es="&#10003; Específico Venezuela: Llamamiento dedicado de CHF 50M">&#10003; Venezuela-specific: Dedicated CHF 50M appeal</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="Channels directly to Venezuelan Red Cross. Best option for donors in countries not otherwise covered. Also accepts credit cards from anywhere in Europe." data-es="Canaliza directamente a la Cruz Roja Venezolana. Mejor opción para donantes en países no cubiertos. Acepta tarjetas de crédito desde cualquier lugar de Europa.">Channels directly to Venezuelan Red Cross. Best option for donors in countries not otherwise covered. Also accepts credit cards from anywhere in Europe.</p>
         <div class="ucard-footer">
@@ -712,6 +737,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Específico Venezuela">&#10003; Venezuela-specific</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="Online donations. Tax-deductible Spain." data-es="Donaciones online. Deducible fiscalmente en España.">Online donations. Tax-deductible Spain.</p>
         <div class="ucard-footer">
@@ -1055,6 +1082,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; Supplies pre-positioned" data-es="&#10003; Suministros pre-posicionados">&#10003; Supplies pre-positioned</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="EUR donations. Venezuela earthquake appeal active." data-es="Donaciones EUR. Apelación terremoto Venezuela activa.">EUR donations. Venezuela earthquake appeal active.</p>
         <div class="ucard-footer">
@@ -1099,6 +1128,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="EUR donations via their site." data-es="Donaciones EUR desde su web.">EUR donations via their site.</p>
         <div class="ucard-footer">
@@ -1142,6 +1173,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific campaign" data-es="&#10003; Campaña específica Venezuela">&#10003; Venezuela-specific campaign</span>
           <span class="upill up-ok t" data-en="&#10003; Italian team on ground" data-es="&#10003; Equipo italiano en terreno">&#10003; Italian team on ground</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="EUR donations. Venezuela earthquake fundraiser active." data-es="Donaciones EUR. Recaudación terremoto Venezuela activa.">EUR donations. Venezuela earthquake fundraiser active.</p>
         <div class="ucard-footer">
@@ -1166,6 +1199,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; Portuguese team on ground" data-es="&#10003; Equipo portugués en terreno">&#10003; Portuguese team on ground</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="EUR donations via their site." data-es="Donaciones EUR desde su web.">EUR donations via their site.</p>
         <div class="ucard-footer">
@@ -1244,17 +1279,39 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="uname">Mujeres Unidas por la Libertad y la Paz</span>
           <span class="ubadge t" data-en="Association" data-es="Asociación">Association</span>
         </div>
-        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Unconfirmed logistics" data-es="Logística sin confirmar">Unconfirmed logistics</span></div>
+        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Active — CMA CGM ship, ~2 months" data-es="Activo — barco CMA CGM, ~2 meses">Active — CMA CGM ship, ~2 months</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Franco-Venezuelan humanitarian association based in Alfortville (Val-de-Marne). President: Maria Cécilia Acevedo Carvajal. Central depot for goods collected across France." data-es="<strong>Respaldado por:</strong> Asociación franco-venezolana con sede en Alfortville (Val-de-Marne). Presidenta: Maria Cécilia Acevedo Carvajal. Depósito central de bienes recogidos en toda Francia."><strong>Backed by:</strong> Franco-Venezuelan humanitarian association based in Alfortville (Val-de-Marne). President: Maria Cécilia Acevedo Carvajal. Central depot for goods collected across France.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (France 3)" data-es="&#10003; Verificado en prensa (France 3)">&#10003; Verified in press (France 3)</span>
           <span class="upill up-ok t" data-en="&#10003; Named president + registered association" data-es="&#10003; Presidenta identificada + asociación registrada">&#10003; Named president + registered association</span>
-          <span class="upill up-warn t" data-en="&#9888; Receiver in Venezuela not publicly confirmed" data-es="&#9888; Receptor en Venezuela sin confirmar públicamente">&#9888; Receiver in Venezuela not publicly confirmed</span>
-          <span class="upill up-warn t" data-en="&#9888; Ship chartered by French govt — 2 month transit" data-es="&#9888; Barco del gobierno francés — 2 meses de tránsito">&#9888; Ship chartered by French govt — 2 month transit</span>
+          <span class="upill up-ok t" data-en="&#10003; CMA CGM confirmed logistics chain" data-es="&#10003; Cadena logística CMA CGM confirmada">&#10003; CMA CGM confirmed logistics chain</span>
+          <span class="upill up-ok t" data-en="&#10003; French Foreign Ministry facilitated" data-es="&#10003; Facilitado por Ministerio de Asuntos Exteriores francés">&#10003; French Foreign Ministry facilitated</span>
+          <span class="upill up-warn t" data-en="&#9888; ~2 month sea transit — not for urgent items" data-es="&#9888; ~2 meses de tránsito marítimo — no para artículos urgentes">&#9888; ~2 month sea transit — not for urgent items</span>
         </div>
-        <p class="udetail t" data-en="Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. French government chartering a boat — 2 months transit. Association also fundraising for faster air freight. Verify before dropping off." data-es="Depósito: patio de iglesia, Alfortville (Val-de-Marne). Recoge bienes de 12+ ciudades francesas vía red @venezolanos_en_francia. Gobierno francés fletará un barco — lento (2 meses). La asociación recauda fondos para flete aéreo más rápido. Verifica antes de ir.">Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. French government chartering a boat — 2 months transit. Association also fundraising for faster air freight. Verify before dropping off.</p>
+        <p class="udetail t" data-en="Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. Ships via CMA CGM (French government facilitated). Storage before shipment: Les Bruits du Cœur 54. ~2 month sea transit." data-es="Depósito: patio de iglesia, Alfortville (Val-de-Marne). Recoge bienes de 12+ ciudades francesas vía red @venezolanos_en_francia. Envío vía CMA CGM (facilitado por gobierno francés). Almacenamiento: Les Bruits du Cœur 54. ~2 meses de tránsito marítimo.">Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. Ships via CMA CGM (French government facilitated). Storage before shipment: Les Bruits du Cœur 54. ~2 month sea transit.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://france3-regions.franceinfo.fr/hauts-de-france/somme/amiens/a-amiens-l-aide-s-organise-pour-le-venezuela-beaucoup-de-gens-n-ont-plus-rien-a-manger-et-surtout-les-bebes-3377680.html" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+      <div class="ucard" data-scope="country" data-country="france" data-contribution="goods" data-tags="">
+        <div class="ucard-meta">
+          <span class="ucountry t" data-en="🇫🇷 France — Nancy" data-es="🇫🇷 Francia — Nancy">🇫🇷 France — Nancy</span>
+          <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
+        </div>
+        <div class="ucard-head">
+          <span class="uname">Ville de Nancy — Hôtel de Ville</span>
+          <span class="ubadge t" data-en="Municipality" data-es="Municipio">Municipality</span>
+        </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active Jul 2–10, 10h–17h" data-es="Activo 2–10 jul, 10h–17h">Active Jul 2–10, 10h–17h</span></div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> Ville de Nancy (official city) + collectif &ldquo;Todos con Venezuela&rdquo;, backed by the French Ministère de l&rsquo;Europe et des Affaires étrangères. Ships via CMA CGM. Storage: Les Bruits du Cœur 54. Partners: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy." data-es="<strong>Respaldado por:</strong> Ville de Nancy (municipio oficial) + colectivo &ldquo;Todos con Venezuela&rdquo;, respaldado por el Ministerio francés de Europa y Asuntos Exteriores. Envío vía CMA CGM. Almacenamiento: Les Bruits du Cœur 54. Socios: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy."><strong>Backed by:</strong> Ville de Nancy (official city) + collectif &ldquo;Todos con Venezuela&rdquo;, backed by the French Ministère de l&rsquo;Europe et des Affaires étrangères. Ships via CMA CGM. Storage: Les Bruits du Cœur 54. Partners: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy.</div>
+        <div class="upills">
+          <span class="upill up-ok t" data-en="&#10003; Official city campaign — verified (Magnum la Radio, @villedenancy)" data-es="&#10003; Campaña municipal oficial — verificada (Magnum la Radio, @villedenancy)">&#10003; Official city campaign — verified (Magnum la Radio, @villedenancy)</span>
+          <span class="upill up-ok t" data-en="&#10003; French Foreign Ministry backed" data-es="&#10003; Respaldado por Ministerio de Asuntos Exteriores francés">&#10003; French Foreign Ministry backed</span>
+          <span class="upill up-ok t" data-en="&#10003; CMA CGM confirmed logistics chain" data-es="&#10003; Cadena logística CMA CGM confirmada">&#10003; CMA CGM confirmed logistics chain</span>
+        </div>
+        <p class="udetail t" data-en="Priority items: baby supplies (diapers, formula, small jars, bottles, wipes), hygiene (soap, shampoo, toilet paper, period products, toothbrushes). Salle Mienville, Hôtel de Ville de Nancy. Volunteers on site throughout." data-es="Artículos prioritarios: bebé (pañales, leche en polvo, tarros, biberones, toallitas), higiene (jabón, champú, papel higiénico, compresas, cepillos). Salle Mienville, Hôtel de Ville de Nancy. Voluntarios presentes en todo momento.">Priority items: baby supplies (diapers, formula, small jars, bottles, wipes), hygiene (soap, shampoo, toilet paper, period products, toothbrushes). Salle Mienville, Hôtel de Ville de Nancy. Volunteers on site throughout.</p>
+        <div class="ucard-footer">
+          <a class="ucard-link" href="https://www.magnumlaradio.com/la-ville-de-nancy-se-mobilise-pour-le-venezuela-apres-les-seismes-devastateurs" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
     </div>
@@ -1318,6 +1375,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific campaign" data-es="&#10003; Campaña específica Venezuela">&#10003; Venezuela-specific campaign</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="EUR donations via their site." data-es="Donaciones EUR desde su web.">EUR donations via their site.</p>
         <div class="ucard-footer">
@@ -1361,6 +1420,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; REDOG search teams deployed" data-es="&#10003; Equipos REDOG desplegados">&#10003; REDOG search teams deployed</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="CHF donations. REDOG rescue teams on the ground." data-es="Donaciones CHF. Equipos REDOG en terreno.">CHF donations. REDOG rescue teams on the ground.</p>
         <div class="ucard-footer">
@@ -1434,6 +1495,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
           <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
+        
+          <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
         <p class="udetail t" data-en="GBP donations. Gift Aid adds 25% at no cost to you. UK deployed 68-person search and rescue team." data-es="Donaciones GBP. Gift Aid añade 25% sin costo. Reino Unido desplegó equipo de 68 especialistas.">GBP donations. Gift Aid adds 25% at no cost to you. UK deployed 68-person search and rescue team.</p>
         <div class="ucard-footer">
@@ -1477,6 +1540,26 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <p class="udetail t" data-en="GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you." data-es="Donaciones GBP online, por teléfono, o SMS SUPPORT al 70150 (£10). Anuncios en BBC, ITV, Channel 4, Channel 5 y Sky. Gift Aid añade 25% sin costo.">GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.dec.org.uk/appeal/venezuela-earthquake-appeal" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+      <div class="ucard" data-scope="country" data-country="uk" data-contribution="cash" data-tags="">
+        <div class="ucard-meta">
+          <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
+          <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
+        </div>
+        <div class="ucard-head">
+          <span class="uname">Network for Animals (NFA)</span>
+          <span class="ubadge t" data-en="Charity" data-es="ONG">Charity</span>
+        </div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> UK registered charity (No. 1142700). Funding Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org — for earthquake response in Caracas and La Guaira." data-es="<strong>Respaldado por:</strong> ONG registrada en RU (N.º 1142700). Financia a Red de Apoyo Canino (RAC) para la respuesta sísmica en Caracas y La Guaira."><strong>Backed by:</strong> UK registered charity (No. 1142700). Funding Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org — for earthquake response in Caracas and La Guaira.</div>
+        <div class="upills">
+          <span class="upill up-ok t" data-en="&#10003; UK registered charity — verified" data-es="&#10003; ONG registrada en RU — verificada">&#10003; UK registered charity — verified</span>
+          <span class="upill up-ok t" data-en="&#10003; Emergency funding already rushed to RAC" data-es="&#10003; Fondos de emergencia ya enviados a RAC">&#10003; Emergency funding already rushed to RAC</span>
+          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
+        </div>
+        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas.</p>
+        <div class="ucard-footer">
+          <a class="ucard-link" href="https://networkforanimals.org/appeals/venezuela-earthquake-jun-26/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
     </div>
@@ -2027,17 +2110,39 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="uname">Mujeres Unidas por la Libertad y la Paz</span>
           <span class="ubadge t" data-en="Association" data-es="Asociación">Association</span>
         </div>
-        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Unconfirmed logistics" data-es="Logística sin confirmar">Unconfirmed logistics</span></div>
+        <div class="ucard-status"><span class="ustatus us-weekend t" data-en="Active — CMA CGM ship, ~2 months" data-es="Activo — barco CMA CGM, ~2 meses">Active — CMA CGM ship, ~2 months</span></div>
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Franco-Venezuelan humanitarian association based in Alfortville (Val-de-Marne). President: Maria Cécilia Acevedo Carvajal. Central depot for goods collected across France." data-es="<strong>Respaldado por:</strong> Asociación franco-venezolana con sede en Alfortville (Val-de-Marne). Presidenta: Maria Cécilia Acevedo Carvajal. Depósito central de bienes recogidos en toda Francia."><strong>Backed by:</strong> Franco-Venezuelan humanitarian association based in Alfortville (Val-de-Marne). President: Maria Cécilia Acevedo Carvajal. Central depot for goods collected across France.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press (France 3)" data-es="&#10003; Verificado en prensa (France 3)">&#10003; Verified in press (France 3)</span>
           <span class="upill up-ok t" data-en="&#10003; Named president + registered association" data-es="&#10003; Presidenta identificada + asociación registrada">&#10003; Named president + registered association</span>
-          <span class="upill up-warn t" data-en="&#9888; Receiver in Venezuela not publicly confirmed" data-es="&#9888; Receptor en Venezuela sin confirmar públicamente">&#9888; Receiver in Venezuela not publicly confirmed</span>
-          <span class="upill up-warn t" data-en="&#9888; Ship chartered by French govt — 2 month transit" data-es="&#9888; Barco del gobierno francés — 2 meses de tránsito">&#9888; Ship chartered by French govt — 2 month transit</span>
+          <span class="upill up-ok t" data-en="&#10003; CMA CGM confirmed logistics chain" data-es="&#10003; Cadena logística CMA CGM confirmada">&#10003; CMA CGM confirmed logistics chain</span>
+          <span class="upill up-ok t" data-en="&#10003; French Foreign Ministry facilitated" data-es="&#10003; Facilitado por Ministerio de Asuntos Exteriores francés">&#10003; French Foreign Ministry facilitated</span>
+          <span class="upill up-warn t" data-en="&#9888; ~2 month sea transit — not for urgent items" data-es="&#9888; ~2 meses de tránsito marítimo — no para artículos urgentes">&#9888; ~2 month sea transit — not for urgent items</span>
         </div>
-        <p class="udetail t" data-en="Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. French government chartering a boat — 2 months transit. Association also fundraising for faster air freight. Verify before dropping off." data-es="Depósito: patio de iglesia, Alfortville (Val-de-Marne). Recoge bienes de 12+ ciudades francesas vía red @venezolanos_en_francia. Gobierno francés fletará un barco — lento (2 meses). La asociación recauda fondos para flete aéreo más rápido. Verifica antes de ir.">Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. French government chartering a boat — 2 months transit. Association also fundraising for faster air freight. Verify before dropping off.</p>
+        <p class="udetail t" data-en="Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. Ships via CMA CGM (French government facilitated). Storage before shipment: Les Bruits du Cœur 54. ~2 month sea transit." data-es="Depósito: patio de iglesia, Alfortville (Val-de-Marne). Recoge bienes de 12+ ciudades francesas vía red @venezolanos_en_francia. Envío vía CMA CGM (facilitado por gobierno francés). Almacenamiento: Les Bruits du Cœur 54. ~2 meses de tránsito marítimo.">Depot: church courtyard, Alfortville (Val-de-Marne). Collects goods from 12+ French cities via @venezolanos_en_francia network. Ships via CMA CGM (French government facilitated). Storage before shipment: Les Bruits du Cœur 54. ~2 month sea transit.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://france3-regions.franceinfo.fr/hauts-de-france/somme/amiens/a-amiens-l-aide-s-organise-pour-le-venezuela-beaucoup-de-gens-n-ont-plus-rien-a-manger-et-surtout-les-bebes-3377680.html" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+      <div class="ucard" data-scope="country" data-country="france" data-contribution="goods" data-tags="">
+        <div class="ucard-meta">
+          <span class="ucountry t" data-en="🇫🇷 France — Nancy" data-es="🇫🇷 Francia — Nancy">🇫🇷 France — Nancy</span>
+          <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
+        </div>
+        <div class="ucard-head">
+          <span class="uname">Ville de Nancy — Hôtel de Ville</span>
+          <span class="ubadge t" data-en="Municipality" data-es="Municipio">Municipality</span>
+        </div>
+        <div class="ucard-status"><span class="ustatus us-active t" data-en="Active Jul 2–10, 10h–17h" data-es="Activo 2–10 jul, 10h–17h">Active Jul 2–10, 10h–17h</span></div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> Ville de Nancy (official city) + collectif &ldquo;Todos con Venezuela&rdquo;, backed by the French Ministère de l&rsquo;Europe et des Affaires étrangères. Ships via CMA CGM. Storage: Les Bruits du Cœur 54. Partners: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy." data-es="<strong>Respaldado por:</strong> Ville de Nancy (municipio oficial) + colectivo &ldquo;Todos con Venezuela&rdquo;, respaldado por el Ministerio francés de Europa y Asuntos Exteriores. Envío vía CMA CGM. Almacenamiento: Les Bruits du Cœur 54. Socios: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy."><strong>Backed by:</strong> Ville de Nancy (official city) + collectif &ldquo;Todos con Venezuela&rdquo;, backed by the French Ministère de l&rsquo;Europe et des Affaires étrangères. Ships via CMA CGM. Storage: Les Bruits du Cœur 54. Partners: El Solatino (Laxou), Lions Club Nancy, Rotary Club Nancy.</div>
+        <div class="upills">
+          <span class="upill up-ok t" data-en="&#10003; Official city campaign — verified (Magnum la Radio, @villedenancy)" data-es="&#10003; Campaña municipal oficial — verificada (Magnum la Radio, @villedenancy)">&#10003; Official city campaign — verified (Magnum la Radio, @villedenancy)</span>
+          <span class="upill up-ok t" data-en="&#10003; French Foreign Ministry backed" data-es="&#10003; Respaldado por Ministerio de Asuntos Exteriores francés">&#10003; French Foreign Ministry backed</span>
+          <span class="upill up-ok t" data-en="&#10003; CMA CGM confirmed logistics chain" data-es="&#10003; Cadena logística CMA CGM confirmada">&#10003; CMA CGM confirmed logistics chain</span>
+        </div>
+        <p class="udetail t" data-en="Priority items: baby supplies (diapers, formula, small jars, bottles, wipes), hygiene (soap, shampoo, toilet paper, period products, toothbrushes). Salle Mienville, Hôtel de Ville de Nancy. Volunteers on site throughout." data-es="Artículos prioritarios: bebé (pañales, leche en polvo, tarros, biberones, toallitas), higiene (jabón, champú, papel higiénico, compresas, cepillos). Salle Mienville, Hôtel de Ville de Nancy. Voluntarios presentes en todo momento.">Priority items: baby supplies (diapers, formula, small jars, bottles, wipes), hygiene (soap, shampoo, toilet paper, period products, toothbrushes). Salle Mienville, Hôtel de Ville de Nancy. Volunteers on site throughout.</p>
+        <div class="ucard-footer">
+          <a class="ucard-link" href="https://www.magnumlaradio.com/la-ville-de-nancy-se-mobilise-pour-le-venezuela-apres-les-seismes-devastateurs" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
       <div class="ucard" data-scope="country" data-country="czechrepublic" data-contribution="cash" data-tags="">
@@ -2241,6 +2346,26 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <a class="ucard-link" href="https://www.dec.org.uk/appeal/venezuela-earthquake-appeal" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
+      <div class="ucard" data-scope="country" data-country="uk" data-contribution="cash" data-tags="">
+        <div class="ucard-meta">
+          <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
+          <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
+        </div>
+        <div class="ucard-head">
+          <span class="uname">Network for Animals (NFA)</span>
+          <span class="ubadge t" data-en="Charity" data-es="ONG">Charity</span>
+        </div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> UK registered charity (No. 1142700). Funding Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org — for earthquake response in Caracas and La Guaira." data-es="<strong>Respaldado por:</strong> ONG registrada en RU (N.º 1142700). Financia a Red de Apoyo Canino (RAC) para la respuesta sísmica en Caracas y La Guaira."><strong>Backed by:</strong> UK registered charity (No. 1142700). Funding Red de Apoyo Canino (RAC) — Venezuela's leading animal rescue org — for earthquake response in Caracas and La Guaira.</div>
+        <div class="upills">
+          <span class="upill up-ok t" data-en="&#10003; UK registered charity — verified" data-es="&#10003; ONG registrada en RU — verificada">&#10003; UK registered charity — verified</span>
+          <span class="upill up-ok t" data-en="&#10003; Emergency funding already rushed to RAC" data-es="&#10003; Fondos de emergencia ya enviados a RAC">&#10003; Emergency funding already rushed to RAC</span>
+          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
+        </div>
+        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas.</p>
+        <div class="ucard-footer">
+          <a class="ucard-link" href="https://networkforanimals.org/appeals/venezuela-earthquake-jun-26/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
     </div>
     <div class="goods-note t" data-en="&#9432; Most established organizations recommend cash over goods — it reaches people faster, avoids customs delays, and lets teams buy exactly what&#39;s needed locally." data-es="&#9432; La mayoría de organizaciones recomiendan dinero en lugar de bienes — llega más rápido, evita aduanas y permite comprar exactamente lo necesario localmente.">&#9432; Most established organizations recommend cash over goods — it reaches people faster, avoids customs delays, and lets teams buy exactly what&#39;s needed locally.</div>
   </section>
@@ -2272,7 +2397,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
       <div class="about-block">
         <h3 class="t" data-en="Last updated" data-es="&Uacute;ltima actualizaci&oacute;n">Last updated</h3>
-        <p>July 1, 2026</p>
+        <p>July 2, 2026</p>
       </div>
 
     </div>
