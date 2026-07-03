@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ayudave v20260702 -->
+<!-- ayudave v20260703 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -173,6 +173,13 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 .up-dim{color:var(--muted);border-color:var(--border);background:transparent}
 .udetail{font-size:14px;color:var(--text);opacity:.85;line-height:1.6}
 .ucard-footer{margin-top:auto;display:flex;justify-content:flex-end}
+.ucard-verify{margin:-6px 0 0}
+.utag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px;border:1px solid;text-transform:uppercase;letter-spacing:.04em}
+.utag-verified{color:var(--green);border-color:#1A5E1A;background:#0D2B0D}
+.utag-partial{color:var(--amber);border-color:var(--amber-dim);background:#1A1200}
+[data-theme="light"] .utag-verified{color:#145214;border-color:#4A8A4A;background:#D6EFD6}
+[data-theme="light"] .utag-partial{color:#6B3800;border-color:#B07830;background:#FDEFD6}
+
 .ucard-link{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--dim);text-decoration:none;text-transform:uppercase;letter-spacing:.06em;transition:color .15s}
 .ucard-link svg{width:12px;height:12px}
 .ucard:hover .ucard-link{color:var(--amber)}
@@ -271,7 +278,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
   "name": "ayudave.net — Verified aid for Venezuela earthquake 2026",
   "description": "Centralized and verified ways to donate to Venezuela after the June 2026 earthquakes. Global organizations and European country-specific channels. Bilingual EN/ES.",
   "url": "https://ayudave.net",
-  "dateModified": "2026-07-02",
+  "dateModified": "2026-07-03",
   "inLanguage": ["en", "es"],
   "about": {
     "@type": "Event",
@@ -409,6 +416,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Direct Relief</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -430,6 +438,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Doctors Without Borders (MSF)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -451,6 +460,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">World Central Kitchen</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -472,6 +482,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Global Empowerment Mission</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -493,6 +504,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Catholic Relief Services</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -514,6 +526,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">International Rescue Committee</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -535,6 +548,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Save the Children</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -556,6 +570,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">GiveDirectly</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -577,6 +592,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Airlink</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -598,6 +614,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">People in Need</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -619,6 +636,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">UN Venezuela Humanitarian Fund</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -640,6 +658,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">GlobalGiving — Venezuela Earthquake Relief Fund</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -661,6 +680,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">IFAW — International Fund for Animal Welfare</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -681,6 +701,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🌍 Global" data-es="🌍 Global">🌍 Global</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">IFRC — Venezuela Emergency Appeal</span>
           <span class="ubadge t" data-en="Appeal" data-es="Llamamiento">Appeal</span>
@@ -728,6 +749,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cruz Roja Española</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -749,6 +771,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Comité de Emergencia Español</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -757,9 +780,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Intermón, World Vision, Plan Internacional." data-es="<strong>Respaldado por:</strong> 8 ONGs españolas incl. Oxfam Intermón, World Vision, Plan Internacional."><strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Intermón, World Vision, Plan Internacional.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Específico Venezuela">&#10003; Venezuela-specific</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Spain — 80% on first €250" data-es="&#10003; Deducible España — 80% primeros €250">&#10003; Tax-deductible Spain — 80% on first €250</span>
         </div>
-        <p class="udetail t" data-en="Funds distributed among member NGOs already in Venezuela." data-es="Fondos distribuidos entre ONGs miembro ya en Venezuela.">Funds distributed among member NGOs already in Venezuela.</p>
+        <p class="udetail t" data-en="Funds distributed among member NGOs already in Venezuela. Tax-deductible in Spain — 80% on first €250." data-es="Fondos distribuidos entre ONGs miembro ya en Venezuela. Deducible en España — 80% primeros €250.">Funds distributed among member NGOs already in Venezuela. Tax-deductible in Spain — 80% on first €250.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.comiteemergencia.org/emergencias/terremoto-venezuela/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -768,6 +790,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Médicos Sin Fronteras España</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -777,9 +800,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; 75% tax reduction on first €2,000" data-es="&#10003; 75% reducción fiscal primeros €2.000">&#10003; 75% tax reduction on first €2,000</span>
         </div>
-        <p class="udetail t" data-en="EUR donations." data-es="Donaciones EUR.">EUR donations.</p>
+        <p class="udetail t" data-en="EUR donations. 75% tax reduction on first €2,000." data-es="Donaciones EUR. Deducci&oacute;n del 75% en los primeros €2.000.">EUR donations. 75% tax reduction on first €2,000.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.es/emergencia-terremoto-venezuela" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -788,6 +810,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">World Central Kitchen (Spain)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -807,6 +830,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Bomberos Unidos Sin Fronteras (BUSF) — Córdoba</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -827,6 +851,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Save the Children España</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -836,9 +861,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Spain — 80% on first €250" data-es="&#10003; Deducible España — 80% primeros €250">&#10003; Tax-deductible Spain — 80% on first €250</span>
         </div>
-        <p class="udetail t" data-en="Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h)." data-es="Dona online o vía Bizum (España): código 13132 (concepto: Terremoto Venezuela). Tel: 900 37 37 15 (gratuito, lun–vie 9–21h).">Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h).</p>
+        <p class="udetail t" data-en="Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h). Tax-deductible in Spain — 80% on first €250." data-es="Dona online o vía Bizum (España): código 13132 (concepto: Terremoto Venezuela). Tel: 900 37 37 15 (gratuito, lun–vie 9–21h). Deducible en España — 80% primeros €250.">Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h). Tax-deductible in Spain — 80% on first €250.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.savethechildren.es/donacion-ong/terremoto-en-venezuela-2026" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -850,6 +874,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Sambil Madrid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -871,6 +896,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Refugiados Sin Fronteras + Diáspora en Movimiento</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -879,6 +905,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating." data-es="<strong>Respaldado por:</strong> Dos organizaciones de la diáspora venezolana coordinando conjuntamente."><strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Humanitarian materials. Confirm accepted items before going. Calle Matilde Landa 26, Madrid. June 27–29, 11:00–18:00." data-es="Material humanitario. Confirmar artículos antes de ir. Calle Matilde Landa 26, Madrid. 27–29 jun, 11:00–18:00.">Humanitarian materials. Confirm accepted items before going. Calle Matilde Landa 26, Madrid. June 27–29, 11:00–18:00.</p>
         <div class="ucard-footer">
@@ -890,6 +917,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128179;&#128230; Both" data-es="&#128179;&#128230; Ambos">&#128179;&#128230; Both</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">VENESP — Villanueva del Pardillo</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -899,6 +927,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
           <span class="upill up-ok t" data-en="&#10003; Also accepts cash for transport costs" data-es="&#10003; También acepta efectivo para transporte">&#10003; Also accepts cash for transport costs</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Basic supplies + cash for transport. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo." data-es="Artículos básicos + efectivo para transporte. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo.">Basic supplies + cash for transport. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo.</p>
         <div class="ucard-footer">
@@ -910,6 +939,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Asociación Venezolana de Alcobendas (AVA)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -930,6 +960,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Pabellón Manuel Cadenas — Leganés</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -951,6 +982,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Fundación Madrina — Madrid</span>
           <span class="ubadge t" data-en="Foundation" data-es="Fundación">Foundation</span>
@@ -972,6 +1004,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Alicante" data-es="🇪🇸 España — Alicante">🇪🇸 Spain — Alicante</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">AMASVE — Alicante</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -981,6 +1014,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
           <span class="upill up-warn t" data-en="&#9888; Medical supplies only — no food or clothes" data-es="&#9888; Solo material médico — sin comida ni ropa">&#9888; Medical supplies only — no food or clothes</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Hours: 9:30–23:00. Phone: 698 464 187. Shipment June 29 — verify before going." data-es="Gasas, antisépticos, primeros auxilios, medicamentos crónicos. Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Horario: 9:30–23:00. Tel: 698 464 187. Envío 29 jun — verifica antes de ir.">Gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Hours: 9:30–23:00. Phone: 698 464 187. Shipment planned Monday June 29.</p>
         <div class="ucard-footer">
@@ -992,6 +1026,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Valladolid" data-es="🇪🇸 España — Valladolid">🇪🇸 Spain — Valladolid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">AVeVa — Valladolid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1000,6 +1035,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán." data-es="<strong>Respaldado por:</strong> Asociación de Venezolanos en Valladolid (AVeVa). Presidenta: Julianny Durán."><strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified via Europa Press" data-es="&#10003; Verificado vía Europa Press">&#10003; Verified via Europa Press</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Non-perishable food, water, clothing, first aid, basic supplies. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid." data-es="Comida no perecedera, agua, ropa, primeros auxilios. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid.">Non-perishable food, water, clothing, first aid, basic supplies. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid.</p>
         <div class="ucard-footer">
@@ -1015,6 +1051,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Aktion Deutschland Hilft</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1024,9 +1061,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Específico Venezuela">&#10003; Venezuela-specific</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Germany" data-es="&#10003; Deducible Alemania">&#10003; Tax-deductible Germany</span>
         </div>
-        <p class="udetail t" data-en="EUR donations. Venezuela-specific campaign." data-es="Donaciones EUR. Campaña específica Venezuela.">EUR donations. Venezuela-specific campaign.</p>
+        <p class="udetail t" data-en="EUR donations. Venezuela-specific campaign. Tax-deductible in Germany." data-es="Donaciones EUR. Campaña específica Venezuela. Deducible en Alemania.">EUR donations. Venezuela-specific campaign. Tax-deductible in Germany.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.aktion-deutschland-hilft.de/de/hilfseinsaetze/erdbeben-venezuela-spenden-sie-jetzt/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1035,6 +1071,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Aktionsbündnis Katastrophenhilfe</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1054,6 +1091,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas international (Germany)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1073,6 +1111,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Deutsches Rotes Kreuz (DRK)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1095,6 +1134,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Malteser International</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1119,6 +1159,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Rode Kruis Nederland</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1140,6 +1181,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cordaid</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1164,6 +1206,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇮🇹 Italy" data-es="🇮🇹 Italia">🇮🇹 Italy</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Croce Rossa Italiana</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1190,6 +1233,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇵🇹 Portugal" data-es="🇵🇹 Portugal">🇵🇹 Portugal</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cruz Vermelha Portuguesa</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1216,6 +1260,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Médecins Sans Frontières France</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1224,9 +1269,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed; general donation funds Venezuela via MSF emergency fund." data-es="<strong>Respaldado por:</strong> MSF internacional. Sin página específica Francia-Venezuela confirmada; donación general financia Venezuela."><strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed; general donation funds Venezuela via MSF emergency fund.</div>
         <div class="upills">
           <span class="upill up-warn t" data-en="&#9888; General page, not Venezuela-specific" data-es="&#9888; Página general, no específica Venezuela">&#9888; General page, not Venezuela-specific</span>
-          <span class="upill up-ok t" data-en="&#10003; 75% tax reduction France — first €2,000" data-es="&#10003; 75% reducción fiscal Francia — primeros €2.000">&#10003; 75% tax reduction France — first €2,000</span>
         </div>
-        <p class="udetail t" data-en="EUR donations." data-es="Donaciones EUR.">EUR donations.</p>
+        <p class="udetail t" data-en="EUR donations. 75% tax reduction in France on first €2,000." data-es="Donaciones EUR. Deducci&oacute;n del 75% en Francia en los primeros €2.000.">EUR donations. 75% tax reduction in France on first €2,000.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.fr/agir/soutenir-nos-actions/faire-un-don-en-ligne" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1235,6 +1279,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Secours Catholique — Caritas France</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1254,6 +1299,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Venezuela Te Necesita (VTN)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1275,6 +1321,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Mujeres Unidas por la Libertad y la Paz</span>
           <span class="ubadge t" data-en="Association" data-es="Asociación">Association</span>
@@ -1298,6 +1345,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France — Nancy" data-es="🇫🇷 Francia — Nancy">🇫🇷 France — Nancy</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Ville de Nancy — Hôtel de Ville</span>
           <span class="ubadge t" data-en="Municipality" data-es="Municipio">Municipality</span>
@@ -1323,6 +1371,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇿 Czech Republic" data-es="🇨🇿 República Checa">🇨🇿 Czech Republic</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">People in Need (Člověk v tísni)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1347,6 +1396,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Österreich</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1366,6 +1416,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Österreichisches Rotes Kreuz</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1392,6 +1443,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Schweiz</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1411,6 +1463,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Schweizerisches Rotes Kreuz (SRK)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1437,17 +1490,18 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇱🇺 Luxembourg" data-es="🇱🇺 Luxemburgo">🇱🇺 Luxembourg</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">MSF Luxembourg</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
           
         </div>
-        <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, energy equipment via EU civil protection." data-es="<strong>Respaldado por:</strong> MSF internacional. Luxemburgo desplegó equipos de telecomunicaciones y refugio vía mecanismo UE."><strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, energy equipment via EU civil protection.</div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international — one of the largest independent medical humanitarian orgs in the world." data-es="<strong>Respaldado por:</strong> MSF internacional — una de las mayores organizaciones humanitarias médicas independientes del mundo."><strong>Backed by:</strong> MSF international — one of the largest independent medical humanitarian orgs in the world.</div>
         <div class="upills">
-          <span class="upill up-ok t" data-en="&#10003; MSF Venezuela operations active" data-es="&#10003; Operaciones MSF Venezuela activas">&#10003; MSF Venezuela operations active</span>
-          <span class="upill up-warn t" data-en="&#9888; No Luxembourg-specific campaign confirmed" data-es="&#9888; Sin campaña específica Luxemburgo confirmada">&#9888; No Luxembourg-specific campaign confirmed</span>
+          <span class="upill up-warn t" data-en="&#9888; No Venezuela-specific page — general MSF donation" data-es="&#9888; Sin página específica Venezuela — donación general MSF">&#9888; No Venezuela-specific page — general MSF donation</span>
+          <span class="upill up-ok t" data-en="&#10003; MSF teams active in Venezuela" data-es="&#10003; Equipos MSF activos en Venezuela">&#10003; MSF teams active in Venezuela</span>
         </div>
-        <p class="udetail t" data-en="EUR donations via MSF Luxembourg." data-es="Donaciones EUR vía MSF Luxemburgo.">EUR donations via MSF Luxembourg.</p>
+        <p class="udetail t" data-en="Donating via MSF Luxembourg goes to MSF&rsquo;s global emergency fund. MSF has teams active in Venezuela but this is not a dedicated Venezuela appeal." data-es="Donar vía MSF Luxemburgo va al fondo de emergencia global de MSF. MSF tiene equipos activos en Venezuela pero no es una campaña dedicada.">Donating via MSF Luxembourg goes to MSF&rsquo;s global emergency fund. MSF has teams active in Venezuela but this is not a dedicated Venezuela appeal.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.lu" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1461,6 +1515,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇴 Norway" data-es="🇳🇴 Noruega">🇳🇴 Norway</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Norge</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1485,6 +1540,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">British Red Cross</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1494,7 +1550,6 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         
           <span class="upill up-warn t" data-en="&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability" data-es="&#9888; Independencia CRV en disputa (intervención govt 2023) — FICR supervisa uso de fondos">&#9888; VRC independence disputed (2023 govt intervention) — IFRC monitors fund accountability</span>
         </div>
@@ -1507,6 +1562,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">UNICEF UK</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1515,9 +1571,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> UNICEF international. 48 metric tonnes of supplies arriving June 29 from Copenhagen." data-es="<strong>Respaldado por:</strong> UNICEF internacional. 48 toneladas de suministros llegan el 29 jun desde Copenhague."><strong>Backed by:</strong> UNICEF international. 48 metric tonnes of supplies arriving June 29 from Copenhagen.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
-        <p class="udetail t" data-en="GBP donations. Funds UNICEF teams already on the ground in Venezuela." data-es="Donaciones GBP. Financia equipos UNICEF ya en terreno en Venezuela.">GBP donations. Funds UNICEF teams already on the ground in Venezuela.</p>
+        <p class="udetail t" data-en="GBP donations. Funds UNICEF teams already on the ground in Venezuela. Gift Aid eligible — adds 25% at no cost to you." data-es="Donaciones GBP. Financia equipos UNICEF ya en terreno en Venezuela. Elegible para Gift Aid — a&ntilde;ade 25% sin costo.">GBP donations. Funds UNICEF teams already on the ground in Venezuela. Gift Aid eligible — adds 25% at no cost to you.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.unicef.org.uk/donate/donate-to-our-venezuela-earthquake-appeal/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1527,6 +1582,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">DEC — Venezuela Earthquake Appeal</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1535,7 +1591,6 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal — launched July 1" data-es="&#10003; Apelación específica Venezuela — lanzada el 1 jul">&#10003; Venezuela-specific appeal — launched July 1</span>
           <span class="upill up-ok t" data-en="&#10003; UK Government matching up to £2M" data-es="&#10003; Gobierno RU iguala hasta £2M">&#10003; UK Government matching up to £2M</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
         <p class="udetail t" data-en="GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you." data-es="Donaciones GBP online, por teléfono, o SMS SUPPORT al 70150 (£10). Anuncios en BBC, ITV, Channel 4, Channel 5 y Sky. Gift Aid añade 25% sin costo.">GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you.</p>
         <div class="ucard-footer">
@@ -1547,6 +1602,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Network for Animals (NFA)</span>
           <span class="ubadge t" data-en="Charity" data-es="ONG">Charity</span>
@@ -1555,9 +1611,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; UK registered charity — verified" data-es="&#10003; ONG registrada en RU — verificada">&#10003; UK registered charity — verified</span>
           <span class="upill up-ok t" data-en="&#10003; Emergency funding already rushed to RAC" data-es="&#10003; Fondos de emergencia ya enviados a RAC">&#10003; Emergency funding already rushed to RAC</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
-        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas.</p>
+        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas. Gift Aid eligible — adds 25% at no cost to you." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate. Elegible para Gift Aid — a&ntilde;ade 25% sin costo.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas. Gift Aid eligible — adds 25% at no cost to you.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://networkforanimals.org/appeals/venezuela-earthquake-jun-26/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1582,6 +1637,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cruz Roja Española</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1602,6 +1658,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Comité de Emergencia Español</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1610,9 +1667,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Intermón, World Vision, Plan Internacional." data-es="<strong>Respaldado por:</strong> 8 ONGs españolas incl. Oxfam Intermón, World Vision, Plan Internacional."><strong>Backed by:</strong> 8 Spanish NGOs incl. Oxfam Intermón, World Vision, Plan Internacional.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Específico Venezuela">&#10003; Venezuela-specific</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Spain — 80% on first €250" data-es="&#10003; Deducible España — 80% primeros €250">&#10003; Tax-deductible Spain — 80% on first €250</span>
         </div>
-        <p class="udetail t" data-en="Funds distributed among member NGOs already in Venezuela." data-es="Fondos distribuidos entre ONGs miembro ya en Venezuela.">Funds distributed among member NGOs already in Venezuela.</p>
+        <p class="udetail t" data-en="Funds distributed among member NGOs already in Venezuela. Tax-deductible in Spain — 80% on first €250." data-es="Fondos distribuidos entre ONGs miembro ya en Venezuela. Deducible en España — 80% primeros €250.">Funds distributed among member NGOs already in Venezuela. Tax-deductible in Spain — 80% on first €250.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.comiteemergencia.org/emergencias/terremoto-venezuela/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1622,6 +1678,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Médicos Sin Fronteras España</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1631,9 +1688,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; 75% tax reduction on first €2,000" data-es="&#10003; 75% reducción fiscal primeros €2.000">&#10003; 75% tax reduction on first €2,000</span>
         </div>
-        <p class="udetail t" data-en="EUR donations." data-es="Donaciones EUR.">EUR donations.</p>
+        <p class="udetail t" data-en="EUR donations. 75% tax reduction on first €2,000." data-es="Donaciones EUR. Deducci&oacute;n del 75% en los primeros €2.000.">EUR donations. 75% tax reduction on first €2,000.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.es/emergencia-terremoto-venezuela" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1643,6 +1699,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">World Central Kitchen (Spain)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1663,6 +1720,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Bomberos Unidos Sin Fronteras (BUSF) — Córdoba</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1683,6 +1741,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain" data-es="🇪🇸 España">🇪🇸 Spain</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Save the Children España</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1692,9 +1751,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Spain — 80% on first €250" data-es="&#10003; Deducible España — 80% primeros €250">&#10003; Tax-deductible Spain — 80% on first €250</span>
         </div>
-        <p class="udetail t" data-en="Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h)." data-es="Dona online o vía Bizum (España): código 13132 (concepto: Terremoto Venezuela). Tel: 900 37 37 15 (gratuito, lun–vie 9–21h).">Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h).</p>
+        <p class="udetail t" data-en="Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h). Tax-deductible in Spain — 80% on first €250." data-es="Dona online o vía Bizum (España): código 13132 (concepto: Terremoto Venezuela). Tel: 900 37 37 15 (gratuito, lun–vie 9–21h). Deducible en España — 80% primeros €250.">Donate online or via Bizum (Spain): code 13132 (concept: Terremoto Venezuela). Phone: 900 37 37 15 (free, Mon–Fri 9–21h). Tax-deductible in Spain — 80% on first €250.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.savethechildren.es/donacion-ong/terremoto-en-venezuela-2026" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1704,6 +1762,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Sambil Madrid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1724,6 +1783,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Refugiados Sin Fronteras + Diáspora en Movimiento</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1732,6 +1792,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating." data-es="<strong>Respaldado por:</strong> Dos organizaciones de la diáspora venezolana coordinando conjuntamente."><strong>Backed by:</strong> Two Venezuelan diaspora organizations jointly coordinating.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Humanitarian materials. Confirm accepted items before going. Calle Matilde Landa 26, Madrid. June 27–29, 11:00–18:00." data-es="Material humanitario. Confirmar artículos antes de ir. Calle Matilde Landa 26, Madrid. 27–29 jun, 11:00–18:00.">Humanitarian materials. Confirm accepted items before going. Calle Matilde Landa 26, Madrid. June 27–29, 11:00–18:00.</p>
         <div class="ucard-footer">
@@ -1743,6 +1804,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128179;&#128230; Both" data-es="&#128179;&#128230; Ambos">&#128179;&#128230; Both</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">VENESP — Villanueva del Pardillo</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1752,6 +1814,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
           <span class="upill up-ok t" data-en="&#10003; Also accepts cash for transport costs" data-es="&#10003; También acepta efectivo para transporte">&#10003; Also accepts cash for transport costs</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Basic supplies + cash for transport. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo." data-es="Artículos básicos + efectivo para transporte. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo.">Basic supplies + cash for transport. Pardillo Center, Av. de Madrid 4 local 1, Villanueva del Pardillo.</p>
         <div class="ucard-footer">
@@ -1763,6 +1826,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Asociación Venezolana de Alcobendas (AVA)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1783,6 +1847,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Pabellón Manuel Cadenas — Leganés</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1804,6 +1869,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Madrid" data-es="🇪🇸 España — Madrid">🇪🇸 Spain — Madrid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Fundación Madrina — Madrid</span>
           <span class="ubadge t" data-en="Foundation" data-es="Fundación">Foundation</span>
@@ -1825,6 +1891,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Alicante" data-es="🇪🇸 España — Alicante">🇪🇸 Spain — Alicante</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">AMASVE — Alicante</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1834,6 +1901,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified in press" data-es="&#10003; Verificado en prensa">&#10003; Verified in press</span>
           <span class="upill up-warn t" data-en="&#9888; Medical supplies only — no food or clothes" data-es="&#9888; Solo material médico — sin comida ni ropa">&#9888; Medical supplies only — no food or clothes</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Hours: 9:30–23:00. Phone: 698 464 187. Shipment June 29 — verify before going." data-es="Gasas, antisépticos, primeros auxilios, medicamentos crónicos. Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Horario: 9:30–23:00. Tel: 698 464 187. Envío 29 jun — verifica antes de ir.">Gauze, antiseptics, first aid, chronic disease meds (no restricted prescriptions). Calle Garbinet 67 (+ Calle Garbinet 44), Alicante. Hours: 9:30–23:00. Phone: 698 464 187. Shipment planned Monday June 29.</p>
         <div class="ucard-footer">
@@ -1845,6 +1913,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇪🇸 Spain — Valladolid" data-es="🇪🇸 España — Valladolid">🇪🇸 Spain — Valladolid</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">AVeVa — Valladolid</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -1853,6 +1922,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán." data-es="<strong>Respaldado por:</strong> Asociación de Venezolanos en Valladolid (AVeVa). Presidenta: Julianny Durán."><strong>Backed by:</strong> Asociación de Venezolanos en Valladolid (AVeVa). President: Julianny Durán.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Verified via Europa Press" data-es="&#10003; Verificado vía Europa Press">&#10003; Verified via Europa Press</span>
+          <span class="upill up-warn t" data-en="&#9888; No shipping partner disclosed" data-es="&#9888; Sin socio de env&iacute;o revelado">&#9888; No shipping partner disclosed</span>
         </div>
         <p class="udetail t" data-en="Non-perishable food, water, clothing, first aid, basic supplies. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid." data-es="Comida no perecedera, agua, ropa, primeros auxilios. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid.">Non-perishable food, water, clothing, first aid, basic supplies. Sede de Ropero Amigo, Plaza Marqués de Suances, Valladolid.</p>
         <div class="ucard-footer">
@@ -1864,6 +1934,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Aktion Deutschland Hilft</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1873,9 +1944,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific" data-es="&#10003; Específico Venezuela">&#10003; Venezuela-specific</span>
           <span class="upill up-ok t" data-en="&#10003; Teams on ground" data-es="&#10003; Equipos en terreno">&#10003; Teams on ground</span>
-          <span class="upill up-ok t" data-en="&#10003; Tax-deductible Germany" data-es="&#10003; Deducible Alemania">&#10003; Tax-deductible Germany</span>
         </div>
-        <p class="udetail t" data-en="EUR donations. Venezuela-specific campaign." data-es="Donaciones EUR. Campaña específica Venezuela.">EUR donations. Venezuela-specific campaign.</p>
+        <p class="udetail t" data-en="EUR donations. Venezuela-specific campaign. Tax-deductible in Germany." data-es="Donaciones EUR. Campaña específica Venezuela. Deducible en Alemania.">EUR donations. Venezuela-specific campaign. Tax-deductible in Germany.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.aktion-deutschland-hilft.de/de/hilfseinsaetze/erdbeben-venezuela-spenden-sie-jetzt/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -1885,6 +1955,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Aktionsbündnis Katastrophenhilfe</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -1905,6 +1976,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas international (Germany)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1925,6 +1997,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Deutsches Rotes Kreuz (DRK)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1945,6 +2018,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇩🇪 Germany" data-es="🇩🇪 Alemania">🇩🇪 Germany</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Malteser International</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1965,6 +2039,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Rode Kruis Nederland</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -1985,6 +2060,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇱 Netherlands" data-es="🇳🇱 Países Bajos">🇳🇱 Netherlands</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cordaid</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2005,6 +2081,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇮🇹 Italy" data-es="🇮🇹 Italia">🇮🇹 Italy</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Croce Rossa Italiana</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2025,6 +2102,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇵🇹 Portugal" data-es="🇵🇹 Portugal">🇵🇹 Portugal</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Cruz Vermelha Portuguesa</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2045,6 +2123,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Médecins Sans Frontières France</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2053,9 +2132,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed; general donation funds Venezuela via MSF emergency fund." data-es="<strong>Respaldado por:</strong> MSF internacional. Sin página específica Francia-Venezuela confirmada; donación general financia Venezuela."><strong>Backed by:</strong> MSF international. No Venezuela-specific French campaign page confirmed; general donation funds Venezuela via MSF emergency fund.</div>
         <div class="upills">
           <span class="upill up-warn t" data-en="&#9888; General page, not Venezuela-specific" data-es="&#9888; Página general, no específica Venezuela">&#9888; General page, not Venezuela-specific</span>
-          <span class="upill up-ok t" data-en="&#10003; 75% tax reduction France — first €2,000" data-es="&#10003; 75% reducción fiscal Francia — primeros €2.000">&#10003; 75% tax reduction France — first €2,000</span>
         </div>
-        <p class="udetail t" data-en="EUR donations." data-es="Donaciones EUR.">EUR donations.</p>
+        <p class="udetail t" data-en="EUR donations. 75% tax reduction in France on first €2,000." data-es="Donaciones EUR. Deducci&oacute;n del 75% en Francia en los primeros €2.000.">EUR donations. 75% tax reduction in France on first €2,000.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.fr/agir/soutenir-nos-actions/faire-un-don-en-ligne" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -2065,6 +2143,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Secours Catholique — Caritas France</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2085,6 +2164,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Venezuela Te Necesita (VTN)</span>
           <span class="ubadge t" data-en="Initiative" data-es="Iniciativa">Initiative</span>
@@ -2106,6 +2186,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France" data-es="🇫🇷 Francia">🇫🇷 France</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Mujeres Unidas por la Libertad y la Paz</span>
           <span class="ubadge t" data-en="Association" data-es="Asociación">Association</span>
@@ -2129,6 +2210,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇫🇷 France — Nancy" data-es="🇫🇷 Francia — Nancy">🇫🇷 France — Nancy</span>
           <span class="ucontrib t" data-en="&#128230; Goods" data-es="&#128230; Bienes">&#128230; Goods</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Ville de Nancy — Hôtel de Ville</span>
           <span class="ubadge t" data-en="Municipality" data-es="Municipio">Municipality</span>
@@ -2150,6 +2232,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇿 Czech Republic" data-es="🇨🇿 República Checa">🇨🇿 Czech Republic</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">People in Need (Člověk v tísni)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2170,6 +2253,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Österreich</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2190,6 +2274,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇦🇹 Austria" data-es="🇦🇹 Austria">🇦🇹 Austria</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Österreichisches Rotes Kreuz</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2210,6 +2295,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Schweiz</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2230,6 +2316,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇨🇭 Switzerland" data-es="🇨🇭 Suiza">🇨🇭 Switzerland</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Schweizerisches Rotes Kreuz (SRK)</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2250,17 +2337,18 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇱🇺 Luxembourg" data-es="🇱🇺 Luxemburgo">🇱🇺 Luxembourg</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">MSF Luxembourg</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
           
         </div>
-        <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, energy equipment via EU civil protection." data-es="<strong>Respaldado por:</strong> MSF internacional. Luxemburgo desplegó equipos de telecomunicaciones y refugio vía mecanismo UE."><strong>Backed by:</strong> MSF international. Luxembourg government deployed telecom, shelter, energy equipment via EU civil protection.</div>
+        <div class="ubacking t" data-en="<strong>Backed by:</strong> MSF international — one of the largest independent medical humanitarian orgs in the world." data-es="<strong>Respaldado por:</strong> MSF internacional — una de las mayores organizaciones humanitarias médicas independientes del mundo."><strong>Backed by:</strong> MSF international — one of the largest independent medical humanitarian orgs in the world.</div>
         <div class="upills">
-          <span class="upill up-ok t" data-en="&#10003; MSF Venezuela operations active" data-es="&#10003; Operaciones MSF Venezuela activas">&#10003; MSF Venezuela operations active</span>
-          <span class="upill up-warn t" data-en="&#9888; No Luxembourg-specific campaign confirmed" data-es="&#9888; Sin campaña específica Luxemburgo confirmada">&#9888; No Luxembourg-specific campaign confirmed</span>
+          <span class="upill up-warn t" data-en="&#9888; No Venezuela-specific page — general MSF donation" data-es="&#9888; Sin página específica Venezuela — donación general MSF">&#9888; No Venezuela-specific page — general MSF donation</span>
+          <span class="upill up-ok t" data-en="&#10003; MSF teams active in Venezuela" data-es="&#10003; Equipos MSF activos en Venezuela">&#10003; MSF teams active in Venezuela</span>
         </div>
-        <p class="udetail t" data-en="EUR donations via MSF Luxembourg." data-es="Donaciones EUR vía MSF Luxemburgo.">EUR donations via MSF Luxembourg.</p>
+        <p class="udetail t" data-en="Donating via MSF Luxembourg goes to MSF&rsquo;s global emergency fund. MSF has teams active in Venezuela but this is not a dedicated Venezuela appeal." data-es="Donar vía MSF Luxemburgo va al fondo de emergencia global de MSF. MSF tiene equipos activos en Venezuela pero no es una campaña dedicada.">Donating via MSF Luxembourg goes to MSF&rsquo;s global emergency fund. MSF has teams active in Venezuela but this is not a dedicated Venezuela appeal.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.msf.lu" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -2270,6 +2358,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇳🇴 Norway" data-es="🇳🇴 Noruega">🇳🇴 Norway</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-partial t" data-en="&#9888; Partially verified" data-es="&#9888; Verificado parcialmente">&#9888; Partially verified</span></div>
         <div class="ucard-head">
           <span class="uname">Caritas Norge</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2290,6 +2379,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">British Red Cross</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2299,7 +2389,6 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal" data-es="&#10003; Apelación específica Venezuela">&#10003; Venezuela-specific appeal</span>
           <span class="upill up-ok t" data-en="&#10003; IFRC-backed" data-es="&#10003; Respaldado FICR">&#10003; IFRC-backed</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
         <p class="udetail t" data-en="GBP donations. Gift Aid adds 25% at no cost to you. UK deployed 68-person search and rescue team." data-es="Donaciones GBP. Gift Aid añade 25% sin costo. Reino Unido desplegó equipo de 68 especialistas.">GBP donations. Gift Aid adds 25% at no cost to you. UK deployed 68-person search and rescue team.</p>
         <div class="ucard-footer">
@@ -2311,6 +2400,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">UNICEF UK</span>
           <span class="ubadge t" data-en="Org" data-es="Org">Org</span>
@@ -2319,9 +2409,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="ubacking t" data-en="<strong>Backed by:</strong> UNICEF international. 48 metric tonnes of supplies arriving June 29 from Copenhagen." data-es="<strong>Respaldado por:</strong> UNICEF internacional. 48 toneladas de suministros llegan el 29 jun desde Copenhague."><strong>Backed by:</strong> UNICEF international. 48 metric tonnes of supplies arriving June 29 from Copenhagen.</div>
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific page" data-es="&#10003; Página específica Venezuela">&#10003; Venezuela-specific page</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
-        <p class="udetail t" data-en="GBP donations. Funds UNICEF teams already on the ground in Venezuela." data-es="Donaciones GBP. Financia equipos UNICEF ya en terreno en Venezuela.">GBP donations. Funds UNICEF teams already on the ground in Venezuela.</p>
+        <p class="udetail t" data-en="GBP donations. Funds UNICEF teams already on the ground in Venezuela. Gift Aid eligible — adds 25% at no cost to you." data-es="Donaciones GBP. Financia equipos UNICEF ya en terreno en Venezuela. Elegible para Gift Aid — a&ntilde;ade 25% sin costo.">GBP donations. Funds UNICEF teams already on the ground in Venezuela. Gift Aid eligible — adds 25% at no cost to you.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://www.unicef.org.uk/donate/donate-to-our-venezuela-earthquake-appeal/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -2331,6 +2420,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">DEC — Venezuela Earthquake Appeal</span>
           <span class="ubadge t" data-en="Coalition" data-es="Coalición">Coalition</span>
@@ -2339,7 +2429,6 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; Venezuela-specific appeal — launched July 1" data-es="&#10003; Apelación específica Venezuela — lanzada el 1 jul">&#10003; Venezuela-specific appeal — launched July 1</span>
           <span class="upill up-ok t" data-en="&#10003; UK Government matching up to £2M" data-es="&#10003; Gobierno RU iguala hasta £2M">&#10003; UK Government matching up to £2M</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
         <p class="udetail t" data-en="GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you." data-es="Donaciones GBP online, por teléfono, o SMS SUPPORT al 70150 (£10). Anuncios en BBC, ITV, Channel 4, Channel 5 y Sky. Gift Aid añade 25% sin costo.">GBP donations online, by phone, or text SUPPORT to 70150 (£10). TV appeals airing on BBC, ITV, Channel 4, Channel 5 and Sky. Gift Aid adds 25% at no cost to you.</p>
         <div class="ucard-footer">
@@ -2351,6 +2440,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
           <span class="ucountry t" data-en="🇬🇧 UK" data-es="🇬🇧 RU">🇬🇧 UK</span>
           <span class="ucontrib t" data-en="&#128179; Cash" data-es="&#128179; Dinero">&#128179; Cash</span>
         </div>
+                <div class="ucard-verify"><span class="utag utag-verified t" data-en="&#10003; Verified" data-es="&#10003; Verificado">&#10003; Verified</span></div>
         <div class="ucard-head">
           <span class="uname">Network for Animals (NFA)</span>
           <span class="ubadge t" data-en="Charity" data-es="ONG">Charity</span>
@@ -2359,9 +2449,8 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
         <div class="upills">
           <span class="upill up-ok t" data-en="&#10003; UK registered charity — verified" data-es="&#10003; ONG registrada en RU — verificada">&#10003; UK registered charity — verified</span>
           <span class="upill up-ok t" data-en="&#10003; Emergency funding already rushed to RAC" data-es="&#10003; Fondos de emergencia ya enviados a RAC">&#10003; Emergency funding already rushed to RAC</span>
-          <span class="upill up-ok t" data-en="&#10003; Gift Aid eligible" data-es="&#10003; Elegible Gift Aid">&#10003; Gift Aid eligible</span>
         </div>
-        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas.</p>
+        <p class="udetail t" data-en="Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas. Gift Aid eligible — adds 25% at no cost to you." data-es="Rescata gatos y perros atrapados y heridos en zonas del terremoto. Financia al equipo en terreno de RAC para atención veterinaria, alimento y operaciones de rescate. Elegible para Gift Aid — a&ntilde;ade 25% sin costo.">Rescuing trapped and injured cats and dogs in earthquake zones. Funding RAC's on-the-ground team for veterinary care, food and rescue operations across affected areas. Gift Aid eligible — adds 25% at no cost to you.</p>
         <div class="ucard-footer">
           <a class="ucard-link" href="https://networkforanimals.org/appeals/venezuela-earthquake-jun-26/" target="_blank"><span class="t" data-en="Visit" data-es="Visitar">Visit</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
@@ -2397,7 +2486,7 @@ h1 br+*,h1 br~*{font-size:0.7em;font-weight:500;color:var(--muted)}
 
       <div class="about-block">
         <h3 class="t" data-en="Last updated" data-es="&Uacute;ltima actualizaci&oacute;n">Last updated</h3>
-        <p>July 2, 2026</p>
+        <p>July 3, 2026</p>
       </div>
 
     </div>
