@@ -101,6 +101,8 @@ Every card carries a `.ucard-verify` div with a `.utag` span, computed mechanica
 - Item/scope restrictions (e.g. "Medical supplies only — no food or clothes")
 - Transit time (e.g. "~2 month sea transit") — slow is not the same as unconfirmed
 
+⚠️ CRITICAL RULE: Transit time NEVER downgrades a card from Verified to Partially verified. This has been corrected multiple times. A confirmed shipping chain (e.g. CMA CGM) with a 2-month transit is VERIFIED. Never add an amber pill for transit duration.
+
 This distinction matters: the tag answers "will this actually reach people in Venezuela," not "how fast" or "how convenient." Getting this wrong (treating slow logistics as equivalent to unverified) was a bug fixed July 3, 2026 — see Known Bug History.
 
 **Goods cards with no shipping partner disclosed** get an explicit pill: `⚠ No shipping partner disclosed` (amber) — silence is never treated as neutral.
@@ -152,10 +154,10 @@ filterType(btn, type)     // shows/hides #type-cards .ucard by data-contribution
 # Current Content
 
 ## Global (14 orgs)
-Direct Relief, MSF, WCK, Global Empowerment Mission, Catholic Relief Services, IRC, Save the Children, GiveDirectly, Airlink, People in Need, UN Venezuela Humanitarian Fund, GlobalGiving, IFAW (animals tag), IFRC Emergency Appeal (VRC disclaimer pill)
+Direct Relief, MSF, WCK, Global Empowerment Mission, Catholic Relief Services, IRC, Save the Children, GiveDirectly (team now physically in Venezuela — first payments coming), Airlink, People in Need, UN Venezuela Humanitarian Fund, GlobalGiving, IFAW (animals tag), IFRC Emergency Appeal (VRC disclaimer pill)
 
-## Spain — Cash (6)
-Cruz Roja Española, Comité de Emergencia Español, MSF España, WCK Spain (Bizum 03843), BUSF Córdoba (Bizum 38350), Save the Children España (Bizum 13132)
+## Spain — Cash (7)
+Cruz Roja Española, Comité de Emergencia Español, MSF España, WCK Spain (Bizum 03843), BUSF Córdoba (Bizum 38350), Save the Children España (Bizum 13132), **World Vision España** (hygiene kits, food baskets, child protection in Caracas, church + UCV partners)
 
 ## Spain — Goods (3, active only — 5 closed initiatives removed July 3, 2026)
 - Pabellón Manuel Cadenas — Leganés → Active (Acción por Venezuela, 45+ points, Toneladas→Bandazul) — ✓ Verified
@@ -179,8 +181,7 @@ Cruz Vermelha Portuguesa (VRC pill)
 ## France (5)
 - MSF France (amber — general page)
 - Secours Catholique (amber)
-- VTN (goods, amber — unverified campaign + logistics chain not confirmed)
-- Mujeres Unidas por la Libertad y la Paz (goods — Alfortville depot, CMA CGM confirmed, French Foreign Ministry, ~2 month transit) — ✓ Verified (transit time no longer downgrades the tag)
+- Mujeres Unidas por la Libertad y la Paz (goods — Alfortville depot, CMA CGM confirmed, French Foreign Ministry, ~2 month transit) — ✓ Verified (transit time NEVER downgrades — confirmed CMA CGM chain)
 - Ville de Nancy — Hôtel de Ville (goods — Active Jul 2–10, 10h–17h, Salle Mienville, "Todos con Venezuela", CMA CGM, Les Bruits du Cœur 54) — ✓ Verified
 
 ## Czech Republic (1)
@@ -193,13 +194,16 @@ Caritas Österreich, Österreichisches Rotes Kreuz (VRC pill)
 Caritas Schweiz, SRK (VRC pill, REDOG)
 
 ## Luxembourg (1)
-MSF Luxembourg — new-format card (warning pill first, confirmation pill second, plain-language detail explaining money goes to global emergency fund)
+MSF Luxembourg — ⚠ Partially verified (no Venezuela-specific page, general MSF fund)
+
+## France — removed
+VTN (Venezuela Te Necesita) removed July 6 — no confirmed earthquake-specific campaign, no confirmed logistics chain, leads to nothing actionable. — new-format card (warning pill first, confirmation pill second, plain-language detail explaining money goes to global emergency fund)
 
 ## Norway (1)
 Caritas Norge (Vipps #91895)
 
 ## UK (4)
-British Red Cross (VRC pill), UNICEF UK, DEC — Venezuela Earthquake Appeal (Jul 1, govt match £2M), Network for Animals / NFA (charity 1142700, funds RAC)
+British Red Cross (VRC pill), UNICEF UK (20 tonnes landed Valencia June 28, $52M needed), DEC — Venezuela Earthquake Appeal (Jul 1, govt match £2M), Network for Animals / NFA (charity 1142700, funds RAC)
 
 ---
 
@@ -232,6 +236,8 @@ Tax-deductibility and Gift Aid facts were moved out of the trust-pill row into t
 | Status badge crammed in title row | `ustatus` inside `ucard-head` | Moved to own `div.ucard-status` |
 | Dev branch diverged, Cloudflare stopped building | Claude force-reset dev branch — NEVER DO THIS | Reset dev to main + pushed clean file |
 | Cloudflare didn't build dev pushes for ~1 hour | Cloudflare Workers Builds incident July 2 22:00-23:39 UTC | Resolved by Cloudflare |
+| Verification tags lost (July 6) | Claude pushed local file to main without verification tags from July 3 | Restored from bc8e0ee + applied July 6 content on top |
+| Mujeres Unidas wrongly marked Partial | Transit time pill added back despite rule — transit duration is NEVER a delivery-risk concern | Removed transit pill, set to Verified |
 | Verification tag penalized slow-but-confirmed logistics same as truly unverified cards | Tag rubric originally flagged ANY amber pill, including pure timing/logistics notes | Rubric now only downgrades for genuine delivery-risk factors (see Verification tag system); transit time, hours, item restrictions excluded |
 | Closed initiatives stayed live with a red "Closed" badge indefinitely | No removal policy existed | Closed initiatives are now removed from the site entirely once confirmed closed |
 
