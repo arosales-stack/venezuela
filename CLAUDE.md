@@ -154,7 +154,7 @@ filterType(btn, type)     // shows/hides #type-cards .ucard by data-contribution
 # Current Content
 
 ## Global (14 orgs)
-Direct Relief, MSF, WCK, Global Empowerment Mission, Catholic Relief Services, IRC, Save the Children, GiveDirectly (team now physically in Venezuela — first payments coming), Airlink, People in Need, UN Venezuela Humanitarian Fund, GlobalGiving, IFAW (animals tag), IFRC Emergency Appeal (VRC disclaimer pill)
+Direct Relief, MSF, WCK, Global Empowerment Mission, Catholic Relief Services, IRC (teams on ground Caracas+La Guaira, 75k+ people reached 2025 — ✓ Verified), Save the Children, GiveDirectly (team physically in Venezuela, first payments coming — ✓ Verified), Airlink, People in Need, UN Venezuela Humanitarian Fund, GlobalGiving, IFAW (animals tag), IFRC Emergency Appeal (VRC disclaimer pill)
 
 ## Spain — Cash (7)
 Cruz Roja Española, Comité de Emergencia Español, MSF España, WCK Spain (Bizum 03843), BUSF Córdoba (Bizum 38350), Save the Children España (Bizum 13132), **World Vision España** (hygiene kits, food baskets, child protection in Caracas, church + UCV partners)
